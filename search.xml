@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title>linux使用教程</title>
+      <link href="/2021/08/11/linux-shi-yong-jiao-cheng/"/>
+      <url>/2021/08/11/linux-shi-yong-jiao-cheng/</url>
+      
+        <content type="html"><![CDATA[<h2 id="虚拟机常用操作"><a href="#虚拟机常用操作" class="headerlink" title="虚拟机常用操作"></a>虚拟机常用操作</h2><h3 id="1、虚拟机的挂起和恢复"><a href="#1、虚拟机的挂起和恢复" class="headerlink" title="1、虚拟机的挂起和恢复"></a>1、虚拟机的挂起和恢复</h3><p>​        挂起相当于将当前虚拟机冻结（各种配置保存),在需要时可以快速恢复。如果是直接关闭虚拟机的话，每次启动虚拟机都会耗费很多时间。</p><h3 id="2、硬件参数的设置"><a href="#2、硬件参数的设置" class="headerlink" title="2、硬件参数的设置"></a>2、硬件参数的设置</h3><p>建议：先关闭虚拟机，再修改配置</p><p><img src="/images/linux%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/image-20210811201840311.png" alt="image-20210811201840311"></p><h3 id="3、快照和系统恢复"><a href="#3、快照和系统恢复" class="headerlink" title="3、快照和系统恢复"></a>3、快照和系统恢复</h3><p>当系统出现严重错误怎么办？</p><p>1、重装系统</p><p>优点：操作简单</p><p>缺点：Ubuntu系统的重装会比较耗时。原来系统的配置，文件以及数据没了。</p><p>2、系统快照：VMware提供的系统功能</p><p>当系统出现问题的时候可以使用最近一次的快照进行恢复。</p><h2 id="Linux系统操作"><a href="#Linux系统操作" class="headerlink" title="Linux系统操作"></a>Linux系统操作</h2><p>​       Linux可以用作个人桌面（办公，看视频，听音乐…),但其主要还是用于服务器环境。常用应用：文件管理器、命令行终端、文本编辑器</p><h3 id="1、文件系统"><a href="#1、文件系统" class="headerlink" title="1、文件系统"></a>1、文件系统</h3><p>对windows来说，每个分区有一个盘符。每一个盘符实际上是一个分区partition。</p><p>在Linux下没有C:等盘符概念。Linux使用统一的目录树结构。</p><pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F;home&#x2F;w #用户目录&#x2F;root&#x2F;bin&#x2F;mnt&#x2F;user&#x2F;etc<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h4 id="1-1、用户目录"><a href="#1-1、用户目录" class="headerlink" title="1.1、用户目录"></a>1.1、用户目录</h4><p>用户目录，即用户自己的目录。如用户w用户目录为<code>/home/w</code> 。Linux系统上可以支持多个用户，每个用户有一个目录。特例：超级用户root，其用户目录为<code>/root</code>。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>linux操作系统安装</title>
+      <link href="/2021/08/10/linux-cao-zuo-xi-tong-an-zhuang/"/>
+      <url>/2021/08/10/linux-cao-zuo-xi-tong-an-zhuang/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1、先安装虚拟机VMware"><a href="#1、先安装虚拟机VMware" class="headerlink" title="1、先安装虚拟机VMware"></a>1、先安装虚拟机VMware</h2><p>链接: <a href="https://pan.baidu.com/s/1zAjd1lsAjLG32PfF-4AjYA">https://pan.baidu.com/s/1zAjd1lsAjLG32PfF-4AjYA</a> 提取码: 3ymx 复制这段内容后打开百度网盘手机App，操作更方便哦</p><p>我这里安装C盘，C盘是固态盘且我的容量比较大，所以启动时候速度会比较快</p><p><img src="/images/linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/image-20210810225534695.png" alt="image-20210810225534695"></p><p>一路下一步直接安装。</p><p>接下来激活软件：</p><p><img src="/images/linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/image-20210810230040538.png" alt="image-20210810230040538"></p><p><img src="/images/linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/image-20210810230109353.png" alt="image-20210810230109353"></p><p> 双击激活软件将获取到密钥填入即可，激活软件和VMware在在网盘链接里都有。</p><p>开启cpu的虚拟化，可通过<code>任务管理器-&gt;性能查看</code>,开启方法百度 xxx电脑开启虚拟化。</p><h2 id="2、安装Ubuntu"><a href="#2、安装Ubuntu" class="headerlink" title="2、安装Ubuntu"></a>2、安装Ubuntu</h2><p>点击创建虚拟机，默认下一步，选择下载好镜像文件</p><p><img src="/images/linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/image-20210811095140213.png" alt="image-20210811095140213"></p><p>下一步选择安装位置</p><p><img src="/images/linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/image-20210811095513926.png" alt="image-20210811095513926"></p><p>选择容量下一步</p><p><img src="/images/linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/image-20210811100150805.png" alt="image-20210811100150805"></p><p>点击完成进行安装</p><p><img src="/images/linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/image-20210811100301824.png" alt="image-20210811100301824"></p><p><img src="/images/linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/image-20210811100404836.png" alt="image-20210811100404836"></p><p>出现该错误，说明cpu的虚拟化没有开启,重启电脑，按住先按住fn+点按f2进入bios</p><p><img src="https://webdoc.lenovo.com.cn/lenovowsi/new_cskb/uploadfile/20150619010806425.jpg" alt="进入BIOS，选择configuration的选项，找到Intel  Virtual  Technology，改成Enable的开启状态"></p><p>再次启动虚拟机。基本上一路傻瓜式安装，</p><p><img src="/images/linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/image-20210811104507501.png" alt="image-20210811104507501"></p><p>密码根据自己喜好设置，我为方便记忆设置为 ubuntu2104</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 工具 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>icarus主题使用及优化</title>
       <link href="/2021/08/10/icarus-zhu-ti-shi-yong-ji-you-hua/"/>
       <url>/2021/08/10/icarus-zhu-ti-shi-yong-ji-you-hua/</url>

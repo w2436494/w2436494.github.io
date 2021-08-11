@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="icarus主题使用及优化, 17&#39;s blog">
+    <meta name="keywords" content="linux使用教程, 17&#39;s blog">
     <meta name="description" content="This is a blog in order to record my learning and growth.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>icarus主题使用及优化 | 17&#39;s blog</title>
+    <title>linux使用教程 | 17&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">icarus主题使用及优化</h1>
+                    <h1 class="description center-align post-title">linux使用教程</h1>
                 </div>
             </div>
         </div>
@@ -431,8 +431,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%8D%9A%E5%AE%A2/">
-                                <span class="chip bg-color">博客</span>
+                            <a href="/tags/linux/">
+                                <span class="chip bg-color">linux</span>
                             </a>
                         
                     </div>
@@ -447,21 +447,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-08-10
+                    2021-08-11
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-10
+                    2021-08-11
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    473
+                    381
                 </div>
                 
 
@@ -486,41 +486,29 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h2><p>icarus主题地址 ：<code>https://github.com/ppoffice/hexo-theme-icarus</code>。打开后，可直接选择下载压缩包。想要其他主题可以在GitHub上搜索<strong>hexo-theme</strong>。</p>
-<p><img src="/images/icarus%E4%B8%BB%E9%A2%98%E4%BD%BF%E7%94%A8%E5%8F%8A%E4%BC%98%E5%8C%96/image-20210810142118309.png" alt="image-20210810142118309"></p>
-<p>​     将下载的文件解压，复制到<code>/theme/</code>中,主题文件夹过长可以重命名为icarus。</p>
-<p>下载方式2：在cmd下到博客根目录下执行命令：</p>
-<pre class="line-numbers language-none"><code class="language-none">cd blog
-git clone https:&#x2F;&#x2F;github.com&#x2F;ppoffice&#x2F;hexo-theme-icarus.git themes&#x2F;icarus <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p>然后修改Hexo根目录下的配置文件<code>_config.yml</code>中的themes参数 <code>theme: icarus</code></p>
-<p>重新使用命令即可本地预览效果</p>
-<p><code>hexo g</code> 和<code>hexo s</code>。</p>
-<p><img src="/images/icarus%E4%B8%BB%E9%A2%98%E4%BD%BF%E7%94%A8%E5%8F%8A%E4%BC%98%E5%8C%96/image-20210810143415851.png" alt="image-20210810143415851"></p>
-<p>输入命令后发现如图的报错，说明Icarus主题的依赖没有安装。通过下面的命令安装</p>
-<p><code>npm install --save bulma-stylus@0.8.0 hexo-component-inferno@^0.4.0 hexo-renderer-inferno@^0.1.3 inferno@^7.3.3 inferno-create-element@^7.3.3</code></p>
-<p>安装完成后再次启动服务。</p>
-<p><code>ERROR Package hexo-component-inferno&#39;s version (0.4.0) does not satisfy the required version (^0.13.0).  ERROR Please install the missing dependencies your Hexo site root directory:</code></p>
-<p>再次报错，<code>hexo-component-inferno</code>是0.4.0不是要求的0.13.0。</p>
-<p>百度进入<code>hexo-component-inferno</code> 进入<code>https://www.npmjs.com/package/hexo-component-inferno</code></p>
-<p><img src="/images/icarus%E4%B8%BB%E9%A2%98%E4%BD%BF%E7%94%A8%E5%8F%8A%E4%BC%98%E5%8C%96/image-20210810144801533.png" alt="image-20210810144801533"></p>
-<p>复制安装命令<code>npm install hexo-component-inferno --save</code>到命令行下执行。再次重启服务。</p>
-<p><strong>found 1 low severity vulnerability run <code>npm audit fix</code> to fix them, or <code>npm audit</code> for details</strong></p>
-<p><code>npm audit fix  npm audit fix --force  npm audit</code> 再次重启ok。</p>
-<p>方法2：删除已经安装的：node_modules 和 package-lock.json<br>修改 package.json 格式如下<br><code>npm audit fix --force  npm instal</code></p>
-<h2 id="界面美化"><a href="#界面美化" class="headerlink" title="界面美化"></a>界面美化</h2><p>1、在hexo博客的根目录下的配置文件做如下修改</p>
-<pre class="line-numbers language-none"><code class="language-none">site
-title: 17&#39;s blog #网站标题
-subtitle: Maker &amp; Developer #网站副标题
-description: This is a blog in order to record my learning and growth. #网站描述
-keywords:
-author: 程序员17 #作者
-language: zh-CN #网站语言 中文汉字
-timezone: Asia&#x2F;Beijing #时区 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                <h2 id="虚拟机常用操作"><a href="#虚拟机常用操作" class="headerlink" title="虚拟机常用操作"></a>虚拟机常用操作</h2><h3 id="1、虚拟机的挂起和恢复"><a href="#1、虚拟机的挂起和恢复" class="headerlink" title="1、虚拟机的挂起和恢复"></a>1、虚拟机的挂起和恢复</h3><p>​        挂起相当于将当前虚拟机冻结（各种配置保存),在需要时可以快速恢复。如果是直接关闭虚拟机的话，每次启动虚拟机都会耗费很多时间。</p>
+<h3 id="2、硬件参数的设置"><a href="#2、硬件参数的设置" class="headerlink" title="2、硬件参数的设置"></a>2、硬件参数的设置</h3><p>建议：先关闭虚拟机，再修改配置</p>
+<p><img src="/images/linux%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/image-20210811201840311.png" alt="image-20210811201840311"></p>
+<h3 id="3、快照和系统恢复"><a href="#3、快照和系统恢复" class="headerlink" title="3、快照和系统恢复"></a>3、快照和系统恢复</h3><p>当系统出现严重错误怎么办？</p>
+<p>1、重装系统</p>
+<p>优点：操作简单</p>
+<p>缺点：Ubuntu系统的重装会比较耗时。原来系统的配置，文件以及数据没了。</p>
+<p>2、系统快照：VMware提供的系统功能</p>
+<p>当系统出现问题的时候可以使用最近一次的快照进行恢复。</p>
+<h2 id="Linux系统操作"><a href="#Linux系统操作" class="headerlink" title="Linux系统操作"></a>Linux系统操作</h2><p>​       Linux可以用作个人桌面（办公，看视频，听音乐…),但其主要还是用于服务器环境。常用应用：文件管理器、命令行终端、文本编辑器</p>
+<h3 id="1、文件系统"><a href="#1、文件系统" class="headerlink" title="1、文件系统"></a>1、文件系统</h3><p>对windows来说，每个分区有一个盘符。每一个盘符实际上是一个分区partition。</p>
+<p>在Linux下没有C:等盘符概念。Linux使用统一的目录树结构。</p>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;
+&#x2F;home&#x2F;w #用户目录
+&#x2F;root
+&#x2F;bin
+&#x2F;mnt
+&#x2F;user
+&#x2F;etc<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
-<p>2、在icarus的根目录下的配置文件做修改</p>
+<h4 id="1-1、用户目录"><a href="#1-1、用户目录" class="headerlink" title="1.1、用户目录"></a>1.1、用户目录</h4><p>用户目录，即用户自己的目录。如用户w用户目录为<code>/home/w</code> 。Linux系统上可以支持多个用户，每个用户有一个目录。特例：超级用户root，其用户目录为<code>/root</code>。</p>
 
                 
             </div>
@@ -547,7 +535,7 @@ timezone: Asia&#x2F;Beijing #时区 <span aria-hidden="true" class="line-numbers
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/08/10/icarus-zhu-ti-shi-yong-ji-you-hua/">http://example.com/2021/08/10/icarus-zhu-ti-shi-yong-ji-you-hua/</a>
+                    <a href="http://example.com/2021/08/11/linux-shi-yong-jiao-cheng/">http://example.com/2021/08/11/linux-shi-yong-jiao-cheng/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -585,8 +573,8 @@ timezone: Asia&#x2F;Beijing #时区 <span aria-hidden="true" class="line-numbers
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%8D%9A%E5%AE%A2/">
-                                    <span class="chip bg-color">博客</span>
+                                <a href="/tags/linux/">
+                                    <span class="chip bg-color">linux</span>
                                 </a>
                             
                         </div>
@@ -758,9 +746,56 @@ timezone: Asia&#x2F;Beijing #时区 <span aria-hidden="true" class="line-numbers
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2021/08/11/linux-shi-yong-jiao-cheng/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="linux使用教程">
+                        
+                        <span class="card-title">linux使用教程</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-11
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            程序员17
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/linux/">
+                        <span class="chip bg-color">linux</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2021/08/10/linux-cao-zuo-xi-tong-an-zhuang/">
                     <div class="card-image">
@@ -778,9 +813,9 @@ timezone: Asia&#x2F;Beijing #时区 <span aria-hidden="true" class="line-numbers
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-08-10
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-10
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -794,51 +829,6 @@ timezone: Asia&#x2F;Beijing #时区 <span aria-hidden="true" class="line-numbers
                     
                     <a href="/tags/%E5%B7%A5%E5%85%B7/">
                         <span class="chip bg-color">工具</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/08/09/hexo-bo-ke-zhu-yi-shi-xiang/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="hexo博客注意事项">
-                        
-                        <span class="card-title">hexo博客注意事项</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-09
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            程序员17
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E5%8D%9A%E5%AE%A2/">
-                        <span class="chip bg-color">博客</span>
                     </a>
                     
                 </div>
