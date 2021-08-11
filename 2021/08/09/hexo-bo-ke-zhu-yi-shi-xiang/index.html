@@ -454,14 +454,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-10
+                    2021-08-11
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    421
+                    569
                 </div>
                 
 
@@ -523,6 +523,25 @@
 <p>但是仅仅这样设置还不够，这样设置在typora中倒是能看图片了，但是使用的却是相对于当前md文件的相对路径，可是如果启动hexo，是要用服务器访问的，而服务器显然无法根据这个相对路径正确访问到图片，因此还需要在typora中进行进一步设置。</p>
 <p>在typora菜单栏点击 <code>格式-&gt;图像-&gt;设置图片根目录</code>，将<code>hexo/source</code>作为其根目录即可。</p>
 <p>完成上面操作后将hexo博客部署到服务器后图片就可以正常显示了。</p>
+<h4 id="hexo-d部署项目到git上报错解决"><a href="#hexo-d部署项目到git上报错解决" class="headerlink" title="hexo d部署项目到git上报错解决"></a>hexo d部署项目到git上报错解决</h4><pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">fatal: unable to access &#39;https:&#x2F;&#x2F;github.com&#x2F;w2436494&#x2F;w2436494.github.io&#x2F;&#39;: OpenSSL SSL_read: Connection was reset, errno 10054
+FATAL &#123;
+  err: Error: Spawn failed
+      at ChildProcess.&lt;anonymous&gt; (D:\blog\node_modules\hexo-util\lib\spawn.js:51:21)
+      at ChildProcess.emit (events.js:375:28)
+      at ChildProcess.cp.emit (D:\blog\node_modules\cross-spawn\lib\enoent.js:34:29)
+      at Process.ChildProcess._handle.onexit (internal&#x2F;child_process.js:277:12) &#123;
+    code: 128
+  &#125;
+&#125; Something&#39;s wrong. Maybe you can find the solution here: %s https:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;troubleshooting.html<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>复制下面的命令在命令行执行后即可再次部署。</p>
+<pre class="line-numbers language-none"><code class="language-none">git config --global --unset http.proxy 
+git config --global --unset https.proxy<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
+
+
 <p>今天又是美好的一天</p>
 <p><img src="/images/hexo%E5%8D%9A%E5%AE%A2%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/1157740.jpg" alt="1157740"></p>
 
@@ -1039,7 +1058,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">2.1k</span>
+                        class="white-color">2.3k</span>
             
             
             
