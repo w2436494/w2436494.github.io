@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>linux教程续2</title>
+      <link href="/2021/08/12/linux-jiao-cheng-xu-2/"/>
+      <url>/2021/08/12/linux-jiao-cheng-xu-2/</url>
+      
+        <content type="html"><![CDATA[<h2 id="用户管理操作"><a href="#用户管理操作" class="headerlink" title="用户管理操作"></a>用户管理操作</h2><h3 id="1、添加用户"><a href="#1、添加用户" class="headerlink" title="1、添加用户"></a>1、添加用户</h3><p>添加一个用户</p><p><code>sudo useradd -m test1</code></p><p>其中 sudo,表示以管理员身份进行。其中-m参数表示在/home下添加用户</p><p>2 修改用户密码</p><p><code>sudo passwd test1</code></p><p>3 删除用户</p><p><code>sudo userdel test1</code></p><p>删除用户后需要删除用户目录 sudo rm -rf /home/test1</p><p>4 在登录系统时，默认不允许以root用户登录，避免使用root登录导致系统出现问题。</p><p>5 只有特殊用户，才能执行sudo,如当前可以使用w用户执行sudo,但test1不行</p><p>Linux下，把能执行sudo命令的用户称作sudoer。</p><h3 id="2、超级用户-根用户root"><a href="#2、超级用户-根用户root" class="headerlink" title="2、超级用户/根用户root"></a>2、超级用户/根用户root</h3><p>类似于Windows下的Administrator用户。切换到root用户，有全部权限，可以直接使用useradd等命令。</p><p>1 首次使用需要给root用户设置一个密码</p><p><code>sudo passwd root</code>  我这里设为12345678方便记忆。</p><p>2 切换到root用户</p><p><code>su root</code> 其中su 表示switch user</p><p>3 退出</p><p><code>exit</code></p><p>root用户的权限很大，为了保证安全，用完后应该尽快退出root用户。</p><h3 id="3、用户组"><a href="#3、用户组" class="headerlink" title="3、用户组"></a>3、用户组</h3><p>Linux下可以创建多个用户，可以用组进行管理用户。每个组可以设置不同的权限。</p><p>比如：</p><p>男生组 boys 。将后面四个用户添加到该组ming bo gang qiang。</p><p>1 创建组</p><p><code>groupadd boys</code></p><p>2 创建用户同时添加到组</p><p><code>useradd -m -g  boys ming</code>  其中-g表示添加用户 同时将用户添加到boys组</p><p>3 修改现有用户到新的组</p><p><code>usermod -g boys w </code> 其中，usermod表示修改用户信息</p><p>4 查看用户和组</p><p><code>cat /etc/group</code></p><p>每一行表示一个group的信息，名称+id</p><p>5 查看用户列表</p><p><code>cat /etc/passwd</code> 每一行表示一个用户</p><p>用户不多时，管理时候并不使用组的概念。useradd a1。</p><p>系统默认会给a1建立一个同名的组a1,也就是a1组只有a1用户。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>linux使用教程</title>
       <link href="/2021/08/11/linux-shi-yong-jiao-cheng/"/>
       <url>/2021/08/11/linux-shi-yong-jiao-cheng/</url>

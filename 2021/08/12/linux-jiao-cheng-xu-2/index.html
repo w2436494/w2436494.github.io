@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="hexo博客注意事项, 17&#39;s blog">
+    <meta name="keywords" content="linux教程续2, 17&#39;s blog">
     <meta name="description" content="This is a blog in order to record my learning and growth.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>hexo博客注意事项 | 17&#39;s blog</title>
+    <title>linux教程续2 | 17&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">hexo博客注意事项</h1>
+                    <h1 class="description center-align post-title">linux教程续2</h1>
                 </div>
             </div>
         </div>
@@ -431,8 +431,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%8D%9A%E5%AE%A2/">
-                                <span class="chip bg-color">博客</span>
+                            <a href="/tags/linux/">
+                                <span class="chip bg-color">linux</span>
                             </a>
                         
                     </div>
@@ -447,21 +447,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-08-09
+                    2021-08-12
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-11
+                    2021-08-12
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    569
+                    483
                 </div>
                 
 
@@ -486,64 +486,41 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="hexo博客教程"><a href="#hexo博客教程" class="headerlink" title="hexo博客教程"></a>hexo博客教程</h2><p>1、新建文章</p>
-<p>cmd进入博客所在文件的根目录下：如<code>D:\blog</code></p>
-<pre class="line-numbers language-none"><code class="language-none">hexo new &quot;文章名字&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>新建文章所在目录<code> \source\_posts</code></p>
-<p>写好文章后，接下来清理一下</p>
-<pre class="line-numbers language-none"><code class="language-none">hexo clean<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>最后生成</p>
-<pre class="line-numbers language-none"><code class="language-none">hexo generate  简写 hexo g<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-<h2 id="hexo常用命令"><a href="#hexo常用命令" class="headerlink" title="hexo常用命令"></a>hexo常用命令</h2><pre class="line-numbers language-none"><code class="language-none">clean     Remove generated files and cache.
- config    Get or set configurations.
- deploy    Deploy your website.
- generate  Generate static files.
- help      Get help on a command.
- init      Create a new Hexo folder.
- list      List the information of the site
- migrate   Migrate your site from other system to Hexo.
- new       Create a new post.
- publish   Moves a draft post from _drafts to _posts folder.
- render    Render files with renderer plugins.
- server    Start the server.
- version   Display version information.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<h2 id="typora编写Hexo插入的图片无法正常显示"><a href="#typora编写Hexo插入的图片无法正常显示" class="headerlink" title="typora编写Hexo插入的图片无法正常显示"></a>typora编写Hexo插入的图片无法正常显示</h2><p>hexo博客文件均保存在 <code>hexo/_posts/</code>文件夹下</p>
-<p>首先在 <code>hexo &gt; source</code>目录下建一个文件夹叫images，用来保存博客中的图片。</p>
-<p>然后打开Typora的 <code>文件 &gt; 偏好设置</code>，进行如下设置。</p>
-<p><img src="/images/hexo%E5%8D%9A%E5%AE%A2%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/image-20210809202626324.png" alt="image-20210809202626324"></p>
-<p>完成上面的操作后，博客中的图片都将会保存到 <code>/source/images/</code>该博客md文件名/图片名称</p>
-<p>但是仅仅这样设置还不够，这样设置在typora中倒是能看图片了，但是使用的却是相对于当前md文件的相对路径，可是如果启动hexo，是要用服务器访问的，而服务器显然无法根据这个相对路径正确访问到图片，因此还需要在typora中进行进一步设置。</p>
-<p>在typora菜单栏点击 <code>格式-&gt;图像-&gt;设置图片根目录</code>，将<code>hexo/source</code>作为其根目录即可。</p>
-<p>完成上面操作后将hexo博客部署到服务器后图片就可以正常显示了。</p>
-<h4 id="hexo-d部署项目到git上报错解决"><a href="#hexo-d部署项目到git上报错解决" class="headerlink" title="hexo d部署项目到git上报错解决"></a>hexo d部署项目到git上报错解决</h4><pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">fatal: unable to access &#39;https:&#x2F;&#x2F;github.com&#x2F;w2436494&#x2F;w2436494.github.io&#x2F;&#39;: OpenSSL SSL_read: Connection was reset, errno 10054
-FATAL &#123;
-  err: Error: Spawn failed
-      at ChildProcess.&lt;anonymous&gt; (D:\blog\node_modules\hexo-util\lib\spawn.js:51:21)
-      at ChildProcess.emit (events.js:375:28)
-      at ChildProcess.cp.emit (D:\blog\node_modules\cross-spawn\lib\enoent.js:34:29)
-      at Process.ChildProcess._handle.onexit (internal&#x2F;child_process.js:277:12) &#123;
-    code: 128
-  &#125;
-&#125; Something&#39;s wrong. Maybe you can find the solution here: %s https:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;troubleshooting.html<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>复制下面的命令在命令行执行后即可再次部署。</p>
-<pre class="line-numbers language-none"><code class="language-none">git config --global --unset http.proxy 
-git config --global --unset https.proxy<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-
-
-
-
-<p>今天又是美好的一天</p>
-<p><img src="/images/hexo%E5%8D%9A%E5%AE%A2%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/1157740.jpg" alt="1157740"></p>
+                <h2 id="用户管理操作"><a href="#用户管理操作" class="headerlink" title="用户管理操作"></a>用户管理操作</h2><h3 id="1、添加用户"><a href="#1、添加用户" class="headerlink" title="1、添加用户"></a>1、添加用户</h3><p>添加一个用户</p>
+<p><code>sudo useradd -m test1</code></p>
+<p>其中 sudo,表示以管理员身份进行。其中-m参数表示在/home下添加用户</p>
+<p>2 修改用户密码</p>
+<p><code>sudo passwd test1</code></p>
+<p>3 删除用户</p>
+<p><code>sudo userdel test1</code></p>
+<p>删除用户后需要删除用户目录 sudo rm -rf /home/test1</p>
+<p>4 在登录系统时，默认不允许以root用户登录，避免使用root登录导致系统出现问题。</p>
+<p>5 只有特殊用户，才能执行sudo,如当前可以使用w用户执行sudo,但test1不行</p>
+<p>Linux下，把能执行sudo命令的用户称作sudoer。</p>
+<h3 id="2、超级用户-根用户root"><a href="#2、超级用户-根用户root" class="headerlink" title="2、超级用户/根用户root"></a>2、超级用户/根用户root</h3><p>类似于Windows下的Administrator用户。切换到root用户，有全部权限，可以直接使用useradd等命令。</p>
+<p>1 首次使用需要给root用户设置一个密码</p>
+<p><code>sudo passwd root</code>  我这里设为12345678方便记忆。</p>
+<p>2 切换到root用户</p>
+<p><code>su root</code> 其中su 表示switch user</p>
+<p>3 退出</p>
+<p><code>exit</code></p>
+<p>root用户的权限很大，为了保证安全，用完后应该尽快退出root用户。</p>
+<h3 id="3、用户组"><a href="#3、用户组" class="headerlink" title="3、用户组"></a>3、用户组</h3><p>Linux下可以创建多个用户，可以用组进行管理用户。每个组可以设置不同的权限。</p>
+<p>比如：</p>
+<p>男生组 boys 。将后面四个用户添加到该组ming bo gang qiang。</p>
+<p>1 创建组</p>
+<p><code>groupadd boys</code></p>
+<p>2 创建用户同时添加到组</p>
+<p><code>useradd -m -g  boys ming</code>  其中-g表示添加用户 同时将用户添加到boys组</p>
+<p>3 修改现有用户到新的组</p>
+<p><code>usermod -g boys w </code> 其中，usermod表示修改用户信息</p>
+<p>4 查看用户和组</p>
+<p><code>cat /etc/group</code></p>
+<p>每一行表示一个group的信息，名称+id</p>
+<p>5 查看用户列表</p>
+<p><code>cat /etc/passwd</code> 每一行表示一个用户</p>
+<p>用户不多时，管理时候并不使用组的概念。useradd a1。</p>
+<p>系统默认会给a1建立一个同名的组a1,也就是a1组只有a1用户。</p>
 
                 
             </div>
@@ -570,7 +547,7 @@ git config --global --unset https.proxy<span aria-hidden="true" class="line-numb
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/08/09/hexo-bo-ke-zhu-yi-shi-xiang/">http://example.com/2021/08/09/hexo-bo-ke-zhu-yi-shi-xiang/</a>
+                    <a href="http://example.com/2021/08/12/linux-jiao-cheng-xu-2/">http://example.com/2021/08/12/linux-jiao-cheng-xu-2/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -608,8 +585,8 @@ git config --global --unset https.proxy<span aria-hidden="true" class="line-numb
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%8D%9A%E5%AE%A2/">
-                                    <span class="chip bg-color">博客</span>
+                                <a href="/tags/linux/">
+                                    <span class="chip bg-color">linux</span>
                                 </a>
                             
                         </div>
@@ -781,17 +758,18 @@ git config --global --unset https.proxy<span aria-hidden="true" class="line-numb
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/08/10/icarus-zhu-ti-shi-yong-ji-you-hua/">
+                <a href="/2021/08/12/linux-jiao-cheng-xu-2/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="icarus主题使用及优化">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="linux教程续2">
                         
-                        <span class="card-title">icarus主题使用及优化</span>
+                        <span class="card-title">linux教程续2</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -801,9 +779,9 @@ git config --global --unset https.proxy<span aria-hidden="true" class="line-numb
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-08-10
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-12
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -812,11 +790,12 @@ git config --global --unset https.proxy<span aria-hidden="true" class="line-numb
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%8D%9A%E5%AE%A2/">
-                        <span class="chip bg-color">博客</span>
+                    <a href="/tags/linux/">
+                        <span class="chip bg-color">linux</span>
                     </a>
                     
                 </div>
@@ -830,13 +809,13 @@ git config --global --unset https.proxy<span aria-hidden="true" class="line-numb
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/07/13/hello-world/">
+                <a href="/2021/08/11/linux-shi-yong-jiao-cheng/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="linux使用教程">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">linux使用教程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -847,7 +826,7 @@ git config --global --unset https.proxy<span aria-hidden="true" class="line-numb
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-13
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-11
                             </span>
                         <span class="publish-author">
                             
@@ -856,6 +835,14 @@ git config --global --unset https.proxy<span aria-hidden="true" class="line-numb
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/linux/">
+                        <span class="chip bg-color">linux</span>
+                    </a>
+                    
                 </div>
                 
             </div>
