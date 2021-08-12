@@ -454,14 +454,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-11
+                    2021-08-12
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    896
+                    1.5k
                 </div>
                 
 
@@ -548,6 +548,53 @@ cd ..&#x2F;www 切换到上级目录，再到www子目录
 ls ~
 ls .&#x2F;www
 还有更复杂的 .&#x2F;hello&#x2F;abc&#x2F;...&#x2F;123&#x2F;.&#x2F;other&#x2F;test.xml<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="目录操作"><a href="#目录操作" class="headerlink" title="目录操作"></a>目录操作</h5><p>mkdir，即make directory创建目录</p>
+<p>mkdir abc</p>
+<p>mkdir -p abc/123/test</p>
+<p>使用-p参数，可以将路径的层次目录全部创建</p>
+<p>rmdir，即remove directory删除目录</p>
+<p>rmdir abc 如果目录非空，则删除失败</p>
+<p>rm ,即 remove 删除文件或目录</p>
+<p>rm -rf abc  删除abc,和子项一起删除</p>
+<p>其中,r表示recursion(递归删除)，f表示force (强制删除)</p>
+<pre class="line-numbers language-rm" data-language="rm"><code class="language-rm">rm -rf &#x2F;* 删除根目录下的所有东西（慎用)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>cp,即copy复制文件或者目录</p>
+<p>cp -rf snap  snap2  </p>
+<p>强制递归复制snap，如果snap2不存在则会创建snap2,如果snap2存在则会将sanp的内容复制到snap2下。</p>
+<p>mv,即move ,移动文件或者目录（重命名)</p>
+<p>move hello helloworld</p>
+<p><code>rm/cp/mv</code>这三个命令对文件同样适用</p>
+<h5 id="归档：备份"><a href="#归档：备份" class="headerlink" title="归档：备份"></a>归档：备份</h5><p>在Linux系统重要的程序或者文件需要备份，首先将其打包为一个文件（tar包），让后在将tar文件备份到某个位置。</p>
+<p>tar,即tape(磁带) archive(档案) 档案打包</p>
+<p>创建档案包</p>
+<pre class="line-numbers language-none"><code class="language-none">tar -cvf example.tar example<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>其中c,表示create创建档案</p>
+<p>v,表示verbose显示详情</p>
+<p>f,表示file</p>
+<p>也可以将多个目录打包 tar -cvf xxx.tar file1 file2 file3</p>
+<p>还原档案包（解压压缩包)</p>
+<pre class="line-numbers language-none"><code class="language-none">tar -xvf example.tar
+tar -xvf example.tar -C outdir
+其中,-C参数指定目标目录(C大写表示切换一个目录)，默认解压到当前目录下<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>上面的tar格式并没有压缩，体积较大。所以可以通过归档并压缩</p>
+<h5 id="归档并压缩"><a href="#归档并压缩" class="headerlink" title="归档并压缩"></a>归档并压缩</h5><pre class="line-numbers language-none"><code class="language-none">tar -czvf example.tar.gz example 参数z表示压缩 先归档在使用gz压
+解压缩
+tar -xzvf example.tar.gz
+tar -xzvf example.tar.gz -C outdir<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="软链接，相当于Windows下的快捷方式"><a href="#软链接，相当于Windows下的快捷方式" class="headerlink" title="软链接，相当于Windows下的快捷方式"></a>软链接，相当于Windows下的快捷方式</h5><p>使用ln命令（link）来创建软链接</p>
+<p><code>ln -s source link</code> 其中，-s表示soft软链接（默认为硬)，除了软链接还有硬链接。</p>
+<p>如：<code>ln -s example example2</code></p>
+<p>删除软链接对原文件没有影响。</p>
+<p>删除原文件，则软链接失效。</p>
+<p>以ls -l查看文件详情时，可以看到文件目标路径,查看当前文件是否是软链接</p>
+<p>比如，ls  -l  /</p>
+<p>可以发现，/bin 实际指向/user/bin</p>
+<pre class="line-numbers language-none"><code class="language-none">lrwxrwxrwx   1 root root          7  8月 11 10:41 bin -&gt; usr&#x2F;bin<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 
 
@@ -1078,7 +1125,7 @@ ls .&#x2F;www
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">2.3k</span>
+                        class="white-color">2.8k</span>
             
             
             
