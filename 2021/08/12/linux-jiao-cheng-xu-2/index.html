@@ -454,14 +454,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-12
+                    2021-08-13
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.4k
+                    2.2k
                 </div>
                 
 
@@ -612,6 +612,89 @@ root@ubuntu21:&#x2F;home&#x2F;w# ls -ld &#x2F;opt&#x2F;software
 drwxr-xr-x 2 w root 4096  8月 12 19:54 &#x2F;opt&#x2F;software<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>只有文件的owner 和root 才有权限修改属主。</p>
+<h2 id="脚本程序"><a href="#脚本程序" class="headerlink" title="脚本程序"></a>脚本程序</h2><p>脚本Script，一种解释执行的程序。</p>
+<p>Linux下常见的三种脚本程序。</p>
+<p>Shell脚本 *.sh</p>
+<p>Per脚本 *.pl</p>
+<p>Python脚本 *.py</p>
+<p>脚本程序，本质是一个文本文件。且具有可执行的权限。</p>
+<p>脚本程序的都是由解释器执行的</p>
+<p>shell脚本解释器：/bin/sh</p>
+<p>Per脚本解释器: /bin/perl</p>
+<p>Python脚本解释器: /bin/python3</p>
+<p>执行一个脚本时，下面两种方式等效</p>
+<pre class="line-numbers language-none"><code class="language-none">.&#x2F;hello.py
+&#x2F;bin&#x2F;python3 hello.py<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="1-shell脚本"><a href="#1-shell脚本" class="headerlink" title="1 shell脚本"></a>1 shell脚本</h3><p>shell脚本，就是按shell语法写出来的脚本，是Linux自带的脚本语言。</p>
+<p>相当于Windows下的dos批处理脚本。</p>
+<p>1 编辑文本文件，保存为.sh</p>
+<pre class="line-numbers language-none"><code class="language-none">#！&#x2F;bin&#x2F;sh
+echo &quot;hello world&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>2 添加可执行权限</p>
+<p>chmod +x hello.sh</p>
+<p>3 执行程序</p>
+<p>./hello.sh</p>
+<p>注：</p>
+<p>第一行必须声明解释器</p>
+<p>#!/bin/sh</p>
+<p>必须有x权限，才能够执行</p>
+<p>执行程序时，必须加上路径</p>
+<pre class="line-numbers language-none"><code class="language-none">.&#x2F;hello.sh
+&#x2F;home&#x2F;w&#x2F;hello.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
+<h3 id="2-python脚本"><a href="#2-python脚本" class="headerlink" title="2 python脚本"></a>2 python脚本</h3><p>python脚本，比shell脚本强大。</p>
+<p>1 编辑一个文本文件 ，保存为.py</p>
+<p>   第一行加上解释器路径 #!/bin/python3</p>
+<p>2 添加可执行权限</p>
+<p>chmod +x hello.py</p>
+<p>3 执行程序</p>
+<p>./hello.py</p>
+<h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><h3 id="1-shell中的变量"><a href="#1-shell中的变量" class="headerlink" title="1 shell中的变量"></a>1 shell中的变量</h3><p>1 定义变量</p>
+<p>2执行命令echo ls cd cp</p>
+<p>3 if判断逻辑，while循环逻辑</p>
+<p>4 自定义函数…</p>
+<h3 id="2环境变量"><a href="#2环境变量" class="headerlink" title="2环境变量"></a>2环境变量</h3><pre class="line-numbers language-none"><code class="language-none">以下命令在终端执行
+定义环境变量
+export OUTDIR&#x3D;&#x2F;opt&#x2F;
+显示环境变量
+echo $&#123;OUTDIR&#125;
+查看所有环境变量
+printenv<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>环境变量的使用：</p>
+<p>可以在当前终端中使用</p>
+<p>可以在shell脚本中使用</p>
+<p>在命令行定义的环境变量，只对当前shell终端有效，当关闭终端后，重启就消失了。如果需要让环境变量在重启后也能使用，可以定义为用户环境变量。</p>
+<h3 id="3用户环境变量"><a href="#3用户环境变量" class="headerlink" title="3用户环境变量"></a>3用户环境变量</h3><p>用户环境变量：定义在~/.profile中</p>
+<p>在主目录下 <code>ls -la</code> 其中，a表示all,显示所有文件</p>
+<p>注：在Linux下，以.开头的文件为隐藏文件</p>
+<pre class="line-numbers language-none"><code class="language-none">ls -la&#x2F;ls -a
+-rw-r--r--  1 w    boys  807  8月 11 10:51 .profile<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><code>gedit .profile</code>可以打开文本编辑器。</p>
+<p>进入后可以在文本最后添加用户环境变量：如：</p>
+<pre class="line-numbers language-none"><code class="language-none"># 定义一个java_home的环境变量
+export JAVA_HOME &#x3D;&#x2F;opt&#x2F;jdk1.8<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>设置完后注销用户，再重新登录才能生效。</p>
+<p>原理：当用户打开终端时，会自动运行.profile，将变量注入当前环境中。</p>
+<p>用户环境变量只对当前用户有效，因为每个用户都有自己的.profile文件</p>
+<p>有的linux系统上，使用.bash_profile。</p>
+<h3 id="4系统环境变量"><a href="#4系统环境变量" class="headerlink" title="4系统环境变量"></a>4系统环境变量</h3><p>系统环境变量对所有用户对有效。</p>
+<p>系统环境变量：定义在/etc/profile中</p>
+<p>以root身份运行gedit /etc/profile</p>
+<p>但，一般不直接修改/etc/profile,而是在/etc/profile.d/创建一个自定义脚本。</p>
+<pre class="line-numbers language-none"><code class="language-none">root@ubuntu21:&#x2F;home&#x2F;w# gedit &#x2F;etc&#x2F;profile.d&#x2F;myprofile.sh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>注销重新登录，就会生效。</p>
+<h3 id="5-path环境变量"><a href="#5-path环境变量" class="headerlink" title="5 path环境变量"></a>5 path环境变量</h3><p>path环境变量是使用最多的一个。用于描述可执行程序的搜索路径。</p>
+<p>echo $PATH</p>
+<p>多个路径之间以冒号隔开</p>
+<p><code>/user/local/bin/:/user/local/sbin/:/user/bin/:/user/sbin/</code></p>
 
                 
             </div>
@@ -1136,7 +1219,7 @@ drwxr-xr-x 2 w root 4096  8月 12 19:54 &#x2F;opt&#x2F;software<span aria-hidden
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">4.2k</span>
+                        class="white-color">5k</span>
             
             
             
