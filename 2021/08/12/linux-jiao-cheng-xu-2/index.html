@@ -454,14 +454,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-13
+                    2021-08-14
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.2k
+                    2.4k
                 </div>
                 
 
@@ -694,7 +694,20 @@ export JAVA_HOME &#x3D;&#x2F;opt&#x2F;jdk1.8<span aria-hidden="true" class="line
 <h3 id="5-path环境变量"><a href="#5-path环境变量" class="headerlink" title="5 path环境变量"></a>5 path环境变量</h3><p>path环境变量是使用最多的一个。用于描述可执行程序的搜索路径。</p>
 <p>echo $PATH</p>
 <p>多个路径之间以冒号隔开</p>
-<p><code>/user/local/bin/:/user/local/sbin/:/user/bin/:/user/sbin/</code></p>
+<p><code>/usr/local/bin/:/usr/local/sbin/:/usr/bin/:/usr/sbin/</code></p>
+<p>系统默认从以下目录搜索可执行程序</p>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;usr&#x2F;bin  比如，&#x2F;user&#x2F;bin&#x2F;tar(tar命令存放于&#x2F;usr&#x2F;bin&#x2F;下)
+&#x2F;usr&#x2F;sbin 比如,&#x2F;user&#x2F;sbin&#x2F;useradd
+&#x2F;usr&#x2F;local&#x2F;bin
+&#x2F;usr&#x2F;local&#x2F;sbin
+其中,sbin为超级用户root才能执行的程序
+&#x2F;usr&#x2F;下系统自带的程序，&#x2F;usr&#x2F;local&#x2F;是用户安装的程序。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>修改PATH环境变量：</p>
+<p>1 root用户编辑/etc/profile.d/myprofile.sh</p>
+<p>设定 path环境变量</p>
+<p><code>export PATH=$PATH:/opt/tomcat/bin</code>  $取出原来的值，再在其后添加一个</p>
+<p>2 注销当前用户，重新登录生效。</p>
 
                 
             </div>
@@ -1219,7 +1232,7 @@ export JAVA_HOME &#x3D;&#x2F;opt&#x2F;jdk1.8<span aria-hidden="true" class="line
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">5k</span>
+                        class="white-color">5.2k</span>
             
             
             
