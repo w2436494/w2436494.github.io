@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="icarus主题使用及优化, 17&#39;s blog">
+    <meta name="keywords" content="正则表达式, 17&#39;s blog">
     <meta name="description" content="This is a blog in order to record my learning and growth.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>icarus主题使用及优化 | 17&#39;s blog</title>
+    <title>正则表达式 | 17&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">icarus主题使用及优化</h1>
+                    <h1 class="description center-align post-title">正则表达式</h1>
                 </div>
             </div>
         </div>
@@ -431,8 +431,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%8D%9A%E5%AE%A2/">
-                                <span class="chip bg-color">博客</span>
+                            <a href="/tags/java/">
+                                <span class="chip bg-color">java</span>
                             </a>
                         
                     </div>
@@ -447,21 +447,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-08-10
+                    2021-08-14
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-10
+                    2021-08-14
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    473
+                    874
                 </div>
                 
 
@@ -486,41 +486,110 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h2><p>icarus主题地址 ：<code>https://github.com/ppoffice/hexo-theme-icarus</code>。打开后，可直接选择下载压缩包。想要其他主题可以在GitHub上搜索<strong>hexo-theme</strong>。</p>
-<p><img src="/images/icarus%E4%B8%BB%E9%A2%98%E4%BD%BF%E7%94%A8%E5%8F%8A%E4%BC%98%E5%8C%96/image-20210810142118309.png" alt="image-20210810142118309"></p>
-<p>​     将下载的文件解压，复制到<code>/theme/</code>中,主题文件夹过长可以重命名为icarus。</p>
-<p>下载方式2：在cmd下到博客根目录下执行命令：</p>
-<pre class="line-numbers language-none"><code class="language-none">cd blog
-git clone https:&#x2F;&#x2F;github.com&#x2F;ppoffice&#x2F;hexo-theme-icarus.git themes&#x2F;icarus <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+                <pre class="line-numbers language-none"><code class="language-none">* 正则表达式:
+* 正则表达式是用来描述一个字符串的内容格式,使用它通常用来匹配一个字符串的内容是否符合
+* 格式要求.
+* 基本语法:
+* []:表示一个字符,该字符可以是[]中指定的内容
+* 例如:
+* [abc]:这个字符可以是a或b或c
+* [a-z]:表示任意一个小写字母
+* [a-zA-Z]:表示任意一个字母
+* [a-zA-Z0-9_]:表示任意一个数字字母下划线
+* [^abc]:该字符只要不是a或b或c<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>然后修改Hexo根目录下的配置文件<code>_config.yml</code>中的themes参数 <code>theme: icarus</code></p>
-<p>重新使用命令即可本地预览效果</p>
-<p><code>hexo g</code> 和<code>hexo s</code>。</p>
-<p><img src="/images/icarus%E4%B8%BB%E9%A2%98%E4%BD%BF%E7%94%A8%E5%8F%8A%E4%BC%98%E5%8C%96/image-20210810143415851.png" alt="image-20210810143415851"></p>
-<p>输入命令后发现如图的报错，说明Icarus主题的依赖没有安装。通过下面的命令安装</p>
-<p><code>npm install --save bulma-stylus@0.8.0 hexo-component-inferno@^0.4.0 hexo-renderer-inferno@^0.1.3 inferno@^7.3.3 inferno-create-element@^7.3.3</code></p>
-<p>安装完成后再次启动服务。</p>
-<p><code>ERROR Package hexo-component-inferno&#39;s version (0.4.0) does not satisfy the required version (^0.13.0).  ERROR Please install the missing dependencies your Hexo site root directory:</code></p>
-<p>再次报错，<code>hexo-component-inferno</code>是0.4.0不是要求的0.13.0。</p>
-<p>百度进入<code>hexo-component-inferno</code> 进入<code>https://www.npmjs.com/package/hexo-component-inferno</code></p>
-<p><img src="/images/icarus%E4%B8%BB%E9%A2%98%E4%BD%BF%E7%94%A8%E5%8F%8A%E4%BC%98%E5%8C%96/image-20210810144801533.png" alt="image-20210810144801533"></p>
-<p>复制安装命令<code>npm install hexo-component-inferno --save</code>到命令行下执行。再次重启服务。</p>
-<p><strong>found 1 low severity vulnerability run <code>npm audit fix</code> to fix them, or <code>npm audit</code> for details</strong></p>
-<p><code>npm audit fix  npm audit fix --force  npm audit</code> 再次重启ok。</p>
-<p>方法2：删除已经安装的：node_modules 和 package-lock.json<br>修改 package.json 格式如下<br><code>npm audit fix --force  npm instal</code></p>
-<h2 id="界面美化"><a href="#界面美化" class="headerlink" title="界面美化"></a>界面美化</h2><p>1、在hexo博客的根目录下的配置文件做如下修改</p>
-<pre class="line-numbers language-none"><code class="language-none">site
-title: 17&#39;s blog #网站标题
-subtitle: Maker &amp; Developer #网站副标题
-description: This is a blog in order to record my learning and growth. #网站描述
-keywords:
-author: 程序员17 #作者
-language: zh-CN #网站语言 中文汉字
-timezone: Asia&#x2F;Beijing #时区 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">* 预定义字符
+* .:&quot;.&quot;表示任意一个字符,没有范围限制
+* \d:表示任意一个数字,等同于[0-9]
+* \w:表示任意一个单词字符,等同于[a-zA-Z0-9_]
+* \s:表示任意一个空白字符.
+* \D:表示不是数字
+* \W:不是单词字符
+* \S:不是空白字符
+*
+* 量词:
+* ?:表示前面的内容出现0-1次
+* 例如:
+* [abc]? 可以匹配:a 或 b 或 c 或什么也不写
+*
+* +:表示前面的内容出现1次以上
+* [abc]+ 可以匹配:aaaaaaaaaa...或abcabcbabcbabcbabcbabbabab....
+*        但是不能匹配:什么都不写或abcfdfsbbaqbb34bbwer...
+*
+* *:表示前面的内容出现任意次(0-多次)
+*   匹配内容与+一致,只是可以一次都不写.
+*
+* &#123;n&#125;:表示前面的内容出现n次
+* 例如:
+* [abc]&#123;3&#125; 可以匹配:aaa 或 bbb 或 aab
+*          不能匹配:aaaa或aad
+*
+* &#123;n,m&#125;:表示前面的内容出现最少n次最多m次
+* [abc]&#123;3,5&#125; 可以匹配:aaa 或  abcab 或者 abcc
+*            不能匹配:aaaaaa 或 aabbd
+*
+* &#123;n,&#125;:表示前面的内容出现n次以上(含n次)
+* [abc]&#123;3,&#125; 可以匹配:aaa 或 aaaaa.... 或 abcbabbcbabcbabcba....
+*           不能匹配:aa 或 abbdaw...
+*
+* ()用于分组,是将括号内的内容看做是一个整体
+* 例如:
+* (abc)&#123;3&#125; 表示abc整体出现3次. 可以匹配abcabcabc.
+*          不能匹配aaa 或abcabc
+*
+* (abc|def)&#123;3&#125;表示abc或def整体出现3次.
+*          可以匹配: abcabcabc 或 defdefdef 或 abcdefabc<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<pre class="line-numbers language-none"><code class="language-none">* String支持正则表达式的方法之一:
+* boolean matches(String regex)
+* 使用给定的正则表达式验证当前字符串是否满足格式要求,满足则返回true.否则返回false<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
+<p>列如对用户名进行检查：</p>
+<p>用户名的首字符必须是大写或者小写字母。</p>
+<p>用户名只能包含大小写字母，数字。</p>
+<p>用户名需要包含至少一个字母和一个数字。</p>
+<p><code>String regex = &quot;^[a-zA-Z]&#123;1&#125;[a-zA-Z0-9]+$&quot;; ^表示匹配开始的位置 $匹配结束位置</code></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UsernameMatch</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
 
-<p>2、在icarus的根目录下的配置文件做修改</p>
+        <span class="token class-name">Scanner</span> sc <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Scanner</span><span class="token punctuation">(</span><span class="token class-name">System</span><span class="token punctuation">.</span>in<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 输入接收</span>
+        <span class="token keyword">int</span> n <span class="token operator">=</span> sc<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> names <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        sc<span class="token punctuation">.</span><span class="token function">nextLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 消除换行符</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            names<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> sc<span class="token punctuation">.</span><span class="token function">nextLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+
+        <span class="token comment">// 用户名检测</span>
+        <span class="token comment">// 大小写字母开头  只包含数字字母</span>
+        <span class="token class-name">String</span> regex <span class="token operator">=</span> <span class="token string">"^[a-zA-Z]&#123;1&#125;[a-zA-Z0-9]+$"</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+
+            <span class="token comment">// 1 用户名的首字符必须是大写或者小写字母。</span>
+            <span class="token comment">// a-z:97-122,A-Z:65-90,0-9:48-57</span>
+            <span class="token comment">// 3 用户名需要包含至少一个字母和一个数字。</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>names<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">matches</span><span class="token punctuation">(</span>regex<span class="token punctuation">)</span><span class="token operator">&amp;&amp;</span><span class="token function">containsNum</span><span class="token punctuation">(</span>names<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                <span class="token comment">// 4 如果用户名合法，请输出 "Accept"，反之输出 "Wrong"。</span>
+                <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Accept"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span><span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+                <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Wrong"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token comment">// 至少包含一个字母和数字</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">boolean</span> <span class="token function">containsNum</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> name<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>name<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token operator">>=</span><span class="token number">48</span> <span class="token operator">&amp;&amp;</span> name<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token operator">&lt;=</span><span class="token number">57</span><span class="token punctuation">)</span>
+                <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
                 
             </div>
@@ -547,7 +616,7 @@ timezone: Asia&#x2F;Beijing #时区 <span aria-hidden="true" class="line-numbers
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/08/10/icarus-zhu-ti-shi-yong-ji-you-hua/">http://example.com/2021/08/10/icarus-zhu-ti-shi-yong-ji-you-hua/</a>
+                    <a href="http://example.com/2021/08/14/zheng-ze-biao-da-shi/">http://example.com/2021/08/14/zheng-ze-biao-da-shi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -585,8 +654,8 @@ timezone: Asia&#x2F;Beijing #时区 <span aria-hidden="true" class="line-numbers
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%8D%9A%E5%AE%A2/">
-                                    <span class="chip bg-color">博客</span>
+                                <a href="/tags/java/">
+                                    <span class="chip bg-color">java</span>
                                 </a>
                             
                         </div>
@@ -758,17 +827,18 @@ timezone: Asia&#x2F;Beijing #时区 <span aria-hidden="true" class="line-numbers
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/08/10/linux-cao-zuo-xi-tong-an-zhuang/">
+                <a href="/2021/08/14/zheng-ze-biao-da-shi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="linux操作系统安装">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="正则表达式">
                         
-                        <span class="card-title">linux操作系统安装</span>
+                        <span class="card-title">正则表达式</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -778,9 +848,9 @@ timezone: Asia&#x2F;Beijing #时区 <span aria-hidden="true" class="line-numbers
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-08-10
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-14
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -789,11 +859,12 @@ timezone: Asia&#x2F;Beijing #时区 <span aria-hidden="true" class="line-numbers
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%B7%A5%E5%85%B7/">
-                        <span class="chip bg-color">工具</span>
+                    <a href="/tags/java/">
+                        <span class="chip bg-color">java</span>
                     </a>
                     
                 </div>
@@ -807,13 +878,13 @@ timezone: Asia&#x2F;Beijing #时区 <span aria-hidden="true" class="line-numbers
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/08/09/hexo-bo-ke-zhu-yi-shi-xiang/">
+                <a href="/2021/08/14/linux-jiao-cheng-xu-3/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="hexo博客注意事项">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="linux教程续3">
                         
-                        <span class="card-title">hexo博客注意事项</span>
+                        <span class="card-title">linux教程续3</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -824,7 +895,7 @@ timezone: Asia&#x2F;Beijing #时区 <span aria-hidden="true" class="line-numbers
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-09
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-14
                             </span>
                         <span class="publish-author">
                             
@@ -837,8 +908,8 @@ timezone: Asia&#x2F;Beijing #时区 <span aria-hidden="true" class="line-numbers
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%8D%9A%E5%AE%A2/">
-                        <span class="chip bg-color">博客</span>
+                    <a href="/tags/linux/">
+                        <span class="chip bg-color">linux</span>
                     </a>
                     
                 </div>
