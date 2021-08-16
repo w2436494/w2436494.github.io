@@ -454,14 +454,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-14
+                    2021-08-15
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    1.4k
                 </div>
                 
 
@@ -581,7 +581,31 @@ sudo ifconfig xxx down<span aria-hidden="true" class="line-numbers-rows"><span><
 <p>因为Linux与Windows文件换行符的格式不同，所以上传前需要做一个换行符转换操作。</p>
 <p><strong>注：只有在编辑shell脚本时需要转换</strong></p>
 <p>其他格式文件一般不需要转换，如*.xml, *.java。</p>
-<h2 id="Java-开发环境"><a href="#Java-开发环境" class="headerlink" title="Java 开发环境"></a>Java 开发环境</h2>
+<h2 id="Java-开发环境"><a href="#Java-开发环境" class="headerlink" title="Java 开发环境"></a>Java 开发环境</h2><h3 id="1、JDK-JRE安装"><a href="#1、JDK-JRE安装" class="headerlink" title="1、JDK/JRE安装"></a>1、JDK/JRE安装</h3><p>运行java命令和javac可以查看jre和jdk是否安装。</p>
+<p>JRE安装：<code>sudo apt install openjdk-8-jre-headless</code></p>
+<p>JDK:<code>sudo apt install openjdk-8-jdk-headless </code></p>
+<p>默认放在/usr/bin下，不需要额外配置PATH，可以</p>
+<p>通过命令<code>ls /usr/bin/java</code>或者java查看</p>
+<h3 id="2、运行Java程序"><a href="#2、运行Java程序" class="headerlink" title="2、运行Java程序"></a>2、运行Java程序</h3><p>​     这里现在Windows上写好Java文件</p>
+<p>​     2.1 、发布</p>
+<p>​      class文件</p>
+<p>​      普通jar文件/可执行JAR文件</p>
+<p>两种JAR文件运行方式命令不同</p>
+<pre class="line-numbers language-none"><code class="language-none">java -cp 文件名.jar  your.MainClass
+java -jar 文件名.jar<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>2.2 上传到Linux：FTP／SETP</p>
+<p>2.3 运行程序</p>
+<pre class="line-numbers language-none"><code class="language-none">w@ubuntu21:~$ java -jar meituan.jar
+12
+3
+w@ubuntu21:~$ <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>注：</p>
+<p>1 程序里需要访问系统文件时，如/etc/。以及需要开启TCP端口，如80,都要使用root运行。</p>
+<p>2 Java GUI程序不能在终端运行</p>
+<h3 id="3、Java程序的运行脚本"><a href="#3、Java程序的运行脚本" class="headerlink" title="3、Java程序的运行脚本"></a>3、Java程序的运行脚本</h3><p>一般情况在Linux系统运行Java程序，通常使用Java脚本，这样运行Java程序会更方便。</p>
+
                 
             </div>
             <hr/>
@@ -1103,7 +1127,7 @@ sudo ifconfig xxx down<span aria-hidden="true" class="line-numbers-rows"><span><
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">7.3k</span>
+                        class="white-color">9.2k</span>
             
             
             
