@@ -429,9 +429,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                                <span class="chip bg-color">数据结构</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -457,7 +461,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    367
                 </div>
                 
 
@@ -482,7 +486,28 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h2 id="二叉排序树"><a href="#二叉排序树" class="headerlink" title="二叉排序树"></a>二叉排序树</h2><h3 id="看一个案例-说明二叉排序树可能的问题"><a href="#看一个案例-说明二叉排序树可能的问题" class="headerlink" title="看一个案例(说明二叉排序树可能的问题)"></a>看一个案例(说明二叉排序树可能的问题)</h3><p>给你一个数列{1,2,3,4,5,6}，要求创建一颗二叉排序树(BST), 并分析问题所在.</p>
+<p>左边 BST 存在的问题分析:</p>
+<p> <img src="/images/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91-AVL/image-20210817133845450.png" alt="image-20210817133845450"></p>
+<p>1）左子树全部为空，从形式上看，更像一个单链表.<br>2）插入速度没有影响<br>3）查询速度明显降低(因为需要依次比较), 不能发挥BST的优势，因为每次还需要比较左子树，其查询速度比单链表还慢<br>**解决方案-平衡二叉树(AVL) **</p>
+<h3 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h3><ol>
+<li><p>平衡二叉树也叫平衡<strong>二叉搜索树</strong>（Self-balancing binary search tree）又被称为 AVL 树， 可以保证查询效率较高。</p>
+</li>
+<li><p>具有以下特点：它是<strong>一 棵空树</strong>或<strong>它的左右两个子树的高度差的绝对值不超过</strong> <strong>1</strong>，并且<strong>左右两个子树都是一棵平衡二叉树</strong>。平衡二叉树的常用实现方法有<strong>红黑树</strong>、AVL算法、替罪羊树、Treap、伸展树等。</p>
+</li>
+<li><p>举例说明, 看看下面哪些 AVL 树, 为什么?</p>
+</li>
+</ol>
+<p><img src="/images/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91-AVL/image-20210817134357736.png" alt="image-20210817134357736"></p>
+<h3 id="应用案例-单旋转-左旋转"><a href="#应用案例-单旋转-左旋转" class="headerlink" title="应用案例-单旋转(左旋转)"></a>应用案例-单旋转(左旋转)</h3><ol>
+<li><p>要求: 给你一个数列，创建出对应的平衡二叉树.数列 {4,3,6,5,7,8}</p>
+</li>
+<li><p>思路分析(示意图)</p>
+</li>
+</ol>
+<p><strong>注：当右子树的高度 减去 左子树高度大于1，则选择左旋转降低右子树的高度，从而达到平衡二叉树。</strong></p>
+<p><img src="/images/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91-AVL/image-20210817151652356.png" alt="image-20210817151652356"></p>
+
                 
             </div>
             <hr/>
@@ -545,7 +570,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                                    <span class="chip bg-color">数据结构</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -748,6 +777,14 @@
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                        <span class="chip bg-color">数据结构</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -994,7 +1031,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">12.6k</span>
+                        class="white-color">12.9k</span>
             
             
             
