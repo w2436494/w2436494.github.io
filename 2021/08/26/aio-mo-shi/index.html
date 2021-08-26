@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="linux教程续2, 17&#39;s blog">
+    <meta name="keywords" content="AIO模式, 17&#39;s blog">
     <meta name="description" content="This is a blog in order to record my learning and growth.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>linux教程续2 | 17&#39;s blog</title>
+    <title>AIO模式 | 17&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">linux教程续2</h1>
+                    <h1 class="description center-align post-title">AIO模式</h1>
                 </div>
             </div>
         </div>
@@ -429,13 +429,9 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/linux/">
-                                <span class="chip bg-color">linux</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -447,21 +443,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-08-12
+                    2021-08-26
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-14
+                    2021-08-26
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.4k
+                    0
                 </div>
                 
 
@@ -486,229 +482,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="用户管理操作"><a href="#用户管理操作" class="headerlink" title="用户管理操作"></a>用户管理操作</h2><h3 id="1、添加用户"><a href="#1、添加用户" class="headerlink" title="1、添加用户"></a>1、添加用户</h3><p>添加一个用户</p>
-<p><code>sudo useradd -m test1</code></p>
-<p>其中 sudo,表示以管理员身份进行。其中-m参数表示在/home下添加用户</p>
-<p>2 修改用户密码</p>
-<p><code>sudo passwd test1</code></p>
-<p>3 删除用户</p>
-<p><code>sudo userdel test1</code></p>
-<p>删除用户后需要删除用户目录 sudo rm -rf /home/test1</p>
-<p>4 在登录系统时，默认不允许以root用户登录，避免使用root登录导致系统出现问题。</p>
-<p>5 只有特殊用户，才能执行sudo,如当前可以使用w用户执行sudo,但test1不行</p>
-<p>Linux下，把能执行sudo命令的用户称作sudoer。</p>
-<h3 id="2、超级用户-根用户root"><a href="#2、超级用户-根用户root" class="headerlink" title="2、超级用户/根用户root"></a>2、超级用户/根用户root</h3><p>类似于Windows下的Administrator用户。切换到root用户，有全部权限，可以直接使用useradd等命令。</p>
-<p>1 首次使用需要给root用户设置一个密码</p>
-<p><code>sudo passwd root</code>  我这里设为12345678方便记忆。</p>
-<p>2 切换到root用户</p>
-<p><code>su root</code> 其中su 表示switch user</p>
-<p>3 退出</p>
-<p><code>exit</code></p>
-<p>root用户的权限很大，为了保证安全，用完后应该尽快退出root用户。</p>
-<h3 id="3、用户组"><a href="#3、用户组" class="headerlink" title="3、用户组"></a>3、用户组</h3><p>Linux下可以创建多个用户，可以用组进行管理用户。每个组可以设置不同的权限。</p>
-<p>比如：</p>
-<p>男生组 boys 。将后面四个用户添加到该组ming bo gang qiang。</p>
-<p>1 创建组</p>
-<p><code>groupadd boys</code></p>
-<p>2 创建用户同时添加到组</p>
-<p><code>useradd -m -g  boys ming</code>  其中-g表示添加用户 同时将用户添加到boys组</p>
-<p>3 修改现有用户到新的组</p>
-<p><code>usermod -g boys w </code> 其中，usermod表示修改用户信息</p>
-<p>4 查看用户和组</p>
-<p><code>cat /etc/group</code></p>
-<p>每一行表示一个group的信息，名称+id</p>
-<p>5 查看用户列表</p>
-<p><code>cat /etc/passwd</code> 每一行表示一个用户</p>
-<p>用户不多时，管理时候并不使用组的概念。useradd a1。</p>
-<p>系统默认会给a1建立一个同名的组a1,也就是a1组只有a1用户。</p>
-<h3 id="4-root用户登录桌面"><a href="#4-root用户登录桌面" class="headerlink" title="4 root用户登录桌面"></a>4 root用户登录桌面</h3><p>Ubuntu默认不允许root登录桌面环境。root设置了密码。</p>
-<pre class="line-numbers language-none"><code class="language-none">w@ubuntu21:~$ su root #切换到root用户
-密码： 
-root@ubuntu21:&#x2F;home&#x2F;w# gedit &#x2F;etc&#x2F;pam.d&#x2F;gdm-autologin  #执行命令 gedit是文本编辑器程序
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<p>会进入一个文本</p>
-<pre class="line-numbers language-none"><code class="language-none">#%PAM-1.0
-auth    requisite       pam_nologin.so
-#auth	required	pam_succeed_if.so user !&#x3D; root quiet_success  #注释该行，保存
-auth	optional	pam_gdm.so
-auth	optional	pam_gnome_keyring.so
-auth    required        pam_permit.so
-@include common-account
-# SELinux needs to be the first session rule. This ensures that any 
-# lingering context has been cleared. Without this it is possible 
-# that a module could execute code in the wrong domain.
-session [success&#x3D;ok ignore&#x3D;ignore module_unknown&#x3D;ignore default&#x3D;bad]        pam_selinux.so close
-session required        pam_loginuid.so
-# SELinux needs to intervene at login time to ensure that the process
-# starts in the proper default security context. Only sessions which are
-# intended to run in the user&#39;s context should be run after this.
-session [success&#x3D;ok ignore&#x3D;ignore module_unknown&#x3D;ignore default&#x3D;bad]        pam_selinux.so open
-session optional        pam_keyinit.so force revoke
-session required        pam_limits.so
-session required        pam_env.so readenv&#x3D;1
-session required        pam_env.so readenv&#x3D;1 user_readenv&#x3D;1 envfile&#x3D;&#x2F;etc&#x2F;default&#x2F;locale
-@include common-session
-session optional        pam_gnome_keyring.so auto_start
-@include common-password<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>在root用户下再次执行命令</p>
-<pre class="line-numbers language-none"><code class="language-none">gedit &#x2F;etc&#x2F;pam.d&#x2F;gdm-password<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>打开后注释第三行</p>
-<pre class="line-numbers language-none"><code class="language-none">#auth	required	pam_succeed_if.so user !&#x3D; root quiet_success<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>关闭虚拟机重启后，即可使用root用户进行登录。</p>
-<p>登录时选择未列出输入root,在输入密码即可。第一次进入需要初始化。</p>
-<h2 id="文件权限"><a href="#文件权限" class="headerlink" title="文件权限"></a>文件权限</h2><h3 id="1-文件权限查看"><a href="#1-文件权限查看" class="headerlink" title="1 文件权限查看"></a>1 文件权限查看</h3><pre class="line-numbers language-none"><code class="language-none">-ower : 文件的属主，拥有者
--r:文件是否可读read
--w:文件是否可写write
--x:文件是否可执行excute<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>使用ls命令查看用户权限</p>
-<p><code>ls -l simple.txt</code></p>
-<pre class="line-numbers language-none"><code class="language-none">w@ubuntu21:~$ ls -l linux使用教程.md
--rw------- 1 w boys 2067  8月 11 22:11 linux使用教程.md
-# -rw 表示用户权限<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<pre class="line-numbers language-none"><code class="language-none">w@ubuntu21:~$ ls -l
-#总用量 52
-drwxr-xr-x 2 w boys 4096  8月 11 11:43 公共的
--rw-rw-r-- 1 w boys  135  8月 12 10:34 example.tar.gz
-# 用户权限  文件里面的子项 用户名 用户所在群组  文件大小(字节)  文件创建时间  文件名
-第一个字母是：
-         d:该项是一个目录directory
-         l:该项是一个链接link
-         -:该项是一个文件
-rw- r-- r--
-权限三部分：自己|同组|别人分别拥有的权限（从左往右每3个字符）
-如：
-d rwx rwx r-x #r可读 w可写  x可执行
-- rw- --- --- <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="2文件权限修改"><a href="#2文件权限修改" class="headerlink" title="2文件权限修改"></a>2文件权限修改</h3><p>chmod,即change file mode 修改文件的访问权限</p>
-<p>比如，文件simple.txt,想让别人也能修改</p>
-<p><code>chmod o+w simple.txt</code>其中o表示other,+w表示增写权限</p>
-<p><code>chmod o-w simple.txt</code> 减去写权限</p>
-<pre class="line-numbers language-none"><code class="language-none">chmod a+w simple.txt  #所有人添加w权限
-chmod a-w simple.txt  #所有人减去w权限
-
-chmod u+w simple.txt #仅仅用户user自己添加w权限<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>注：只有文件的属主或者root用户可以修改文件权限</p>
-<p>省略写法：</p>
-<p>chmod +w simple.txt</p>
-<p>chmod -w simple.txt 默认是修改自己和本组的权限。</p>
-<h3 id="3修改文件属主"><a href="#3修改文件属主" class="headerlink" title="3修改文件属主"></a>3修改文件属主</h3><p>chown,即change owner修改文件的属主</p>
-<p>一般来说，每个用户只操作自己的用户目录，所以chown命令不常用。</p>
-<p>如：在/opt下创建一个目录software ,将其分配给w用户</p>
-<pre class="line-numbers language-none"><code class="language-none">w@ubuntu21:~$ su root
-密码： 
-root@ubuntu21:&#x2F;home&#x2F;w# mkdir &#x2F;opt&#x2F;software
-root@ubuntu21:&#x2F;home&#x2F;w# ls -ld &#x2F;opt&#x2F;software
-drwxr-xr-x 2 root root 4096  8月 12 19:54 &#x2F;opt&#x2F;software
-root@ubuntu21:&#x2F;home&#x2F;w# chown -R w &#x2F;opt&#x2F;software
-root@ubuntu21:&#x2F;home&#x2F;w# ls -ld &#x2F;opt&#x2F;software
-drwxr-xr-x 2 w root 4096  8月 12 19:54 &#x2F;opt&#x2F;software<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>只有文件的owner 和root 才有权限修改属主。</p>
-<h2 id="脚本程序"><a href="#脚本程序" class="headerlink" title="脚本程序"></a>脚本程序</h2><p>脚本Script，一种解释执行的程序。</p>
-<p>Linux下常见的三种脚本程序。</p>
-<p>Shell脚本 *.sh</p>
-<p>Per脚本 *.pl</p>
-<p>Python脚本 *.py</p>
-<p>脚本程序，本质是一个文本文件。且具有可执行的权限。</p>
-<p>脚本程序的都是由解释器执行的</p>
-<p>shell脚本解释器：/bin/sh</p>
-<p>Per脚本解释器: /bin/perl</p>
-<p>Python脚本解释器: /bin/python3</p>
-<p>执行一个脚本时，下面两种方式等效</p>
-<pre class="line-numbers language-none"><code class="language-none">.&#x2F;hello.py
-&#x2F;bin&#x2F;python3 hello.py<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h3 id="1-shell脚本"><a href="#1-shell脚本" class="headerlink" title="1 shell脚本"></a>1 shell脚本</h3><p>shell脚本，就是按shell语法写出来的脚本，是Linux自带的脚本语言。</p>
-<p>相当于Windows下的dos批处理脚本。</p>
-<p>1 编辑文本文件，保存为.sh</p>
-<pre class="line-numbers language-none"><code class="language-none">#！&#x2F;bin&#x2F;sh
-echo &quot;hello world&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p>2 添加可执行权限</p>
-<p>chmod +x hello.sh</p>
-<p>3 执行程序</p>
-<p>./hello.sh</p>
-<p>注：</p>
-<p>第一行必须声明解释器</p>
-<p>#!/bin/sh</p>
-<p>必须有x权限，才能够执行</p>
-<p>执行程序时，必须加上路径</p>
-<pre class="line-numbers language-none"><code class="language-none">.&#x2F;hello.sh
-&#x2F;home&#x2F;w&#x2F;hello.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-
-
-<h3 id="2-python脚本"><a href="#2-python脚本" class="headerlink" title="2 python脚本"></a>2 python脚本</h3><p>python脚本，比shell脚本强大。</p>
-<p>1 编辑一个文本文件 ，保存为.py</p>
-<p>   第一行加上解释器路径 #!/bin/python3</p>
-<p>2 添加可执行权限</p>
-<p>chmod +x hello.py</p>
-<p>3 执行程序</p>
-<p>./hello.py</p>
-<h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><h3 id="1-shell中的变量"><a href="#1-shell中的变量" class="headerlink" title="1 shell中的变量"></a>1 shell中的变量</h3><p>1 定义变量</p>
-<p>2执行命令echo ls cd cp</p>
-<p>3 if判断逻辑，while循环逻辑</p>
-<p>4 自定义函数…</p>
-<h3 id="2环境变量"><a href="#2环境变量" class="headerlink" title="2环境变量"></a>2环境变量</h3><pre class="line-numbers language-none"><code class="language-none">以下命令在终端执行
-定义环境变量
-export OUTDIR&#x3D;&#x2F;opt&#x2F;
-显示环境变量
-echo $&#123;OUTDIR&#125;
-查看所有环境变量
-printenv<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>环境变量的使用：</p>
-<p>可以在当前终端中使用</p>
-<p>可以在shell脚本中使用</p>
-<p>在命令行定义的环境变量，只对当前shell终端有效，当关闭终端后，重启就消失了。如果需要让环境变量在重启后也能使用，可以定义为用户环境变量。</p>
-<h3 id="3用户环境变量"><a href="#3用户环境变量" class="headerlink" title="3用户环境变量"></a>3用户环境变量</h3><p>用户环境变量：定义在~/.profile中</p>
-<p>在主目录下 <code>ls -la</code> 其中，a表示all,显示所有文件</p>
-<p>注：在Linux下，以.开头的文件为隐藏文件</p>
-<pre class="line-numbers language-none"><code class="language-none">ls -la&#x2F;ls -a
--rw-r--r--  1 w    boys  807  8月 11 10:51 .profile<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p><code>gedit .profile</code>可以打开文本编辑器。</p>
-<p>进入后可以在文本最后添加用户环境变量：如：</p>
-<pre class="line-numbers language-none"><code class="language-none"># 定义一个java_home的环境变量
-export JAVA_HOME &#x3D;&#x2F;opt&#x2F;jdk1.8<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p>设置完后注销用户，再重新登录才能生效。</p>
-<p>原理：当用户打开终端时，会自动运行.profile，将变量注入当前环境中。</p>
-<p>用户环境变量只对当前用户有效，因为每个用户都有自己的.profile文件</p>
-<p>有的linux系统上，使用.bash_profile。</p>
-<h3 id="4系统环境变量"><a href="#4系统环境变量" class="headerlink" title="4系统环境变量"></a>4系统环境变量</h3><p>系统环境变量对所有用户对有效。</p>
-<p>系统环境变量：定义在/etc/profile中</p>
-<p>以root身份运行gedit /etc/profile</p>
-<p>但，一般不直接修改/etc/profile,而是在/etc/profile.d/创建一个自定义脚本。</p>
-<pre class="line-numbers language-none"><code class="language-none">root@ubuntu21:&#x2F;home&#x2F;w# gedit &#x2F;etc&#x2F;profile.d&#x2F;myprofile.sh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>注销重新登录，就会生效。</p>
-<h3 id="5-path环境变量"><a href="#5-path环境变量" class="headerlink" title="5 path环境变量"></a>5 path环境变量</h3><p>path环境变量是使用最多的一个。用于描述可执行程序的搜索路径。</p>
-<p>echo $PATH</p>
-<p>多个路径之间以冒号隔开</p>
-<p><code>/usr/local/bin/:/usr/local/sbin/:/usr/bin/:/usr/sbin/</code></p>
-<p>系统默认从以下目录搜索可执行程序</p>
-<pre class="line-numbers language-none"><code class="language-none">&#x2F;usr&#x2F;bin  比如，&#x2F;user&#x2F;bin&#x2F;tar(tar命令存放于&#x2F;usr&#x2F;bin&#x2F;下)
-&#x2F;usr&#x2F;sbin 比如,&#x2F;user&#x2F;sbin&#x2F;useradd
-&#x2F;usr&#x2F;local&#x2F;bin
-&#x2F;usr&#x2F;local&#x2F;sbin
-其中,sbin为超级用户root才能执行的程序
-&#x2F;usr&#x2F;下系统自带的程序，&#x2F;usr&#x2F;local&#x2F;是用户安装的程序。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>修改PATH环境变量：</p>
-<p>1 root用户编辑/etc/profile.d/myprofile.sh</p>
-<p>设定 path环境变量</p>
-<p><code>export PATH=$PATH:/opt/tomcat/bin</code>  $取出原来的值，再在其后添加一个</p>
-<p>2 注销当前用户，重新登录生效。</p>
-
+                
                 
             </div>
             <hr/>
@@ -734,7 +508,7 @@ export JAVA_HOME &#x3D;&#x2F;opt&#x2F;jdk1.8<span aria-hidden="true" class="line
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/08/12/linux-jiao-cheng-xu-2/">http://example.com/2021/08/12/linux-jiao-cheng-xu-2/</a>
+                    <a href="http://example.com/2021/08/26/aio-mo-shi/">http://example.com/2021/08/26/aio-mo-shi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -771,11 +545,7 @@ export JAVA_HOME &#x3D;&#x2F;opt&#x2F;jdk1.8<span aria-hidden="true" class="line
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/linux/">
-                                    <span class="chip bg-color">linux</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -945,62 +715,18 @@ export JAVA_HOME &#x3D;&#x2F;opt&#x2F;jdk1.8<span aria-hidden="true" class="line
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/08/14/linux-jiao-cheng-xu-3/">
+                <a href="/2021/08/26/aio-mo-shi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="linux教程续3">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="AIO模式">
                         
-                        <span class="card-title">linux教程续3</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-08-14
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            程序员17
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/linux/">
-                        <span class="chip bg-color">linux</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/08/11/linux-shi-yong-jiao-cheng/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="linux使用教程">
-                        
-                        <span class="card-title">linux使用教程</span>
+                        <span class="card-title">AIO模式</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1011,7 +737,45 @@ export JAVA_HOME &#x3D;&#x2F;opt&#x2F;jdk1.8<span aria-hidden="true" class="line
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-11
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-26
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            程序员17
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/08/18/bio-nio-aio-mo-shi-xiang-jie/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="BIO NIO AIO模式详解">
+                        
+                        <span class="card-title">BIO NIO AIO模式详解</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-18
                             </span>
                         <span class="publish-author">
                             
@@ -1024,8 +788,8 @@ export JAVA_HOME &#x3D;&#x2F;opt&#x2F;jdk1.8<span aria-hidden="true" class="line
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/linux/">
-                        <span class="chip bg-color">linux</span>
+                    <a href="/tags/java/">
+                        <span class="chip bg-color">java</span>
                     </a>
                     
                 </div>
