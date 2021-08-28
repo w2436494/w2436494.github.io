@@ -454,14 +454,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-27
+                    2021-08-28
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.3k
+                    2.6k
                 </div>
                 
 
@@ -689,7 +689,7 @@
    启动线程：传入目标对象+Thread对象.start()
    推荐使用：可以避免单继承的局限性，方便一个对象被多个线程使用。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="变发问题"><a href="#变发问题" class="headerlink" title="变发问题"></a>变发问题</h4><p>多个线程操作同一个资源的情况下，线程不安全，数据混乱。</p>
+<h4 id="并发问题"><a href="#并发问题" class="headerlink" title="并发问题"></a>并发问题</h4><p>多个线程操作同一个资源的情况下，线程不安全，数据混乱。</p>
 <p>代码如下：</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">thread<span class="token punctuation">.</span>kuangsheng</span><span class="token punctuation">;</span>
 
@@ -867,9 +867,80 @@
 
 
 
+<h3 id="静态代理模式"><a href="#静态代理模式" class="headerlink" title="静态代理模式"></a>静态代理模式</h3><p>例子：</p>
+<p>真是角色：你</p>
+<p>婚庆公司：代理你，处理结婚的事</p>
+<p>结婚:实现结婚接口即可</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">thread<span class="token punctuation">.</span>kuangsheng</span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * 静态代理模式总结：
+ * 真实对象和代理对象都要实现同一个接口
+ * 代理对象 要代理真实角色
+ * 优点：
+ *    代理对象可以做很多真实对象做不了的事
+ *    真实对象可以专注与做自己的事
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">StaticProxy</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+
+        <span class="token comment">/**
+         * 原来的调用方法
+         */</span>
+<span class="token comment">//        You you = new You();</span>
+<span class="token comment">//        you.happyMarry();</span>
+
+        <span class="token comment">// 静态代理模式</span>
+        <span class="token comment">// Thread 实现了Runnable接口  它代理Runnable接口</span>
+        <span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-></span> <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"2021-08-28 学习多线程"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// WeddingCompany 代理You  他们都实现了Marry接口</span>
+        <span class="token class-name">You</span> you <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">You</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">new</span> <span class="token class-name">WeddingCompany</span><span class="token punctuation">(</span>you<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">happyMarry</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">Marry</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">void</span> <span class="token function">happyMarry</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// 真实角色</span>
+<span class="token keyword">class</span> <span class="token class-name">You</span> <span class="token keyword">implements</span> <span class="token class-name">Marry</span><span class="token punctuation">&#123;</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">happyMarry</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"你要结婚了"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// 代理角色  帮助你结婚</span>
+<span class="token keyword">class</span> <span class="token class-name">WeddingCompany</span> <span class="token keyword">implements</span> <span class="token class-name">Marry</span><span class="token punctuation">&#123;</span>
+    <span class="token comment">// 代理谁-->真实目标对象</span>
+    <span class="token keyword">private</span> <span class="token class-name">You</span> target<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">WeddingCompany</span><span class="token punctuation">(</span><span class="token class-name">You</span> target<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>target <span class="token operator">=</span> target<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">happyMarry</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token function">before</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>target<span class="token punctuation">.</span><span class="token function">happyMarry</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 真实对象</span>
+        <span class="token function">after</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">after</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"结婚之后，收尾款"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">before</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"结婚前，收定金布置现场"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
-<h2 id="三、线程状态"><a href="#三、线程状态" class="headerlink" title="三、线程状态"></a>三、线程状态</h2><h2 id="四、线程状态"><a href="#四、线程状态" class="headerlink" title="四、线程状态"></a>四、线程状态</h2><h2 id="五、线程同步（重点）"><a href="#五、线程同步（重点）" class="headerlink" title="五、线程同步（重点）"></a>五、线程同步（重点）</h2><h2 id="六、线程通信问题"><a href="#六、线程通信问题" class="headerlink" title="六、线程通信问题"></a>六、线程通信问题</h2><h2 id="七、高级主题"><a href="#七、高级主题" class="headerlink" title="七、高级主题"></a>七、高级主题</h2>
+
+<p><strong>线程的底层实现原理，静态代理模式</strong></p>
+<h2 id="三、线程状态"><a href="#三、线程状态" class="headerlink" title="三、线程状态"></a>三、线程状态</h2><h2 id="四、线程同步（重点）"><a href="#四、线程同步（重点）" class="headerlink" title="四、线程同步（重点）"></a>四、线程同步（重点）</h2><h2 id="五、线程通信问题"><a href="#五、线程通信问题" class="headerlink" title="五、线程通信问题"></a>五、线程通信问题</h2><h2 id="六、高级主题"><a href="#六、高级主题" class="headerlink" title="六、高级主题"></a>六、高级主题</h2>
                 
             </div>
             <hr/>
@@ -1106,18 +1177,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/08/27/duo-xian-cheng-xiang-jie/">
+                <a href="/2021/08/28/lambda-biao-da-shi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="多线程详解">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="Lambda表达式">
                         
-                        <span class="card-title">多线程详解</span>
+                        <span class="card-title">Lambda表达式</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1127,9 +1197,9 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-27
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-08-28
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -1138,7 +1208,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -1393,7 +1462,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">30k</span>
+                        class="white-color">30.9k</span>
             
             
             
