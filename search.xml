@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>并发编程1</title>
+      <link href="/2021/08/29/bing-fa-bian-cheng-1/"/>
+      <url>/2021/08/29/bing-fa-bian-cheng-1/</url>
+      
+        <content type="html"><![CDATA[<h2 id="什么是juc"><a href="#什么是juc" class="headerlink" title="什么是juc"></a>什么是juc</h2><p>了解：源码+官方文档</p><p>juc就是Java下面的前三个包</p><table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td><a href="java/util/concurrent/package-summary.html">java.util.concurrent</a></td><td>实用程序类通常在并发编程中很有用。</td></tr><tr><td><a href="java/util/concurrent/atomic/package-summary.html">java.util.concurrent.atomic</a></td><td>一个小型工具包，支持单个变量上的无锁线程安全编程。</td></tr><tr><td><a href="java/util/concurrent/locks/package-summary.html">java.util.concurrent.locks</a></td><td>接口和类提供了一个框架，用于锁定和等待与内置同步和监视器不同的条件。</td></tr><tr><td><a href="java/util/function/package-summary.html">java.util.function</a></td><td><em>功能界面</em>提供了lambda表达式和方法引用的目标类型。</td></tr></tbody></table><p>工作中有些业务：可能无法通过普通的线程代码实现？</p><p>Thread和Runnable属于java.lang包下</p><p>Callable属于java.util.concurrent包</p><p><strong>Runnable</strong>：没有返回值，效率比Callable低</p><h3 id="线程进程"><a href="#线程进程" class="headerlink" title="线程进程"></a>线程进程</h3><blockquote><p>线程、进程，如果不能使用一句话说出来的技术，说明掌握不扎实！</p></blockquote><p>进程：是一个运行的一个程序，QQ.exe Music.exe 程序的集合；<br>一个进程往往可以包含多个线程，至少包含一个！<br>Java默认有几个线程？ 2 个 mian、GC<br>线程：<strong>线程是进程中的一个执行单元，负责当前进程中程序的执行，一个进程中至少有一个线程。</strong>一个进程中是可以有多个线程的，这个应用程序也可以称之为多线程程序。如开了一个进程 Typora，写字，自动保存（线程负责的）<br>对于Java而言：Thread、Runnable、Callable<br>Java 真的可以开启线程吗？ 开不了</p><blockquote><p>并发和并行</p></blockquote><p>并发编程：并发、并行<br>并发（多线程操作同一个资源）<br>CPU 一核 ，模拟出来多条线程，天下武功，唯快不破，快速交替<br>并行（多个人一起行走）<br>CPU 多核 ，多个线程可以同时执行； 线程池</p><p><img src="../images/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B1/image-20210829210331921.png" alt="image-20210829210331921"></p><p><img src="../images/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B1/image-20210829210414186.png" alt="image-20210829210414186"></p><p>从上面两个图多可以看出我的CPU只有4核心，最多只能4个线程并行。也可以通过代码查看</p><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">juc</span><span class="token punctuation">;</span><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestCPUCore</span> <span class="token punctuation">&#123;</span>    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>        <span class="token comment">// 获取cpu的核数</span>        <span class="token comment">// cpu密集型 IO密集型</span>        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">Runtime</span><span class="token punctuation">.</span><span class="token function">getRuntime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">availableProcessors</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//4</span>    <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>并发编程的本质：<strong>充分利用CPU的资源</strong></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>多线程详解续2</title>
       <link href="/2021/08/28/duo-xian-cheng-xiang-jie-xu-2/"/>
       <url>/2021/08/28/duo-xian-cheng-xiang-jie-xu-2/</url>
