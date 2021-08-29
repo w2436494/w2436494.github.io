@@ -461,7 +461,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.3k
+                    3.7k
                 </div>
                 
 
@@ -1068,7 +1068,62 @@
 
 
 
-<h2 id="六、高级主题"><a href="#六、高级主题" class="headerlink" title="六、高级主题"></a>六、高级主题</h2>
+<h2 id="六、线程池"><a href="#六、线程池" class="headerlink" title="六、线程池"></a>六、线程池</h2><p>背景：经常创建线程和销毁、使用量特别大的资源，比如并发情况下的线程，对性能影响很大。</p>
+<p>思路：提前创建好多个线程，使用时直接获取，使用完放回池中，可以避免频繁的创建和销毁、实现重复利用。类似生活中公共的静态工具。</p>
+<p>好处：</p>
+<ul>
+<li><p>提高响应速度（减少创建新线程的时间）</p>
+</li>
+<li><p>降低消耗资源（重复利用线程池中的线程，不需要每次创建）</p>
+</li>
+<li><p>便于线程管理</p>
+<ul>
+<li>corePoolSize 核心池的大小</li>
+<li>maximumPoolSize 最大线程数</li>
+<li>keepAliveTime 线程没有任务书最多保持多长时间终止</li>
+</ul>
+</li>
+</ul>
+<h3 id="使用线程池"><a href="#使用线程池" class="headerlink" title="使用线程池"></a>使用线程池</h3><ul>
+<li>JDK5起提供了线程池相关API：ExecutorService和Executors</li>
+<li>ExecutorService:真正的线程池接口。常见子类ThreadPoolExecutor<ul>
+<li>void execute(Runnable command):执行任务，没有返回值，一般执行Runnable</li>
+<li><T>Future<T>submit(Callable<T> task):执行任务，有返回值，一般用来执行Callable</li>
+<li>void shutdown()  关闭线程池</li>
+</ul>
+</li>
+<li>Executors:工具类、线程池的工厂类，由于创建并返回不同类型的线程池</li>
+</ul>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">thread<span class="token punctuation">.</span>kuangsheng</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>concurrent<span class="token punctuation">.</span></span><span class="token class-name">ExecutorService</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>concurrent<span class="token punctuation">.</span></span><span class="token class-name">Executors</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 线程池测试</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestPool</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">// 1、创建线程池</span>
+        <span class="token class-name">ExecutorService</span> es <span class="token operator">=</span>  <span class="token class-name">Executors</span><span class="token punctuation">.</span><span class="token function">newFixedThreadPool</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// 2、创建任务 并执行</span>
+        <span class="token class-name">MyRunnable2</span> task <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MyRunnable2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        es<span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">(</span>task<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        es<span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">(</span>task<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        es<span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">(</span>task<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        es<span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">(</span>task<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        es<span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">(</span>task<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">MyRunnable2</span> <span class="token keyword">implements</span> <span class="token class-name">Runnable</span><span class="token punctuation">&#123;</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
                 
             </div>
             <hr/>
@@ -1592,7 +1647,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">36k</span>
+                        class="white-color">36.3k</span>
             
             
             
