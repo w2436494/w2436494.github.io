@@ -454,7 +454,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-09-01
+                    2021-09-03
                 </div>
                 
 
@@ -545,10 +545,10 @@
        <span class="token comment">// 新生</span>
        NEW<span class="token punctuation">,</span>
 
-      <span class="token comment">// 阻塞</span>
+      <span class="token comment">// 运行</span>
        RUNNABLE<span class="token punctuation">,</span>
        
-    <span class="token comment">// 运行</span>
+    <span class="token comment">//  阻塞</span>
        BLOCKED<span class="token punctuation">,</span>
 
        <span class="token comment">// 等待 死死的等待</span>
@@ -577,7 +577,7 @@
 <p>wait只能在同步代码块中使用</p>
 <p>sleep 可以在任何地方睡/使用</p>
 <p><strong>4、是否需要捕获异常</strong></p>
-<p>wait 不需要捕获异常<br>sleep 必须要捕获异常</p>
+<p>wait 需要捕获异常<br>sleep 需要捕获异常</p>
 <h3 id="3、Lock锁（重点）"><a href="#3、Lock锁（重点）" class="headerlink" title="3、Lock锁（重点）"></a>3、Lock锁（重点）</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">juc</span><span class="token punctuation">;</span>
 
 <span class="token comment">/**
@@ -587,7 +587,7 @@
  */</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SaleTicketDemo1</span> <span class="token punctuation">&#123;</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token comment">// 并发：多线程操作一个资源类 吧资源类丢入线程</span>
+        <span class="token comment">// 并发：多线程操作一个资源类 b资源类丢入线程</span>
         <span class="token class-name">Ticket</span> ticket <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Ticket</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
         <span class="token comment">// lambda表达式（参数）->&#123;代码&#125;</span>
@@ -1525,18 +1525,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/08/29/bing-fa-bian-cheng-1/">
+                <a href="/2021/09/01/bing-fa-bian-cheng-2/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="并发编程1">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="并发编程2">
                         
-                        <span class="card-title">并发编程1</span>
+                        <span class="card-title">并发编程2</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1546,9 +1545,9 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-29
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-01
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -1557,7 +1556,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -1812,7 +1810,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">40.2k</span>
+                        class="white-color">43k</span>
             
             
             
