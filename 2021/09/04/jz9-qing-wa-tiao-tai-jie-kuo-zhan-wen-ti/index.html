@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="线程池, 17&#39;s blog">
+    <meta name="keywords" content="jz9青蛙跳台阶扩展问题, 17&#39;s blog">
     <meta name="description" content="This is a blog in order to record my learning and growth.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>线程池 | 17&#39;s blog</title>
+    <title>jz9青蛙跳台阶扩展问题 | 17&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">线程池</h1>
+                    <h1 class="description center-align post-title">jz9青蛙跳台阶扩展问题</h1>
                 </div>
             </div>
         </div>
@@ -431,8 +431,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/java/">
-                                <span class="chip bg-color">java</span>
+                            <a href="/tags/%E5%89%91%E6%8C%87offer/">
+                                <span class="chip bg-color">剑指offer</span>
                             </a>
                         
                     </div>
@@ -447,21 +447,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-08-16
+                    2021-09-04
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-16
+                    2021-09-05
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    222
+                    597
                 </div>
                 
 
@@ -486,27 +486,72 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1-线程"><a href="#1-线程" class="headerlink" title="1 线程"></a>1 线程</h2><p>概念：就是进程中的一个顺序控制流程，是cpu中的最小执行单位。</p>
-<p>作用：增加cpu的使用效率</p>
-<p>线程的缺点：</p>
-<p>   1）频繁的创建的创建和销毁都会带来性能开销，无法做到的重复利用</p>
-<p>​    2）线程资源不能做到统一管理。</p>
-<p>start方法与run方法的区别。</p>
-<p>创建线程的四种方法</p>
-<p>Thread类：执行任务和线程进行绑定。</p>
-<p>Runable接口</p>
-<p>Callable接口</p>
-<p>线程池</p>
-<h2 id="2-线程池"><a href="#2-线程池" class="headerlink" title="2 线程池"></a>2 线程池</h2><p>池化技术: 数据库连接池、线程池</p>
-<p>常见的线程池：</p>
-<p>通过Executors创建</p>
-<h2 id="3-怎么设计一个线程池"><a href="#3-怎么设计一个线程池" class="headerlink" title="3 怎么设计一个线程池"></a>3 怎么设计一个线程池</h2><p>本质是为了解决线程的两个缺点。</p>
-<p>jdk生产者消费者模型</p>
-<p>阻塞队列：起到一个缓冲作用</p>
-<p>当阻塞</p>
-<p>线程池的工作流程</p>
-<p>创建一个空的线程池</p>
-<p>来任务</p>
+                <h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><p>jz8 一只青蛙一次可以跳上1级台阶，也可以跳上2级。求该青蛙跳上一个n级的台阶(n为正整数)总共有多少种跳法。</p>
+<p>知识点:</p>
+<p><a target="_blank" rel="noopener" href="https://www.nowcoder.com/ta/coding-interviews?tag=591">递归</a></p>
+<p><img src="/images/jz9%E9%9D%92%E8%9B%99%E8%B7%B3%E5%8F%B0%E9%98%B6%E6%89%A9%E5%B1%95%E9%97%AE%E9%A2%98/image-20210905092127078.png" alt="image-20210905092127078"></p>
+<p>如图：青蛙要跳上第5台阶，首先需要到第4台阶或第3台阶。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">jumpFloor</span><span class="token punctuation">(</span><span class="token keyword">int</span> target<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>target <span class="token operator">==</span> <span class="token number">1</span> <span class="token operator">||</span> target <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">return</span> target<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        
+        <span class="token keyword">return</span> <span class="token function">jumpFloor</span><span class="token punctuation">(</span>target<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token function">jumpFloor</span><span class="token punctuation">(</span>target <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>递归解法看上去代码简洁，容易理解，但有很大的性能问题。以6阶台阶为例：</p>
+<p><img src="/images/jz9%E9%9D%92%E8%9B%99%E8%B7%B3%E5%8F%B0%E9%98%B6%E6%89%A9%E5%B1%95%E9%97%AE%E9%A2%98/image-20210905094531370.png" alt="image-20210905094531370"></p>
+<p>可以看出子问题多次求解：第4台阶和第3台阶多次求解。当n越大这种情况越多。</p>
+<p><strong>非递归解法</strong></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">jumpFloor</span><span class="token punctuation">(</span><span class="token keyword">int</span> target<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>target <span class="token operator">==</span> <span class="token number">1</span> <span class="token operator">||</span> target <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">return</span> target<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> b <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>target <span class="token operator">></span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            target<span class="token operator">--</span><span class="token punctuation">;</span>
+            <span class="token keyword">int</span> t <span class="token operator">=</span> b<span class="token punctuation">;</span>
+            b <span class="token operator">=</span> a<span class="token operator">+</span>b<span class="token punctuation">;</span>
+            a <span class="token operator">=</span> t<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> b<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+
+<p>jz9 一只青蛙一次可以跳上1级台阶，也可以跳上2级……<strong>它也可以跳上n级</strong>。求该青蛙跳上一个n级的台阶(n为正整数)总共有多少种跳法。</p>
+<p>知识点：</p>
+<p><a target="_blank" rel="noopener" href="https://www.nowcoder.com/ta/coding-interviews?tag=593">动态规划</a> </p>
+<p>大致上，若要解决一个问题，我们需要解其不同部分（几子问题），再根据子问题的解得出原问题的解。通常许多子问题非常相似，为此<strong>动态规划试图仅仅解决每个子问题异常，从而减少计算量：一旦某个子问题的解已经算出，则将其记忆化存储，以便下一次需要同一子问题解时直接查表</strong></p>
+<p>1、动态规划在查找有很多重叠子问题的情况的最优解时有效。</p>
+<p>2、动态规划只能应用于有最优子结构的问题。</p>
+<p>3、无后效性。及子问题一旦确定，就不再改变，不受在这之后、包含他的更大的问题求解策略影响。</p>
+<p><a target="_blank" rel="noopener" href="https://www.nowcoder.com/ta/coding-interviews?tag=591">递归</a></p>
+<p>第N阶台阶等于前n-1阶台阶之和。</p>
+<p><img src="/images/jz9%E9%9D%92%E8%9B%99%E8%B7%B3%E5%8F%B0%E9%98%B6%E6%89%A9%E5%B1%95%E9%97%AE%E9%A2%98/image-20210905095715909.png" alt="image-20210905095715909"></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Arrays</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">jumpFloorII</span><span class="token punctuation">(</span><span class="token keyword">int</span> target<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>target <span class="token operator">==</span> <span class="token number">1</span> <span class="token operator">||</span> target <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">return</span> target<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        
+        <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> dp <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span>target<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">fill</span><span class="token punctuation">(</span>dp<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 每一阶台阶都可以直接从0台阶跳上去，默认一种跳法</span>
+        dp<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>target<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span>i<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">+=</span>dp<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 每一步都是前面所有台阶的方法数之和</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> dp<span class="token punctuation">[</span>target<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
                 
             </div>
@@ -533,7 +578,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/08/16/xian-cheng-chi/">http://example.com/2021/08/16/xian-cheng-chi/</a>
+                    <a href="http://example.com/2021/09/04/jz9-qing-wa-tiao-tai-jie-kuo-zhan-wen-ti/">http://example.com/2021/09/04/jz9-qing-wa-tiao-tai-jie-kuo-zhan-wen-ti/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -571,8 +616,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/java/">
-                                    <span class="chip bg-color">java</span>
+                                <a href="/tags/%E5%89%91%E6%8C%87offer/">
+                                    <span class="chip bg-color">剑指offer</span>
                                 </a>
                             
                         </div>
@@ -748,13 +793,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/08/16/er-cha-pai-xu-shu/">
+                <a href="/2021/09/05/jz39-ping-heng-er-cha-shu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="二叉排序树">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="jz39 平衡二叉树">
                         
-                        <span class="card-title">二叉排序树</span>
+                        <span class="card-title">jz39 平衡二叉树</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -765,7 +810,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-08-16
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-05
                         </span>
                         <span class="publish-author">
                             
@@ -778,8 +823,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
-                        <span class="chip bg-color">数据结构</span>
+                    <a href="/tags/%E5%89%91%E6%8C%87Offer/">
+                        <span class="chip bg-color">剑指Offer</span>
                     </a>
                     
                 </div>
@@ -793,13 +838,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/08/16/he-fu-man-shu/">
+                <a href="/2021/09/04/bing-fa-bian-cheng-3/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="赫夫曼树">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="并发编程3">
                         
-                        <span class="card-title">赫夫曼树</span>
+                        <span class="card-title">并发编程3</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -810,7 +855,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-16
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-04
                             </span>
                         <span class="publish-author">
                             
@@ -823,8 +868,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
-                        <span class="chip bg-color">数据结构</span>
+                    <a href="/tags/java/">
+                        <span class="chip bg-color">java</span>
                     </a>
                     
                 </div>
@@ -1029,7 +1074,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">43k</span>
+                        class="white-color">46.9k</span>
             
             
             
