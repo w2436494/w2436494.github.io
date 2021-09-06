@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Lambda表达式, 17&#39;s blog">
+    <meta name="keywords" content="二分查找, 17&#39;s blog">
     <meta name="description" content="This is a blog in order to record my learning and growth.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Lambda表达式 | 17&#39;s blog</title>
+    <title>二分查找 | 17&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Lambda表达式</h1>
+                    <h1 class="description center-align post-title">二分查找</h1>
                 </div>
             </div>
         </div>
@@ -431,8 +431,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/java/">
-                                <span class="chip bg-color">java</span>
+                            <a href="/tags/%E6%9F%A5%E6%89%BE/">
+                                <span class="chip bg-color">查找</span>
                             </a>
                         
                     </div>
@@ -447,21 +447,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-08-28
+                    2021-09-06
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-28
+                    2021-09-06
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    563
+                    265
                 </div>
                 
 
@@ -486,116 +486,42 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><strong>为什么要使用Lambda表达式</strong></p>
-<p>  避免匿名内部类定义过多<br>  简化代码，去掉一堆没有意义的代码，只留下核心代码</p>
-<h3 id="函数式接口"><a href="#函数式接口" class="headerlink" title="函数式接口"></a>函数式接口</h3><p>理解Functional Interface（函数式接口)事学习Java 8 Lambda表达式的关键<br>函数式接口的定义：<br>    任何接口，如果只包含唯一个抽象方法，那么它就是一个函数式接口</p>
-<pre><code><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">Runnable</span><span class="token punctuation">&#123;</span>
-        <span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-</code></pre>
-<p>​    对于函数式接口，我们可以通过Lambda表达式来创建该接口的对象。</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">lamda<span class="token punctuation">.</span>kuangsheng</span><span class="token punctuation">;</span>
+                <h4 id="704-二分查找"><a href="#704-二分查找" class="headerlink" title="704. 二分查找"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/binary-search/">704. 二分查找</a></h4><p>难度简单</p>
+<p>给定一个 <code>n</code> 个元素有序的（升序）整型数组 <code>nums</code> 和一个目标值 <code>target</code> ，写一个函数搜索 <code>nums</code> 中的 <code>target</code>，如果目标值存在返回下标，否则返回 <code>-1</code>。</p>
+<p><strong>示例 1:</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">输入: nums &#x3D; [-1,0,3,5,9,12], target &#x3D; 9
+输出: 4
+解释: 9 出现在 nums 中并且下标为 4<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<span class="token comment">/*  Lambda表达式
- */</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestLambda</span><span class="token punctuation">&#123;</span>
+<p><strong>示例 2:</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">输入: nums &#x3D; [-1,0,3,5,9,12], target &#x3D; 2
+输出: -1
+解释: 2 不存在 nums 中因此返回 -1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-    <span class="token comment">// 3、静态成员内部类</span>
-    <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">Like2</span> <span class="token keyword">implements</span> <span class="token class-name">ILike</span><span class="token punctuation">&#123;</span>
-        <span class="token annotation punctuation">@Override</span>
-        <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">lambda</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"学习lambda表达式2"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span>
-
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token class-name">ILike</span> like <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Like</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        like<span class="token punctuation">.</span><span class="token function">lambda</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        like <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Like2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        like<span class="token punctuation">.</span><span class="token function">lambda</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        <span class="token comment">// 4、局部内部类</span>
-        <span class="token keyword">class</span> <span class="token class-name">Like3</span> <span class="token keyword">implements</span> <span class="token class-name">ILike</span><span class="token punctuation">&#123;</span>
-
-            <span class="token annotation punctuation">@Override</span>
-            <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">lambda</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-                <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"学习Lambda表达式3"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">search</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> nums<span class="token punctuation">,</span> <span class="token keyword">int</span> target<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">int</span> left <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> right <span class="token operator">=</span> nums<span class="token punctuation">.</span>length<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">// 注意点1 right为数组最后一个元素下标 不能为数组长度否则会下标越界</span>
+        <span class="token keyword">int</span> mid <span class="token operator">=</span> <span class="token punctuation">(</span>left<span class="token operator">+</span>right<span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">;</span>
+        <span class="token keyword">boolean</span> flag <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> left<span class="token punctuation">;</span>left <span class="token operator">&lt;=</span> right<span class="token punctuation">;</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span> <span class="token comment">// 注意点2 left &lt;= right;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span> <span class="token operator">==</span> target<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                flag <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span> <span class="token comment">// 标记为找到</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span> <span class="token operator">&lt;</span> target<span class="token punctuation">)</span><span class="token punctuation">&#123;</span> <span class="token comment">// 中间值小于目标值 目标值只可能出现在Mid之后</span>
+                left <span class="token operator">=</span>  mid<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span>
+                mid <span class="token operator">=</span> <span class="token punctuation">(</span>left<span class="token operator">+</span>right<span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span><span class="token keyword">else</span><span class="token punctuation">&#123;</span>
+                right <span class="token operator">=</span>  mid<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+                mid <span class="token operator">=</span> <span class="token punctuation">(</span>left<span class="token operator">+</span>right<span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">;</span>
             <span class="token punctuation">&#125;</span>
         <span class="token punctuation">&#125;</span>
-        like <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Like3</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        like<span class="token punctuation">.</span><span class="token function">lambda</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        <span class="token comment">// 5、匿名内部类，没有类的名称，必须借助接口或者父类</span>
-        like <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ILike</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-
-            <span class="token annotation punctuation">@Override</span>
-            <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">lambda</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-                <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"学习Lambda表达式4"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token punctuation">&#125;</span>
-        <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-        like<span class="token punctuation">.</span><span class="token function">lambda</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-
-        <span class="token comment">// 使用Lambda表达式简化</span>
-        like <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-></span> <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"学习lambda表达式5"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        like<span class="token punctuation">.</span><span class="token function">lambda</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span>
+           <span class="token keyword">return</span> mid<span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
-
-<span class="token comment">// 1、函数式接口</span>
-<span class="token keyword">interface</span> <span class="token class-name">ILike</span><span class="token punctuation">&#123;</span>
-    <span class="token keyword">void</span> <span class="token function">lambda</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-
-<span class="token comment">// 2、实现类</span>
-<span class="token keyword">class</span> <span class="token class-name">Like</span> <span class="token keyword">implements</span> <span class="token class-name">ILike</span><span class="token punctuation">&#123;</span>
-
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">lambda</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"学习lambda表达式1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<p><strong>总结</strong>：</p>
-<p>Lambda前提是函数式接口</p>
-<p> Lambda表达式只有一行的情况下，可以不写代码块，如果多行，则必须用代码块包裹。</p>
-<p>多个参数可以去除参数类型，但小括号不能去。如只有一个参数则小括号也可不写。</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">lamda</span><span class="token punctuation">;</span>
-
-<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">File</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">FileFilter</span><span class="token punctuation">;</span>
-
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">LamdaDemo1</span> <span class="token punctuation">&#123;</span>
-
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-
-        <span class="token class-name">FileFilter</span> filter <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileFilter</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-            <span class="token annotation punctuation">@Override</span>
-            <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">accept</span><span class="token punctuation">(</span><span class="token class-name">File</span> pathname<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-                <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-            <span class="token punctuation">&#125;</span>
-        <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-
-        <span class="token comment">// lambda表示中参数类型不需要指定，只需要指定参数名即可</span>
-        <span class="token class-name">FileFilter</span> filter1 <span class="token operator">=</span> <span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token operator">-></span><span class="token punctuation">&#123;</span>
-            <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-        <span class="token comment">/* 如果方法体中只有一行代码，方法体的“&#123;&#125;”可以忽略不写
-           如果该方法需要返回值，则忽略&#123;&#125;的同时return关键字也必须一同
-         忽略不写
-         */</span>
-
-        <span class="token class-name">FileFilter</span> filter2 <span class="token operator">=</span> <span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token operator">-></span><span class="token boolean">false</span><span class="token punctuation">;</span>
-        <span class="token comment">/*
-        如果参数只有一个，则参数列表的“（）”可以忽略不写
-         */</span>
-        <span class="token class-name">FileFilter</span> filter3 <span class="token operator">=</span> file<span class="token operator">-></span><span class="token boolean">false</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
                 
@@ -623,7 +549,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/08/28/lambda-biao-da-shi/">http://example.com/2021/08/28/lambda-biao-da-shi/</a>
+                    <a href="http://example.com/2021/09/06/er-fen-cha-zhao/">http://example.com/2021/09/06/er-fen-cha-zhao/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -661,8 +587,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/java/">
-                                    <span class="chip bg-color">java</span>
+                                <a href="/tags/%E6%9F%A5%E6%89%BE/">
+                                    <span class="chip bg-color">查找</span>
                                 </a>
                             
                         </div>
@@ -838,13 +764,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/08/28/duo-xian-cheng-xiang-jie-xu-2/">
+                <a href="/2021/09/06/jz16-he-bing-liang-ge-pai-xu-de-lian-biao/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="多线程详解续2">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="JZ16 合并两个排序的链表">
                         
-                        <span class="card-title">多线程详解续2</span>
+                        <span class="card-title">JZ16 合并两个排序的链表</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -855,7 +781,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-08-28
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-06
                         </span>
                         <span class="publish-author">
                             
@@ -868,8 +794,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/java/">
-                        <span class="chip bg-color">java</span>
+                    <a href="/tags/%E9%93%BE%E8%A1%A8/">
+                        <span class="chip bg-color">链表</span>
                     </a>
                     
                 </div>
@@ -883,13 +809,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/08/27/duo-xian-cheng-xiang-jie/">
+                <a href="/2021/09/05/bing-fa-bian-cheng-4/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="多线程详解">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="并发编程4">
                         
-                        <span class="card-title">多线程详解</span>
+                        <span class="card-title">并发编程4</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -900,7 +826,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-27
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-05
                             </span>
                         <span class="publish-author">
                             
