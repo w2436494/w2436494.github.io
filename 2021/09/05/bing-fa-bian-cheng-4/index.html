@@ -454,7 +454,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-09-07
+                    2021-09-08
                 </div>
                 
 
@@ -501,7 +501,7 @@
 <p><strong>关于JMM的一些同步的约定</strong></p>
 <p>1、线程解锁前，必须把共享变量<strong>立刻</strong>刷回主存<br>2、线程加锁前，必须读取主存中的最新值到工作内存中！</p>
 <p>3、加锁和解锁是同一把锁<br>线程  <strong>工作内存</strong>  、<strong>主内存</strong></p>
-<p><strong>8中操作</strong></p>
+<p><strong>8种操作</strong></p>
 <p><img src="/images/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B4/image-20210905163131697.png" alt="image-20210905163131697"></p>
 <p><img src="/images/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B4/image-20210905163159048.png" alt="image-20210905163159048"></p>
 <p><strong>内存交互操作有8种，虚拟机实现必须保证每一个操作都是原子的，不可在分的（对于double和long类型的变量来说，load、store、read和write操作在某些平台上允许例外）</strong></p>
@@ -790,7 +790,7 @@ y <span class="token operator">=</span> x <span class="token operator">*</span> 
                     lazyMan <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LazyMan</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
                     <span class="token comment">// 虽然加锁了但在极端情况仍然是不安全的</span>
                     <span class="token comment">// 因为不是原子性操作</span>
-                    <span class="token comment">/** 底层是3不操作
+                    <span class="token comment">/** 底层是3个步操作
                      * 1、分配内存空间
                      * 2、执行构造方法，初始化对象
                      * 3、把这个对象指向这个空间
@@ -1234,11 +1234,8 @@ public ReentrantLock(boolean fair) &#123;
 
         <span class="token punctuation">&#125;</span>
     <span class="token punctuation">&#125;</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-
-    <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>测试：</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">juc<span class="token punctuation">.</span>lock</span><span class="token punctuation">;</span>
@@ -1858,7 +1855,7 @@ public ReentrantLock(boolean fair) &#123;
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">52k</span>
+                        class="white-color">52.8k</span>
             
             
             

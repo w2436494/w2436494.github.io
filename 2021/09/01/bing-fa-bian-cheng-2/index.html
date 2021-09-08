@@ -454,14 +454,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-09-04
+                    2021-09-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.9k
+                    3.7k
                 </div>
                 
 
@@ -695,6 +695,20 @@
 <p>细节：<br>1、有缓存<br>2、结果可能需要等待，会阻塞！</p>
 <h3 id="8、常用辅助列类（必会）"><a href="#8、常用辅助列类（必会）" class="headerlink" title="8、常用辅助列类（必会）"></a>8、常用辅助列类（必会）</h3><h4 id="8-1、CountDownLatch"><a href="#8-1、CountDownLatch" class="headerlink" title="8.1、CountDownLatch"></a>8.1、CountDownLatch</h4><p>减法计数器</p>
 <p><img src="/images/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B2/image-20210903155651536.png" alt="image-20210903155651536"></p>
+<ul>
+<li><p>允许一个或多个线程等待直到在其他线程中执行的一组操作完成的同步辅助。</p>
+<p>A <code>CountDownLatch</code>用给定的<em>计数</em>初始化。 <a href="../../../java/util/concurrent/CountDownLatch.html#await--"><code>await</code></a>方法阻塞，直到由于<a href="../../../java/util/concurrent/CountDownLatch.html#countDown--"><code>countDown()</code></a>方法的<a href="../../../java/util/concurrent/CountDownLatch.html#countDown--">调用</a>而导致当前计数达到零，之后所有等待线程被释放，并且任何后续的<code>await</code>  <a href="../../../java/util/concurrent/CountDownLatch.html#await--">调用立即</a>返回。  这是一个一次性的现象 - 计数无法重置。 如果您需要重置计数的版本，请考虑使用<a href="../../../java/util/concurrent/CyclicBarrier.html"><code>CyclicBarrier</code></a>  。 </p>
+<p>A <code>CountDownLatch</code>是一种通用的同步工具，可用于多种用途。  一个<code>CountDownLatch</code>为一个计数的CountDownLatch用作一个简单的开/关锁存器，或者门：所有线程调用<a href="../../../java/util/concurrent/CountDownLatch.html#await--"><code>await</code></a>在门口等待，直到被调用<a href="../../../java/util/concurrent/CountDownLatch.html#countDown--"><code>countDown()</code></a>的线程打开。  一个<code>CountDownLatch</code>初始化<em>N</em>可以用来做一个线程等待，直到<em>N个</em>线程完成某项操作，或某些动作已经完成N次。 </p>
+<p><code>CountDownLatch</code>一个有用的属性是，它不要求调用<code>countDown</code>线程等待计数到达零之前继续，它只是阻止任何线程通过<a href="../../../java/util/concurrent/CountDownLatch.html#await--"><code>await</code></a>  ，直到所有线程可以通过。 </p>
+<p><strong>示例用法：</strong>这是一组类，其中一组工作线程使用两个倒计时锁存器： </p>
+<ul>
+<li>第一个是启动信号，防止任何工作人员进入，直到驾驶员准备好继续前进; </li>
+<li>第二个是完成信号，允许司机等到所有的工作人员完成。 </li>
+</ul>
+<p>另一个典型的用法是将问题划分为N个部分，用一个Runnable来描述每个部分，该Runnable执行该部分并在锁存器上倒计时，并将所有Runnables排队到执行器。  当所有子部分完成时，协调线程将能够通过等待。 （当线程必须以这种方式反复倒数时，请<a href="../../../java/util/concurrent/CyclicBarrier.html">改用<code>CyclicBarrier</code></a>  ）） </p>
+<p>内存一致性效果：直到计数调用之前达到零，在一个线程操作<code>countDown()</code> <a href="package-summary.html#MemoryVisibility"><em>happen-before</em></a>以下由相应的成功返回行动<code>await()</code>在另一个线程。 </p>
+</li>
+</ul>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">juc<span class="token punctuation">.</span>add</span><span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>concurrent<span class="token punctuation">.</span></span><span class="token class-name">CountDownLatch</span><span class="token punctuation">;</span>
@@ -721,7 +735,12 @@
 <p>countDownLatch.countDown(); // 数量-1</p>
 <p>countDownLatch.await(); // 等待计数器归零，然后再向下执行<br>每次有线程调用 countDown() 数量-1，假设计数器变为0，countDownLatch.await() 就会被唤醒，继续执行！</p>
 <h4 id="8-2、CyclicBarrier"><a href="#8-2、CyclicBarrier" class="headerlink" title="8.2、CyclicBarrier"></a>8.2、CyclicBarrier</h4><p><img src="/images/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B2/image-20210903161224882.png" alt="image-20210903161224882"></p>
-<p>加法计数器</p>
+<ul>
+<li><p>允许一组线程全部等待彼此达到共同屏障点的同步辅助。循环阻塞在涉及固定大小的线程方的程序中很有用，这些线程必须偶尔等待彼此。屏障被称为<em>循环</em>  ，因为它可以在等待的线程被释放之后重新使用。</p>
+<p>A <code>CyclicBarrier</code>支持一个可选的<a href="../../../java/lang/Runnable.html"><code>Runnable</code></a>命令，每个屏障点运行一次，在派对中的最后一个线程到达之后，但在任何线程释放之前。  在任何一方继续进行之前，此<em>屏障操作</em>对更新共享状态很有用。 </p>
+</li>
+</ul>
+<p><strong>加法计数器</strong></p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">juc<span class="token punctuation">.</span>add</span><span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>concurrent<span class="token punctuation">.</span></span><span class="token class-name">BrokenBarrierException</span><span class="token punctuation">;</span>
@@ -756,6 +775,11 @@
 
 <h4 id="8-2、Semaphore"><a href="#8-2、Semaphore" class="headerlink" title="8.2、Semaphore"></a>8.2、Semaphore</h4><p>semaphore：信号量</p>
 <p><img src="/images/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B2/image-20210903192017485.png" alt="image-20210903192017485"></p>
+<ul>
+<li><p>一个计数信号量。在概念上，信号量维持一组许可证。如果有必要，每个<a href="../../../java/util/concurrent/Semaphore.html#acquire--"><code>acquire()</code>都会</a>阻塞，直到许可证可用，然后才能使用它。每个<a href="../../../java/util/concurrent/Semaphore.html#release--"><code>release()</code></a>添加许可证，潜在地释放阻塞获取方。但是，没有使用实际的许可证对象;<code>Semaphore</code>只保留可用数量的计数，并相应地执行。</p>
+<p>信号量通常用于限制线程数，而不是访问某些（物理或逻辑）资源。</p>
+</li>
+</ul>
 <p>模拟抢车位  6个车抢3个车位（信号量）</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">juc<span class="token punctuation">.</span>add</span><span class="token punctuation">;</span>
 
@@ -789,7 +813,10 @@
 <p><strong>原理：</strong></p>
 <p><code>semaphore.acquire();</code>获得，假设如果已经满了，等待，等待被释放为止！</p>
 <p><code> semaphore.release();</code>释放，会将当前的信号量释放 + 1，然后唤醒等待的线程！作用： 多个共享资源互斥的使用！并发限流，控制最大的线程数！</p>
-<h3 id="9、读写锁"><a href="#9、读写锁" class="headerlink" title="9、读写锁"></a>9、读写锁</h3><p><img src="/images/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B2/image-20210903202057764.png" alt="image-20210903202057764"></p>
+<h3 id="9、读写锁"><a href="#9、读写锁" class="headerlink" title="9、读写锁"></a>9、读写锁</h3><ul>
+<li>A <code>ReadWriteLock</code>维护一对关联的<a href="../../../../java/util/concurrent/locks/Lock.html"><code>locks</code></a>  ，一个用于只读操作，一个用于写入。 <a href="../../../../java/util/concurrent/locks/ReadWriteLock.html#readLock--"><code>read  lock</code></a>可以由多个阅读器线程同时进行，只要没有作者。 <a href="../../../../java/util/concurrent/locks/ReadWriteLock.html#writeLock--"><code>write  lock</code></a>是独家的。 </li>
+</ul>
+<p><img src="/images/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B2/image-20210903202057764.png" alt="image-20210903202057764"></p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">juc<span class="token punctuation">.</span>rw</span><span class="token punctuation">;</span>
 
 <span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">HashMap</span><span class="token punctuation">;</span>
@@ -852,7 +879,7 @@
 
     <span class="token comment">// 取，读</span>
     <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">get</span><span class="token punctuation">(</span><span class="token class-name">String</span> key<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-        readWriteLock<span class="token punctuation">.</span><span class="token function">readLock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">lock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 加写锁</span>
+        readWriteLock<span class="token punctuation">.</span><span class="token function">readLock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">lock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 加d锁</span>
         <span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
             <span class="token comment">// 业务</span>
             <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">"读取"</span><span class="token operator">+</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1636,7 +1663,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">52k</span>
+                        class="white-color">52.8k</span>
             
             
             
