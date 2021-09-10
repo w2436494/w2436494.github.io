@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="泛型, 17&#39;s blog">
+    <meta name="keywords" content="面向对象, 17&#39;s blog">
     <meta name="description" content="This is a blog in order to record my learning and growth.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>泛型 | 17&#39;s blog</title>
+    <title>面向对象 | 17&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">泛型</h1>
+                    <h1 class="description center-align post-title">面向对象</h1>
                 </div>
             </div>
         </div>
@@ -447,21 +447,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-09-09
+                    2021-09-10
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-09-09
+                    2021-09-10
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    8
+                    3.7k
                 </div>
                 
 
@@ -486,8 +486,180 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Beyondczn/article/details/107093693">https://blog.csdn.net/Beyondczn/article/details/107093693</a></p>
+                <h3 id="1、Java特点"><a href="#1、Java特点" class="headerlink" title="1、Java特点"></a>1、Java特点</h3><p>java一种面向对象的编程语言。Java 还是一个平台。Java 平台由 Java 虚拟机（Java Virtual Machine，JVM）和 Java 应用编程接口（Application Programming Interface，API）构成。</p>
+<p>Java 语言是一种分布式的面向对象语言，具有面向对象、平台无关性、简单性、解释执行、多线程、安全性等很多特点，下面针对这些特点进行逐一介绍。</p>
+<h4 id="1-面向对象"><a href="#1-面向对象" class="headerlink" title="1. 面向对象"></a>1. 面向对象</h4><p>Java 是一种面向对象的语言，它对对象中的类、对象、继承、封装、多态、接口、包等均有很好的支持。为了简单起见，Java 只支持类之间的单继承，但是可以使用接口来实现多继承。使用 Java 语言开发程序，需要采用面向对象的思想设计程序和编写代码。</p>
+<blockquote>
+<p>什么是面向对象？</p>
+</blockquote>
+<p><strong>面向对象是把一组数据结构和处理它们的方法组成对象。把具有相同特征和行为的对象归纳成类。通过封装隐藏类的内部细节。通过继承使得类得到泛化。通过多态实现基于对象类型的动态分配</strong></p>
+<h4 id="2-平台无关性"><a href="#2-平台无关性" class="headerlink" title="2. 平台无关性"></a>2. 平台无关性</h4><p>平台无关性的具体表现在于，Java 是“一次编写，到处运行（Write Once，Run any Where）”的语言，因此采用 Java 语言编写的程序具有很好的可移植性，而保证这一点的正是 Java 的虚拟机机制。在引入虚拟机之后，Java 语言在不同的平台上运行不需要重新编译。</p>
+<p>Java 语言使用 Java 虚拟机机制屏蔽了具体平台的相关信息，使得 Java 语言编译的程序只需生成虚拟机上的目标代码，就可以在多种平台上不加修改地运行。</p>
+<h4 id="3-简单性"><a href="#3-简单性" class="headerlink" title="3. 简单性"></a>3. 简单性</h4><p>Java 语言的语法与 C 语言和 C++ 语言很相近，使得很多程序员学起来很容易。对 Java 来说，它舍弃了很多 C++ 中难以理解的特性，如操作符的重载和多继承等，而且 Java 语言不使用指针，加入了垃圾回收机制，解决了程序员需要管理内存的问题，使编程变得更加简单。</p>
+<h4 id="4-解释执行"><a href="#4-解释执行" class="headerlink" title="4. 解释执行"></a>4. 解释执行</h4><p>Java 程序在 Java 平台运行时会被编译成字节码文件，然后可以在有 Java 环境的操作系统上运行。在运行文件时，Java 的解释器对这些字节码进行解释执行，执行过程中需要加入的类在连接阶段被载入到运行环境中。</p>
+<h4 id="5-多线程"><a href="#5-多线程" class="headerlink" title="5. 多线程"></a>5. 多线程</h4><p>Java 语言是多线程的，这也是 Java 语言的一大特性，它必须由 Thread 类和它的子类来创建。Java 支持多个线程同时执行，并提供多线程之间的同步机制。任何一个线程都有自己的 run() 方法，要执行的方法就写在 run() 方法体内。</p>
+<h4 id="6-分布式"><a href="#6-分布式" class="headerlink" title="6. 分布式"></a>6. 分布式</h4><p>Java 语言支持 Internet 应用的开发，在 Java 的基本应用编程接口中就有一个网络应用编程接口，它提供了网络应用编程的类库，包括 URL、URLConnection、Socket 等。Java 的 RIM 机制也是开发分布式应用的重要手段。</p>
+<h4 id="7-健壮性"><a href="#7-健壮性" class="headerlink" title="7. 健壮性"></a>7. 健壮性</h4><p>Java 的强类型机制、异常处理、垃圾回收机制等都是 Java 健壮性的重要保证。对指针的丢弃是 Java 的一大进步。另外，Java 的异常机制也是健壮性的一大体现。</p>
+<h4 id="8-高性能"><a href="#8-高性能" class="headerlink" title="8. 高性能"></a>8. 高性能</h4><p>Java 的高性能主要是相对其他高级脚本语言来说的，随着 JIT（Just in Time）的发展，Java 的运行速度也越来越高。</p>
+<h4 id="9-安全性"><a href="#9-安全性" class="headerlink" title="9. 安全性"></a>9. 安全性</h4><p>Java 通常被用在网络环境中，为此，Java 提供了一个安全机制以防止恶意代码的攻击。除了 Java 语言具有许多的安全特性以外，Java 还对通过网络下载的类增加一个安全防范机制，分配不同的名字空间以防替代本地的同名类，并包含安全管理机制。</p>
+<p>Java 语言的众多特性使其在众多的编程语言中占有较大的市场份额，Java 语言对对象的支持和强大的 API 使得编程工作变得更加容易和快捷，大大降低了程序的开发成本。Java 的“一次编写，到处执行”正是它吸引众多商家和编程人员的一大优势。</p>
+<h3 id="2、方法"><a href="#2、方法" class="headerlink" title="2、方法"></a>2、方法</h3><p>方法:    封装一段特定的业务逻辑功能，只干一件事，反复调用，减少重复，有利于维护</p>
+<p>方法的签名: 方法名+参数列表</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">方法的定义<span class="token operator">:</span>    
+修饰词  返回值类型  方法名<span class="token punctuation">(</span>参数列表<span class="token punctuation">)</span><span class="token punctuation">&#123;</span> 
+    方法体   
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
+<blockquote>
+<p>类：类是对对象的抽象，属于同一类 的对象有相同的属性和行为</p>
+</blockquote>
+<p>1）现实生活是由很多很多对象组成的，Java基于对象抽出了类  </p>
+<p>2)对象:软件中真实存在的单个东西/个体    </p>
+<p>类:类别/类型，代表一类个体  </p>
+<p>3)类是对象的模板/模子，对象是类的具体的实例  </p>
+<p>4)类中包含:   </p>
+<p>​    4.1)对象所具有的属性/特征—————成员变量    </p>
+<p>​    4.2)对象所具有的行为/动作—————方法  </p>
+<p>5)一个类可以创建多个对象</p>
+<h3 id="3、重载"><a href="#3、重载" class="headerlink" title="3、重载"></a>3、重载</h3><p> 1)发生在同一类中，方法名称相同，参数列表不同，方法体不同 </p>
+<p> 2)编译器在编译时会根据方法的签名自动绑定调用的方法</p>
+<blockquote>
+<p>重载在什么情况下使用？</p>
+</blockquote>
+<p>最常用的情况：构造方法，有参和无参构造方法。Java的sout。</p>
+<h4 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h4><p>构造方法:构造函数、构造器、构建器——复用给成员变量赋初值的代码  </p>
+<p>1)给成员变量赋初值  </p>
+<p>2)与类同名，没有返回值类型(连void都没有)  </p>
+<p>3)在创建(new)对象时被自动调用  </p>
+<p>4)若自己没有写构造方法，则编译器默认一个无参构造方法，    若自己写了构造方法，则不再默认提供 </p>
+<p> 5)构造方法可以重载</p>
+<h4 id="this"><a href="#this" class="headerlink" title="this"></a>this</h4><p>this:指代当前对象，哪个对象调用方法它指的就是哪个对象      </p>
+<p> 只能用在方法中，方法中访问成员变量之前默认有个this.  </p>
+<p>**this的用法: **</p>
+<p> 1)this.成员变量名———–访问成员变量      ——–当成员变量与局部变量同名时，若想访问成员变量则this不能省略    </p>
+<p>2)this.方法名()————-调用方法(一般不用)    </p>
+<p>3)this()——————–调用构造方法(很少用)</p>
+<blockquote>
+<p>面向对象的三大特性：封装，继承，多态</p>
+</blockquote>
+<p>[转载面向对象三大特性详解]<a target="_blank" rel="noopener" href="https://www.cnblogs.com/rove888/p/9936109.html">https://www.cnblogs.com/rove888/p/9936109.html</a></p>
+<h3 id="4、继承"><a href="#4、继承" class="headerlink" title="4、继承"></a>4、继承</h3><p> 1)作用:代码复用  </p>
+<p>2)通过extends来实现继承  </p>
+<p>3)超类/父类:派生类所共有的属性和行为  </p>
+<p>  派生类/子类:派生类所特有的属性和行为 </p>
+<p> 4)派生类可以访问:派生类的+超类的，而超类只能访问超类的</p>
+<p>  5)一个超类可以有多个派生类，    一个派生类只能有一个超类———单一继承  </p>
+<p>6)继承具有传递性  </p>
+<p>7)java规定:构造派生类之前必须先构造超类    </p>
+<p>7.1)在派生类的构造方法中若自己没有调用超类构造方法，        —-则默认super()来调用超类的无参构造方法    </p>
+<p>7.2)在派生类的构造方法中若自己调用了超类的构造方法，        —-则不再默认提供    注意:super()调用超类构造方法必须位于派生类构造方法的第一行</p>
+<h4 id="spuer"><a href="#spuer" class="headerlink" title="spuer"></a>spuer</h4><p>super:指代当前对象的超类对象 </p>
+<p> super的用法:  </p>
+<p>  1)super.成员变量名————-访问超类的成员变量  </p>
+<p>  2)super.方法名()—————调用超类的方法</p>
+<p> 3)super()———————-调用超类的构造方法</p>
+<p>**向上造型:  **</p>
+<p>1)超类型的引用指向派生类的对象</p>
+<p>  2)能点出来什么，看引用的类型——–这是规定，记住就OK</p>
+<p> <strong>2.方法的重写</strong></p>
+<p>(Override/Overriding):重新写、覆盖  </p>
+<p>1)发生在父子类中，方法名称相同，参数列表相同，方法体不同</p>
+<p>  2)重写方法被调用时，看对象的类型—-这是规定，记住就OK</p>
+<p>  3)重写需遵循”两同两小一大”原则:—–了解即可，一般都是一模一样的    </p>
+<p>3.1)两同:      </p>
+<p>  1)方法名称相同 2)参数列表相同    </p>
+<p>3.2)两小:       </p>
+<p> 1)派生类方法的返回值类型小于或等于超类方法的   </p>
+<p>3.2.1.1)void时，必须相等   </p>
+<p>3.2.1.2)基本类型时，必须相等  </p>
+<p> 3.2.1.3)引用类型时，小于或等于</p>
+<p> 2)派生类方法抛出的异常小于或等于超类方法的</p>
+<p>3.3)一大:        </p>
+<p>1)派生类方法的访问权限大于或等于超类方法的</p>
+<p><strong>3.重写与重载的区别</strong>:———-常见面试题</p>
+<p>  1)重写:    1.1)发生在父子类中，方法名称相同，参数列表相同 </p>
+<p>  2)重载:    2.1)发生在同一类中，方法名称相同，参数列表不同</p>
+<p>**访问控制修饰符: **</p>
+<p> 1)public:公开的，任何类 </p>
+<p> 2)private:私有的，本类  </p>
+<p>3)protected:受保护的，本类、派生类、同包类</p>
+<p>  4)默认的:什么也不写，本类、同包类  </p>
+<p>说明:    1)类的访问权限只能是public或默认的   </p>
+<p> 2)类中成员的访问权限如上四种都可以 </p>
+<p><strong>3.final</strong>:</p>
+<p>最终的、不可改变的——-应用率极低  </p>
+<p>1)修饰变量:变量不能被改变  </p>
+<p>2)修饰方法:方法不能被重写  </p>
+<p>3)修饰类:类不能被继承</p>
+<p>**4.static:静态的  **</p>
+<p>1)静态变量:    </p>
+<p>1.1)由static修饰    </p>
+<p>1.2)属于类，存储在方法区中，只有一份    </p>
+<p>1.3)常常通过类名点来访问   </p>
+<p> 1.4)何时用:所有对象所共享的数据(图片、音频、视频等) </p>
+<p>**2)静态方法:  **</p>
+<p>  2.1)由static修饰    </p>
+<p>2.2)属于类，存储在方法区中，只有一份 </p>
+<p>   2.3)常常通过类名点来访问  </p>
+<p>  2.4)静态方法中没有隐式this传递，在静态方法中不能直接访问实例成员</p>
+<p>​    2.5)何时用:方法的操作与对象无关  </p>
+<p>**3)静态块:    **</p>
+<p>3.1)由static修饰  </p>
+<p>  3.2)属于类，在类被加载时自动执行，        一个类只被加载一次，所以静态块也只执行一次         3.3)何时用:初始化/加载静态资源(图片、音频、视频等)</p>
+<p>**static final常量:  **</p>
+<p>1)必须声明同时初始化</p>
+<p>  2)通过类名点来访问，不能被改变  </p>
+<p>3)建议:常量名所有字母都大写，多个单词用_分隔  </p>
+<p>4)编译器在编译时会将常量直接替换为具体的值，效率高 </p>
+<p> 5)何时用:数据永远不改变，并且经常使用</p>
+<h3 id="5、多态"><a href="#5、多态" class="headerlink" title="5、多态"></a>5、多态</h3><p>1)多态的意义:  </p>
+<p>  1.1)同一类型的引用在指向不同的对象时，有不同的实现(所有抽象方法都是多态的)       —-行为的多态:cut()、step()、getImage()…… </p>
+<p>   1.2)同一个对象被造型为不同的类型时，有不同的功能(所有对象都是多态的—明天详细讲)       —-对象的多态:我、水…… </p>
+<p> 2)向上造型/自动类型转换:   </p>
+<p> 2.1)超类型的引用指向派生类的对象  </p>
+<p>  2.2)能造型成为的数据类型: 超类+所实现的接口   </p>
+<p> 2.3)能点出来什么，看引用的类型  3)强制类型转换，成功的条件只有如下两种:    3.1)引用所指向的对象，就是该类型  </p>
+<p>  3.2)引用所指向的对象，继承了该类或实现了该接口 </p>
+<p> 4)强转时若不符合如上两个条件，则发生ClassCastException类型转换异常    建议在强转之前应先通过instanceof来判断引用指向的对象是否是该类型</p>
+<h3 id="6、抽象类"><a href="#6、抽象类" class="headerlink" title="6、抽象类"></a>6、抽象类</h3><p>**.抽象方法:  **</p>
+<p>1)由abstract修饰  </p>
+<p>2)只有方法的定义，没有具体的实现(连{}都没有) </p>
+<p>3.抽象类:  </p>
+<p>1)由abstract修饰  </p>
+<p>2)包含抽象方法的类必须是抽象类  </p>
+<p>3)抽象类不能被实例化(new对象) </p>
+<p> 4)抽象类是需要被继承的，</p>
+<p>派生类:   </p>
+<p> 4.1)重写所有抽象方法———变不完整为完整    </p>
+<p>4.2)也可以声明为抽象类</p>
+<p> 5)抽象类的意义:    </p>
+<p>5.1)封装共有的属性和行为———–代码复用   </p>
+<p> 5.2)给所有派生类提供统一的类型—–向上造型    </p>
+<p>5.3)可以包含抽象方法，为所有派生类提供统一的入口(造型后能点出来)     </p>
+<p>   派生类的具体实现不同，但入口是一致的</p>
+<p><strong>成员内部类:</strong></p>
+<p>应用率低 </p>
+<p> 1)类中套类，外面的称为外部类，里面的称为内部类  </p>
+<p>2)内部类通常只服务于外部类，对外不具备可见性  </p>
+<p>3)内部类对象只能在外部类中创建</p>
+<p>  4)内部类中可以直接访问外部类的成员(包括私有的)   </p>
+<p> 内部类中有个隐式的引用指向了创建它的外部类对象      </p>
+<p>语法: 外部类名.this </p>
+<p>**2.匿名内部类:**应用率高—————大大简化代码的操作 </p>
+<p> 1)若想创建一个类(派生类)的对象，并且对象只被创建一次，    此时该类不必命名，称为匿名内部类</p>
+<p>  2)匿名内部类中不能修改外面变量的值，因为在匿名内部类中默认变量为final的</p>
+<h3 id="7、接口"><a href="#7、接口" class="headerlink" title="7、接口"></a>7、接口</h3><p>1)是一种数据类型(引用类型)  </p>
+<p>2)由interface定义  </p>
+<p>3)只能包含常量和抽象方法</p>
+<p>  4)接口不能被实例化(new对象)  </p>
+<p>5)接口是需要被实现/继承的，实现/派生类:      必须重写接口中的所有抽象方法(重写时必须加public关键字) </p>
+<p> 6)一个类可以实现多个接口，用逗号分隔    若又继承又实现时，应先继承后实现 </p>
+<p> 7)接口可以继承接口</p>
+<p>设计规则: </p>
+<p>1)将所有派生类所共有的属性和行为，抽到超类中————抽共性 </p>
+<p>2)派生类的行为都一样，设计为普通方法  派生类的行为不一样，设计为抽象方法 </p>
+<p>3)将部分派生类所共有的属性和行为，抽到接口中  接口是对继承的单根性的扩展———–实现多继承</p>
+<h3 id="8、枚举"><a href="#8、枚举" class="headerlink" title="8、枚举"></a>8、枚举</h3>
                 
             </div>
             <hr/>
@@ -513,7 +685,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/09/09/fan-xing/">http://example.com/2021/09/09/fan-xing/</a>
+                    <a href="http://example.com/2021/09/10/mian-xiang-dui-xiang/">http://example.com/2021/09/10/mian-xiang-dui-xiang/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -724,9 +896,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/09/10/mian-xiang-dui-xiang/">
                     <div class="card-image">
@@ -744,9 +917,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-10
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-10
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -755,6 +928,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -773,13 +947,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/09/08/zhu-jie-yu-fan-she/">
+                <a href="/2021/09/09/fan-xing/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="注解与反射">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="泛型">
                         
-                        <span class="card-title">注解与反射</span>
+                        <span class="card-title">泛型</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -790,7 +964,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-08
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-09
                             </span>
                         <span class="publish-author">
                             
