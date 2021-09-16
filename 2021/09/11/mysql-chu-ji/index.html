@@ -1,0 +1,2073 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Mysql初级, 17&#39;s blog">
+    <meta name="description" content="This is a blog in order to record my learning and growth.">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Mysql初级 | 17&#39;s blog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">17&#39;s blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">17&#39;s blog</div>
+        <div class="logo-desc">
+            
+            This is a blog in order to record my learning and growth.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Mysql初级</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/mysql/">
+                                <span class="chip bg-color">mysql</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-09-11
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2021-09-11
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    6.7k
+                </div>
+                
+
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><h3 id="数据库概述"><a href="#数据库概述" class="headerlink" title="数据库概述"></a>数据库概述</h3><ul>
+<li><p>学习数据库主要学习的就是如何对数据进行增删改查操作</p>
+</li>
+<li><p>之前通过IO技术对数据进行增删改查实际上相当于自己写了一个简单版的数据库软件， 功能少，效率低。  对数据进行操作是几乎所有网站都需要进行的， 互联网行业凡是常用又复杂的功能 一定会有一个通用的解决方案，我需要掌握的就是如何去使用这种方案， 数据库软件就是这样一个通用的对数据进行操作的解决方案</p>
+</li>
+<li><p>通过学习SQL（Structured Query Language结构化查询语言）让我们程序员和数据库软件进行交流。</p>
+</li>
+<li><p>DBMS（DataBase Management System数据库管理系统又称数据库软件）　　</p>
+</li>
+<li><p>常见的DBMS：</p>
+<ul>
+<li><p>MySQL：Oracle公司产品，09年被Ｓｕｎ公司收购，１０年Ｓｕｎ公司被Oracle收购，开源数据库，原MySQL创始人创办了Maria DB（其实就是MySQL数据库的一个分支） , 目前市场占有率排名第一</p>
+</li>
+<li><p>Oracle: Oracle公司产品，闭源数据库，性能最高价格最贵　目前市占率排名第二</p>
+</li>
+<li><p>ＳＱＬＳｅｒｖｅｒ：微软公司产品，主要应用在微软的整套网站解决方案中（开发语言＋ｗｅｂＳｅｒｖｅｒ＋操作系统＋数据库软件）　市占率第三　　　　网站开发语言：ｐｈｐ，．ｎｅｔ，Ｊａｖａ　</p>
+</li>
+<li><p>DB２：　IBM公司产品，主要应用在IBM的整套解决方案中。　　</p>
+</li>
+<li><p>SQLite：轻量级数据库，安装包只有几十ｋ，主要应用在移动设备或嵌入式设备　</p>
+</li>
+</ul>
+</li>
+<li><p>开源和闭源</p>
+<ul>
+<li>开源：开放源代码，　盈利方式：靠卖服务，　会有技术大牛无偿维护升级　</li>
+<li>闭源：不开放源代码，盈利方式：靠卖产品和卖服务，　可能会有技术大牛攻击（但是闭源产品公司有钱，　会养一群人维护升级）　　</li>
+</ul>
+</li>
+</ul>
+<h2 id="SQL语言"><a href="#SQL语言" class="headerlink" title="SQL语言"></a>SQL语言</h2><p>－　如果需要执行ｓｑｌ语言需要先和数据库软件建立连接</p>
+<h3 id="如何连接数据库"><a href="#如何连接数据库" class="headerlink" title="如何连接数据库"></a>如何连接数据库</h3><ul>
+<li><p>windows： 从开始菜单中找到MySQL或MariaDB文件夹 找到里面的MySQL Client  点击运行  输入自己的密码 </p>
+</li>
+<li><p>其它操作系统： 在桌面右键打开终端 输入 mysql -uroot -p 回车后输入密码</p>
+</li>
+<li><p>退出连接， 关闭窗口 或 执行 exit</p>
+</li>
+<li><p>如果连接不上数据库 检查MySQL服务是否开启</p>
+<ul>
+<li><p>window键+r    输入services.msc</p>
+<p><img src="../images/Mysql%E5%88%9D%E7%BA%A7/image-20210421104143039.png" alt="image-20210421104143039"></p>
+</li>
+<li><p>找到MySQL服务 检查是否正在运行  </p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="SQL语句分类"><a href="#SQL语句分类" class="headerlink" title="SQL语句分类"></a>SQL语句分类</h3><ul>
+<li>DDL*：数据定义语言，包括数据库相关和表相关的SQL语句，在数据库软件中保存数据需要先建库再建表 之后才能操作数据</li>
+<li>DML**：数据操作语言， 包括数据相关的操作比如增、删、改、查</li>
+<li>DQL***： 数据查询语言，只包括查询相关的SQL</li>
+<li>TCL*： 事务控制语言，包括事务相关的SQL</li>
+<li>DCL： 数据库控制语言，包括用户管理和权限分配相关SQL</li>
+</ul>
+<h3 id="DDL数据定义语言"><a href="#DDL数据定义语言" class="headerlink" title="DDL数据定义语言"></a>DDL数据定义语言</h3><h4 id="数据库相关SQL"><a href="#数据库相关SQL" class="headerlink" title="数据库相关SQL"></a>数据库相关SQL</h4><ol>
+<li>查询所有数据库</li>
+</ol>
+<ul>
+<li>show databases; </li>
+</ul>
+<ol start="2">
+<li><p>创建数据库</p>
+<p>格式：create database 数据库名;</p>
+<p>指定字符集格式：create database 数据库名 character set utf8/gbk;</p>
+<p>举例：</p>
+<p>create database db1;</p>
+<p>create database db2 character set utf8;</p>
+<p>create database db3 character set gbk;</p>
+<p>show databases;</p>
+</li>
+<li><p>查询数据库信息</p>
+<p>格式：show create database 数据库名;</p>
+<p>举例</p>
+<p>show create database db1;</p>
+<p>show create database db2;</p>
+<p>show create database db3;</p>
+</li>
+<li><p>删除数据库</p>
+<p>格式： drop database 数据库名;</p>
+<p>举例：</p>
+<p>drop database db1;</p>
+<p>drop database db2;</p>
+<p>show databases;</p>
+</li>
+<li><p>使用数据库， 必须使用了某个数据库之后才能操作表和数据</p>
+<p>格式： use 数据库名；</p>
+<p>举例    </p>
+<p>use db3;</p>
+</li>
+</ol>
+<h3 id="表相关的SQL"><a href="#表相关的SQL" class="headerlink" title="表相关的SQL"></a>表相关的SQL</h3><ul>
+<li><p>操作表相关的SQL语句必须使用了数据库之后。</p>
+<p>ERROR 1046 (3D000): No database selected</p>
+<p>create database mydb3;</p>
+<p>use mydb3;</p>
+</li>
+</ul>
+<ol>
+<li><p>查询所有表</p>
+<p>格式：show tables;</p>
+</li>
+<li><p>创建表</p>
+<p>默认字符集格式：create table 表名(字段1名 类型, 字段2名 类型);</p>
+<p>指定字符集格式：create table 表名(字段1名 类型, 字段2名 类型)charset=utf8/gbk;</p>
+<p>举例：</p>
+<p>create table person(name varchar(20),age int);</p>
+<p>create table student(name varchar(20),score int,gender varchar(1))charset=utf8;</p>
+<p>创建一个保存汽车信息的car表 字段：name名字，type类型，price价格</p>
+<p>字符集为gbk</p>
+<p>create table car(name varchar(20),type varchar(20),price int)charset=gbk;</p>
+</li>
+<li><p>查询表信息</p>
+</li>
+</ol>
+<p>格式：show create table 表名;</p>
+<p>举例</p>
+<p>show create table person;</p>
+<p>show create table student;</p>
+<p>show create table car;</p>
+<ol start="3">
+<li><p>查询表字段信息</p>
+<p>格式：desc 表名；</p>
+<p>desc person;</p>
+<p>desc car;</p>
+</li>
+<li><p>删除表</p>
+<p>格式：drop table 表名;</p>
+<p>举例</p>
+<p>drop table person;</p>
+<p>drop table car;</p>
+</li>
+</ol>
+<h3 id="表相关SQL续"><a href="#表相关SQL续" class="headerlink" title="表相关SQL续"></a>表相关SQL续</h3><ol>
+<li><p>修改表名</p>
+<p>格式：rename table 原名 to 新名；</p>
+<p>举例</p>
+<p>use mydb3;</p>
+<p>rename table student to stu;</p>
+</li>
+<li><p>添加表字段</p>
+<p>最后面添加格式：alter table 表名 add 字段名 类型;</p>
+<p>最前面添加格式：alter table 表名 add 字段名 类型 first;</p>
+<p>在xxx字段后面添加：alter table 表名 add 字段名 类型 after xxx;</p>
+<p>举例：</p>
+<p>alter table stu add age int;</p>
+<p>alter table stu add id int first;</p>
+<p>alter table stu add address varchar(50) after name;</p>
+</li>
+<li><p>删除表字段</p>
+<p>格式：alter table 表名 drop 字段名;</p>
+<p>alter table stu drop address;</p>
+<p>alter table stu drop age;</p>
+</li>
+<li><p>修改表字段</p>
+<p>格式：alter table 表名 change 原名 新名 新类型；</p>
+<p>举例：</p>
+<p>alter table stu change score address varchar(20);</p>
+</li>
+</ol>
+<h3 id="表相关SQL回顾"><a href="#表相关SQL回顾" class="headerlink" title="表相关SQL回顾"></a>表相关SQL回顾</h3><ol>
+<li>查询所有： show tables;</li>
+<li>创建表：  create table t1(name varchar(20),age int)charset=utf8/gbk;</li>
+<li>查询表信息： show create table t1;</li>
+<li>查询表字段： desc t1;</li>
+<li>删除表：   drop table t1;</li>
+<li>修改表名：  rename table t1 to t2;</li>
+<li>添加表字段： alter table t1 add age int first/after xxx;</li>
+<li>删除表字段： alter table t1 drop 字段名;</li>
+<li>修改表字段： alter table t1 change 原名 新名 新类型;</li>
+</ol>
+<h3 id="DML数据操作语言（数据相关SQL语句）"><a href="#DML数据操作语言（数据相关SQL语句）" class="headerlink" title="DML数据操作语言（数据相关SQL语句）"></a>DML数据操作语言（数据相关SQL语句）</h3><p>create database mydb6 character set utf8;</p>
+<p>use mydb6;</p>
+<p>create table person(name varchar(20),age int)charset=utf8;</p>
+<ol>
+<li><p>插入数据</p>
+<ul>
+<li><p>全表插入格式：insert into 表名 values(值1,值2,值3)；值的数量和顺序要和表字段一致</p>
+</li>
+<li><p>指定字段格式：insert into 表名(字段1名，字段2名)values(值1,值2); 值得数量和顺序和指定的一致 </p>
+</li>
+<li><p>批量插入格式：insert into 表名 values(值1,值2,值3),(值1,值2,值3),(值1,值2,值3);</p>
+</li>
+<li><p>举例：</p>
+</li>
+</ul>
+<p>insert into person values(“Tom”,18);</p>
+<p>insert into person(name) values(‘Jerry’);</p>
+<p>insert into person values(‘Lucy’,20),(‘Lily’,21);</p>
+<p>insert into person(name) values(‘Lilei’),(‘Hanmeimei’);</p>
+<ul>
+<li>中文问题：</li>
+</ul>
+<p>insert into person values(‘刘德华’,30);</p>
+<ul>
+<li>如果执行上面的SQL出现下面的错误提示， 执行 set names gbk;</li>
+</ul>
+</li>
+</ol>
+<p><img src="../images/Mysql%E5%88%9D%E7%BA%A7/image-20210421162931563.png" alt="image-20210421162931563"></p>
+<p><img src="../images/Mysql%E5%88%9D%E7%BA%A7/image-20210421163930985.png" alt="image-20210421163930985"></p>
+<ol start="2">
+<li><p>查询数据</p>
+<ul>
+<li><p>格式： select 字段信息 from 表名 where 条件;</p>
+</li>
+<li><p>举例:</p>
+<p>select name from person;</p>
+<p>select name,age from person;</p>
+<p>select * from person;</p>
+<p>select * from person where age&lt;=20;</p>
+<p>select * from person where name=’Tom’;</p>
+</li>
+</ul>
+</li>
+<li><p>修改数据</p>
+<ul>
+<li><p>格式： update 表名 set 字段2名=值,字段2名=值 where 条件;</p>
+</li>
+<li><p>举例：</p>
+<p>update person set age=5 where name=’Jerry’;</p>
+<p>update person set name=’张学友’,age=25 where name=’刘德华’;</p>
+<p>update person set age=15 where age&lt;20;</p>
+</li>
+</ul>
+</li>
+<li><p>删除数据</p>
+<ul>
+<li><p>格式：delete from 表名 where 条件;</p>
+</li>
+<li><p>举例：</p>
+<p>delete from person where name=’Tom’;</p>
+<p>delete from person where age&lt;20;</p>
+<p>delete from person;</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="数据相关SQL回顾"><a href="#数据相关SQL回顾" class="headerlink" title="数据相关SQL回顾"></a>数据相关SQL回顾</h3><ol>
+<li>插入数据： insert into 表名(字段1名，字段2名) values(值1，值2)，(值1，值2)，(值1，值2);</li>
+<li>查询数据： select 字段信息 from 表名  where 条件；</li>
+<li>修改数据： update 表名 set xxx=xxx,xxx=xxx where条件；</li>
+<li>删除数据： delete from 表名  where 条件;</li>
+</ol>
+<p>​     </p>
+<h3 id="主键约束"><a href="#主键约束" class="headerlink" title="主键约束"></a>主键约束</h3><ul>
+<li>什么是主键: 表示数据唯一性的字段称为主键  </li>
+<li>什么事约束: 创建表时给表字段添加的限制条件.  </li>
+<li>什么是主键约束: 唯一且非空  </li>
+<li>格式: 创建表时在主键字段的后面添加primary key</li>
+</ul>
+<p>create table emp(id int primary key,name varchar(20));</p>
+<p>insert into emp values(1,’张三’);</p>
+<p>insert into emp values(1,’李四’);   //报错 Duplicate entry  数据重复</p>
+<p>insert into emp values(null,’王五’);//报错 cannot be null 不能为null</p>
+<h3 id="主键约束-自增"><a href="#主键约束-自增" class="headerlink" title="主键约束+自增"></a>主键约束+自增</h3><ul>
+<li>自增规律: 从历史最大值+1</li>
+</ul>
+<p>格式: primary key auto_increment</p>
+<p>create table t1(id int primary key auto_increment,name varchar(20));</p>
+<p>insert into t1 values(null,’aaa’);</p>
+<p>insert into t1 values(null,’bbb’);</p>
+<p>insert into t1 values(10,’ccc’);</p>
+<p>insert into t1 values(null,’ddd’);</p>
+<p>delete from t1 where id&gt;=10;</p>
+<p>insert into t1 values(null,’eee’);</p>
+<h3 id="数据库中的数据类型"><a href="#数据库中的数据类型" class="headerlink" title="数据库中的数据类型"></a>数据库中的数据类型</h3><ol>
+<li><p>整数: int(m) 和 bigint(m)   m代表的是显示长度    m=10 存18     0000000018 如果需要使用m 创建表时需要添加zerofill 关键字,bigint等效java中的long  </p>
+<p>create table t2(age int(5) zerofill);</p>
+<p>insert into t2 values(18);</p>
+<p>select * from t2;</p>
+</li>
+<li><p>浮点数: float(m,d)和double(m,d)   m代表总长度 d代表小数长度  保存23.234  m=5  d=3   , decimal(m,d)超高精度浮点数 只有涉及超高精度运算时使用  </p>
+<p>create table t3(salary double(5,3));</p>
+<p>insert into t3 values(23.234);</p>
+<p>insert into t3 values(23.12312312);</p>
+<p>insert into t3 values(231.12312312);   //报错 长度超限</p>
+</li>
+<li><p>字符串</p>
+<ul>
+<li>char(m): 固定长度, m=10   存”abc” 占10, 执行效率略高, 最大长度255</li>
+<li>varchar(m):可变长度,m=10   存”abc” 占3 , 节省存储空间,最大长度65535 , 建议保存255以内长度</li>
+<li>text(m):可变长度,m=10   存”abc” 占3,最大长度65535 , 建议保存长度大于255</li>
+</ul>
+</li>
+<li><p>日期</p>
+<ul>
+<li>date: 只能保存年月日</li>
+<li>time: 只能保存时分秒</li>
+<li>datetime:保存年月日时分秒,  最大值为9999-12-31,默认值为null</li>
+<li>timestamp(时间戳距离1970年1月1日的毫秒数):保存年月日时分秒,最大值2038-1-19  ,默认值为当前系统时间  </li>
+</ul>
+<p>create table t_date(t1 date,t2 time,t3 datetime,t4 timestamp);</p>
+<p>insert into t_date values(‘2021-4-22’,’11:04:22’,null,null);</p>
+<p>insert into t_date values(‘2021-4-22’,’11:04:22’,’2020-11-25 13:33:22’,null);</p>
+</li>
+</ol>
+<h3 id="导入-sql批处理文件"><a href="#导入-sql批处理文件" class="headerlink" title="导入*.sql批处理文件"></a>导入*.sql批处理文件</h3><ul>
+<li><p>把下载的emp.sql文件 保存到某个盘的根目录下 , 如果不是windows系统把文件放在桌面</p>
+</li>
+<li><p>通过执行以下指令导入</p>
+<p>source f:/emp.sql;</p>
+<p>导入成功后MySQL里面会添加一个newdb3的数据库 并且已经使用,</p>
+<p>执行select * from emp; 如果出现乱码 </p>
+<p>执行set names gbk;   即可解决</p>
+</li>
+</ul>
+<h3 id="去重distinct"><a href="#去重distinct" class="headerlink" title="去重distinct"></a>去重distinct</h3><ol>
+<li><p>查询员工表中出现了哪几种不同的工作</p>
+<p>select distinct job  from emp;</p>
+</li>
+<li><p>查询员工表中出现的部门编号deptno 去掉重复</p>
+<p>select distinct deptno from emp;</p>
+</li>
+</ol>
+<h3 id="is-null和is-not-null"><a href="#is-null和is-not-null" class="headerlink" title="is null和is not null"></a>is null和is not null</h3><ul>
+<li>如果查询的值为null不能使用=, 需要使用is</li>
+</ul>
+<ol>
+<li><p>查询没有领导的员工</p>
+<p>select * from emp where mgr is null;</p>
+</li>
+<li><p>查询有领导的员工</p>
+<p>select * from emp where mgr is not null;</p>
+</li>
+</ol>
+<h3 id="比较运算符-gt-lt-gt-lt-和-lt-gt"><a href="#比较运算符-gt-lt-gt-lt-和-lt-gt" class="headerlink" title="比较运算符  &gt; &lt; &gt;= &lt;= =  !=和&lt;&gt;"></a>比较运算符  &gt; &lt; &gt;= &lt;= =  !=和&lt;&gt;</h3><ol>
+<li><p>查询工资小于等于3000的员工姓名和工资</p>
+<p>select ename,sal from emp where sal&lt;=3000;</p>
+</li>
+<li><p>查询1号部门的员工姓名和工作</p>
+<p>select ename,job from emp where deptno=1;</p>
+</li>
+<li><p>查询不是程序员的员工姓名 工资和工作(两种写法)</p>
+<p>select ename,sal,job from emp where job!=’程序员’;</p>
+<p>select ename,sal,job from emp where job&lt;&gt;’程序员’;</p>
+</li>
+<li><p>查询有奖金的员工姓名和奖金</p>
+<p>select ename,comm from emp where comm&gt;0;</p>
+</li>
+</ol>
+<h3 id="and和or"><a href="#and和or" class="headerlink" title="and和or"></a>and和or</h3><ul>
+<li>and类似Java中的&amp;&amp;  如果需要同时满足多个条件时使用</li>
+<li>or类似Java中的||  如果查询的数据满足某一个条件时使用</li>
+</ul>
+<ol>
+<li><p>查询1号部门工资高于2000的员工信息</p>
+<p>select * from emp where deptno=1 and sal&gt;2000;</p>
+</li>
+<li><p>查询是程序员或者工资等于5000的员工信息</p>
+<p>select * from emp where job=’程序员’ or sal=5000;</p>
+</li>
+<li><p>查询出CEO和项目经理的名字</p>
+<p>select ename from emp where job=’CEO’ or job=’项目经理’;</p>
+</li>
+<li><p>查询奖金是500的销售信息 </p>
+<p>select * from emp where comm=500 and job=’销售’;</p>
+</li>
+</ol>
+<h3 id="in关键字"><a href="#in关键字" class="headerlink" title="in关键字"></a>in关键字</h3><ul>
+<li>当查询某个字段的值为多个值时使用</li>
+</ul>
+<ol>
+<li>查询工资是3000,1500和5000的员工信息</li>
+</ol>
+<p>select * from emp where sal=3000 or sal=1500 or sal=5000;</p>
+<p>select * from emp where sal in(3000,1500,5000);</p>
+<ol start="2">
+<li><p>查询工作是销售 人事和程序员的员工信息</p>
+<p>select * from emp where job in(‘销售’,’人事’,’程序员’);</p>
+</li>
+<li><p>查询1号和2号部门工资大于2000的员工信息</p>
+<p>select * from emp where deptno in(1,2) and sal&gt;2000;</p>
+</li>
+</ol>
+<h3 id="between-x-and-y关键字-包含x和y"><a href="#between-x-and-y关键字-包含x和y" class="headerlink" title="between x and y关键字  包含x和y"></a>between x and y关键字  包含x和y</h3><ul>
+<li>当查询某个字段的值在某个范围之内时使用</li>
+</ul>
+<ol>
+<li><p>查询工资在2000到3000之间的员工信息</p>
+<p>select * from emp where sal between 2000 and 3000;</p>
+</li>
+</ol>
+<h3 id="综合练习题"><a href="#综合练习题" class="headerlink" title="综合练习题"></a>综合练习题</h3><ol>
+<li><p>查询3号部门中有上级领导的员工信息</p>
+<p>select * from emp where deptno=3 and mgr is not null;</p>
+</li>
+<li><p>查询2号部门工资在2000-3000之间的员工姓名,工资和部门编号</p>
+<p>select ename,sal,deptno from emp where deptno=2 and sal between 2000 and 3000;</p>
+</li>
+<li><p>查询1号部门工资为800和1600的员工信息</p>
+<p>select * from emp where deptno=1 and sal in(800,1600);</p>
+</li>
+<li><p>查询1号部门中出现了哪几种不同的工作 </p>
+<p>select distinct job from emp where deptno=1;</p>
+</li>
+</ol>
+<h3 id="模糊查询-like"><a href="#模糊查询-like" class="headerlink" title="模糊查询 like"></a>模糊查询 like</h3><ul>
+<li>_: 代表一个未知字符</li>
+<li>%: 代表0或多个未知字符</li>
+<li>举例:<ul>
+<li>以x开头       x%</li>
+<li>以x结尾       %x</li>
+<li>包含x           %x%</li>
+<li>以x开头以y结尾     x%y</li>
+<li>第二个字符是x      _x%</li>
+<li>第三个字符是x倒数第二个是y        _ _x%y _</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li><p>查询姓孙的员工姓名</p>
+<p>select ename from emp where ename like ‘孙%’;</p>
+</li>
+<li><p>查询工作中第二个字是售的员工信息</p>
+<p>select * from emp where job like ‘_售%’;</p>
+</li>
+<li><p>查询名字中以精结尾的员工姓名</p>
+<p>select ename from emp where ename like ‘%精’;</p>
+</li>
+<li><p>查询名字中包含僧的员工并且工资高于2000的员工信息</p>
+<p>select * from emp where ename like ‘%僧%’ and sal&gt;2000;</p>
+</li>
+<li><p>查询1号和2号部门中工作以市开头的员工信息</p>
+<p>select * from emp where deptno in(1,2) and job like ‘市%’;</p>
+</li>
+<li><p>查询有领导的员工中是经理的员工姓名</p>
+<p>select ename from emp where mgr is not null and job like ‘%经理%’;</p>
+</li>
+</ol>
+<h3 id="排序-order-by"><a href="#排序-order-by" class="headerlink" title="排序 order by"></a>排序 order by</h3><ul>
+<li>格式: order by 字段名 asc升序(默认)/desc降序</li>
+</ul>
+<ol>
+<li><p>查询每个员工的姓名和工资按照工资降序进行排序</p>
+<p>select ename,sal from emp order by sal desc;</p>
+</li>
+<li><p>查询每个员工的姓名,工资和部门编号,按照部门编号升序排序,如果部门编号一致则按照工资降序排序</p>
+<p>select ename,sal,deptno from emp order by deptno,sal desc;</p>
+</li>
+</ol>
+<h3 id="分页查询-limit"><a href="#分页查询-limit" class="headerlink" title="分页查询 limit"></a>分页查询 limit</h3><ul>
+<li>格式: limit 跳过的条数,请求的条数(每页的条数)</li>
+<li>举例:                                     跳过的条数= (请求页数-1)*每页条数<ul>
+<li>请求第一页的5条数据       limit 0,5</li>
+<li>请求第二页的5条数据       limit 5,5</li>
+<li>请求第8页的6条数据        limit 42,6</li>
+<li>请求第6页的7条数据        limit 35,7</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li><p>按照工资升序排序  请求第一页的5条数据</p>
+<p>select * from emp order by sal  limit 0,5;</p>
+</li>
+<li><p>查询员工表中工资降序排序 第二页的3条数据</p>
+<p>select * from emp order by sal desc limit 3,3;</p>
+</li>
+<li><p>查询1号部门工资前三的员工信息 </p>
+<p>select * from emp where deptno=1 order by sal desc limit 0,3;</p>
+</li>
+<li><p>查询2号部门工资最高的员工姓名和工资</p>
+<p>select ename,sal from emp where deptno=2 order by sal desc limit 0,1;</p>
+</li>
+</ol>
+<h3 id="数值计算"><a href="#数值计算" class="headerlink" title="数值计算 + - * / %"></a>数值计算 + - * / %</h3><ol>
+<li><p>查询每个员工的姓名,工资和年终奖(年终奖=月工资*3)</p>
+<p>select  ename,sal,sal*3 from emp;</p>
+</li>
+<li><p>查询2号部门中,每个员工的姓名,工资和涨薪5块钱之后的工资</p>
+<p>select ename,sal,sal+5 from emp where deptno=2;</p>
+</li>
+<li><p>让三号部门的每个员工涨薪5块钱</p>
+<p>update emp set sal=sal+5 where deptno=3;</p>
+</li>
+</ol>
+<h3 id="别名"><a href="#别名" class="headerlink" title="别名"></a>别名</h3><ul>
+<li><p>给查询的字段起别名</p>
+<p>select ename from emp;</p>
+<p>select ename as ‘姓名’ from emp;</p>
+<p>select ename ‘姓名’ from emp;</p>
+<p>select ename 姓名 from emp;</p>
+</li>
+</ul>
+<h3 id="综合练习题-1"><a href="#综合练习题-1" class="headerlink" title="综合练习题"></a>综合练习题</h3><ol>
+<li><p>查询有领导并且工资在1000到3000之间的员工信息</p>
+<p>select * from emp where mgr is not null and sal between 1000 and 3000;</p>
+</li>
+<li><p>查询名字中包含精或者工作中包含序的员工姓名和工作    </p>
+<p>select ename,job from emp where ename like ‘%精%’ or job like ‘%序%’;</p>
+</li>
+<li><p>查询3号部门工资最高的员工姓名和工资</p>
+<p>select ename,sal from emp where deptno=3 order by sal desc limit 0,1;</p>
+</li>
+<li><p>查询1号部门和2号部门的员工信息工资升序，查询第3页的2条数据</p>
+</li>
+</ol>
+<p>​    select * from emp where deptno in(1,2) order by sal limit 4,2;</p>
+<ol start="5">
+<li><p>查询上级领导编号是8工资最高的3个人的信息</p>
+<p>select * from emp where mgr=8 order by sal desc limit 0,3;</p>
+</li>
+</ol>
+<h3 id="聚合函数"><a href="#聚合函数" class="headerlink" title="聚合函数"></a>聚合函数</h3><ul>
+<li><p>使用聚合函数可以对查询的多条数据进行统计查询 </p>
+</li>
+<li><p>统计方式: 平均值  最大值  最小值  求和   计数</p>
+</li>
+<li><p>平均值avg(字段名)</p>
+<ul>
+<li><p>查询1号部门的平均工资</p>
+<p>select avg(sal) from emp where deptno=1;</p>
+</li>
+</ul>
+</li>
+<li><p>最大值max(字段名)</p>
+<ul>
+<li><p>查询1号部门的最高工资</p>
+<p>select max(sal) from emp where deptno=1;</p>
+</li>
+</ul>
+</li>
+<li><p>最小值min(字段名)</p>
+<ul>
+<li><p>查询1号部门的最低工资</p>
+<p>select min(sal) from emp where deptno=1;</p>
+</li>
+</ul>
+</li>
+<li><p>求和sum(字段名)</p>
+<ul>
+<li><p>查询1号部门的工资总和</p>
+<p>select sum(sal) from emp where deptno=1;</p>
+</li>
+</ul>
+</li>
+<li><p>计数count(*)</p>
+<ul>
+<li><p>查询工资高于2000的员工人数</p>
+<p>select count(*) from emp where sal&gt;2000;</p>
+</li>
+</ul>
+</li>
+<li><p>聚合函数相关练习题:</p>
+<ol>
+<li><p>查询和销售相关工作的工资总和</p>
+<p>select sum(sal) from emp where job like ‘%销售%’;</p>
+</li>
+<li><p>查询1号部门工资高于1500的员工人数</p>
+<p>select count(*) from emp where deptno=1 and sal&gt;1500;</p>
+</li>
+<li><p>查询1号部门中名字包含僧的员工的人数和平均工资 起别名</p>
+<p>select count(*) 人数,avg(sal) 平均工资 from emp where deptno=1 and ename like ‘%僧%’;</p>
+</li>
+<li><p>查询1号部门的平均工资,最高工资,最低工资,工资总和,人数 并且起别名</p>
+<p>select avg(sal) 平均工资,max(sal) 最高工资,min(sal) 最低工资,sum(sal) 工资总和,count(*) 人数 from emp where deptno=1;</p>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="分组查询"><a href="#分组查询" class="headerlink" title="分组查询"></a>分组查询</h3><ul>
+<li>什么是分组查询: 将某个字段相同的值划分为一组 按组进行统计查询.</li>
+</ul>
+<ol>
+<li><p>查询每个部门的平均工资</p>
+<p>select deptno,avg(sal) from emp group by deptno;</p>
+</li>
+<li><p>查询每种工作的平均工资</p>
+<p>select job,avg(sal) from emp group by job;</p>
+</li>
+<li><p>查询每种工作的人数</p>
+<p>select job,count(*) from emp group by job;</p>
+</li>
+<li><p>查询每个部门工资高于2000的员工人数</p>
+<p>select deptno,count(*) from emp where sal&gt;2000 group by deptno;</p>
+</li>
+<li><p>查询平均工资最高的部门编号和平均工资</p>
+<p>select deptno,avg(sal) from emp group by deptno order by avg(sal) desc limit 0,1;</p>
+</li>
+</ol>
+<h3 id="having关键字"><a href="#having关键字" class="headerlink" title="having关键字"></a>having关键字</h3><ul>
+<li><p>where后面只能写普通字段条件, 不能写聚合函数条件</p>
+</li>
+<li><p>聚合函数条件需要写在having关键字后面</p>
+</li>
+<li><p>各个关键字的位置:</p>
+<p>select 查询的字段 from 表名 where 普通字段条件 group by 分组字段名 having 聚合函数条件 order by 排序字段名  limit 跳过条数,请求条数;</p>
+</li>
+<li><p>having一定要和分组查询group by结合使用,不能单独使用.</p>
+</li>
+</ul>
+<ol>
+<li>查询部门平均工资高于2000的部门编号和平均工资</li>
+</ol>
+<p>select deptno,avg(sal) from emp group by deptno having avg(sal)&gt;2000;</p>
+<ol start="2">
+<li><p>查询每种工作的人数,只查询人数大于1的工作名称和人数.</p>
+<p>select job,count(*) c from emp group by job having c&gt;1;</p>
+</li>
+<li><p>查询每个部门的工资总和，只查询有领导的员工，并且要求工资总和高于5400</p>
+<p>select deptno,sum(sal) s from emp where mgr is not null group by deptno having s&gt;5400;</p>
+</li>
+<li><p>查询每个部门的平均工资,只查询工资在1000到3000之间的,并且过滤掉平均工资低于2000的部门信息</p>
+<p>select deptno,avg(sal) a from emp where sal between 1000 and 3000 group by deptno having a&gt;=2000;</p>
+</li>
+<li><p>查询每种工作的人数要求人数大于1个,并且只查询1号部门和2号部门的员工, 按照人数降序排序</p>
+<p>select job,count(*) c from emp where deptno in(1,2) group by job having c&gt;1 order by c desc;</p>
+</li>
+</ol>
+<h3 id="子查询-嵌套查询"><a href="#子查询-嵌套查询" class="headerlink" title="子查询(嵌套查询)"></a>子查询(嵌套查询)</h3><ol>
+<li>查询工资高于1号部门平均工资的员工信息</li>
+</ol>
+<p>select avg(sal) from emp where deptno=1;</p>
+<p>select * from emp where sal&gt;(select avg(sal) from emp where deptno=1);</p>
+<ol start="2">
+<li><p>查询工资最高的员工信息</p>
+<ul>
+<li>先查最高工资</li>
+</ul>
+<p>select max(sal) from emp;</p>
+<ul>
+<li>再通过最高工资查询员工信息</li>
+</ul>
+<p>select * from emp where sal=(select max(sal) from emp);</p>
+</li>
+<li><p>查询工资高于2号部门最低工资的员工信息</p>
+<ul>
+<li><p>先查2号部门最低工资</p>
+<p>select min(sal) from emp where deptno=2;</p>
+</li>
+<li><p>再查员工信息</p>
+<p>select * from emp where sal&gt;(select min(sal) from emp where deptno=2);</p>
+</li>
+</ul>
+</li>
+<li><p>查询和孙悟空相同工作的其它员工信息</p>
+<ul>
+<li><p>先查孙悟空工作</p>
+<p>select job from emp where ename=’孙悟空’;</p>
+</li>
+<li><p>查询和孙悟空工作相同的员工</p>
+<p>select * from emp where job=(select job from emp where ename=’孙悟空’) and ename!=’孙悟空’;</p>
+</li>
+</ul>
+</li>
+<li><p>查询拿最低工资员工的同事们的信息(同事指相同部门)   </p>
+<ul>
+<li><p>先查最低工资</p>
+<p>select min(sal) from emp;</p>
+</li>
+<li><p>查询最低工资的员工部门编号</p>
+<p>select deptno from emp where sal=(select min(sal) from emp);</p>
+</li>
+<li><p>最后查询该部门下的员工 排除掉最低工资的员工</p>
+<p>select * from emp where deptno=(select deptno from emp where sal=(select min(sal) from emp)) and sal!=(select min(sal) from emp);</p>
+</li>
+</ul>
+</li>
+<li><p>查询人数最多的部门信息(需要用到dept部门表)</p>
+<ul>
+<li><p>查询 最多人数的部门编号</p>
+<p>select deptno from emp group by deptno order by count(*) desc limit 0,1;</p>
+</li>
+<li><p>根据部门编号查询部门信息</p>
+<p>select * from dept where deptno=(select deptno from emp group by deptno order by count(*) desc limit 0,1);</p>
+</li>
+</ul>
+</li>
+<li><p>有的工作只有一个人, 那么查询有哪些人从事了这种只有一个人的工作</p>
+<ul>
+<li><p>查询只有一个人的工作</p>
+<p>select job from emp group by job having count(*)=1;</p>
+</li>
+<li><p>查询有哪些员工从事上面查询到的工作</p>
+<p>select * from emp where job in(select job from emp group by job having count(*)=1);</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="关联关系"><a href="#关联关系" class="headerlink" title="关联关系"></a>关联关系</h3><ul>
+<li><p>在创建表时, 表和表之间存在的业务关系</p>
+</li>
+<li><p>有哪些关系?</p>
+<ul>
+<li>一对一:  有AB两张表,A表中一条数据对应B表中的一条数据, 同时B表中的一条数据也对应A表中的一条数据.</li>
+<li>一对多: 有AB两张表,A表中一条数据对应B表中的多条数据, 同时B表中的一条数据对应A表中的一条数据.</li>
+<li>多对多:有AB两张表,A表中一条数据对应B表中的多条数据, 同时B表中的一条数据也对应A表中的多条数据.</li>
+</ul>
+</li>
+<li><p>表和表之间如何建立关系?</p>
+<ul>
+<li><p>在表中通过一个外键字段建立关系</p>
+</li>
+<li><p>什么是外键: 用来建立关系的字段称为外键</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="关联查询"><a href="#关联查询" class="headerlink" title="关联查询"></a>关联查询</h3><ul>
+<li><p>同时查询多张表数据的查询方式称为关联查询 </p>
+</li>
+<li><p>关联查询的三种方式:</p>
+<ul>
+<li>等值连接</li>
+<li>内连接</li>
+<li>外连接</li>
+</ul>
+</li>
+</ul>
+<h3 id="关联查询之等值连接"><a href="#关联查询之等值连接" class="headerlink" title="关联查询之等值连接"></a>关联查询之等值连接</h3><ul>
+<li>格式:  select * from A,B where 关联关系 and A.age&gt;18;</li>
+</ul>
+<ol>
+<li><p>查询工资高于2000的每个员工姓名和对应的部门名</p>
+<p>select ename,dname from emp e ,dept d </p>
+<p>where e.deptno=d.deptno and sal&gt;2000;</p>
+</li>
+</ol>
+<h3 id="关联查询之内连接-join-连接"><a href="#关联查询之内连接-join-连接" class="headerlink" title="关联查询之内连接         join=连接"></a>关联查询之内连接         join=连接</h3><ul>
+<li><p>格式: select * from A join B on 关联关系  where A.age&gt;18;</p>
+</li>
+<li><p>内连接和等值连接查询到的数据是一样的, 两个表的交集数据</p>
+</li>
+</ul>
+<ol>
+<li><p>查询工资高于2000的每个员工姓名和对应的部门名</p>
+<p>select ename,dname from </p>
+<p>emp e join dept d on e.deptno=d.deptno </p>
+<p>where sal&gt;2000;</p>
+</li>
+<li><p>查询1号部门有领导的员工姓名,工资,部门名,部门地址</p>
+<p>select ename,sal,dname,loc from </p>
+<p>emp e join dept d on e.deptno=d.deptno</p>
+<p>where d.deptno=1 and mgr is not null;</p>
+</li>
+</ol>
+<h3 id="关联查询之外连接"><a href="#关联查询之外连接" class="headerlink" title="关联查询之外连接"></a>关联查询之外连接</h3><ul>
+<li>格式: select * from A left/right join B on 关联关系  where A.age&gt;18;</li>
+<li>当需要查询一张表的全部以及另外一张表的交集时使用外连接</li>
+</ul>
+<ol>
+<li><p>查询所有员工姓名以及对应的部门名</p>
+<p>insert into emp(empno,ename) values (100,’灭霸’);</p>
+<p>select ename,dname from emp e left join dept d on e.deptno=d.deptno; </p>
+</li>
+</ol>
+<h3 id="关联查询总结"><a href="#关联查询总结" class="headerlink" title="关联查询总结:"></a>关联查询总结:</h3><ul>
+<li>如果查询的是两张表交集数据则使用等值连接或内连接(推荐)</li>
+<li>如果查询的是一张表的全部以及另外一张表的交集使用外连接</li>
+</ul>
+<h3 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h3><ul>
+<li><p>JavaDataBaseConnectivity: Java数据库连接.</p>
+</li>
+<li><p>学习JDBC主要学习的就是如何在Java代码中执行SQL语句  </p>
+</li>
+<li><p>JDBC是Sun提供的一套Java语言和各种数据库进行连接的API(Application Programma Interface 应用程序编程接口)</p>
+</li>
+<li><p>为什么使用JDBC接口</p>
+<p>如果没有JDBC接口,Java程序员有可能每一种数据库都学习一套新的方法, Sun公司为了避免这种情况,通过JDBC接口规范了各个数据库厂商的方法名, 各个数据库厂商根据JDBC接口写自己的实现类, 这样对应Java程序员而言即使换了数据库 代码是不需要改变的,因为不同的数据库方法名都是JDBC接口中定义的方法名.</p>
+</li>
+<li><p>如何使用JDBC连接数据库</p>
+<ul>
+<li><p>创建maven工程 02jdbc01</p>
+</li>
+<li><p>在pom.xml文件中添加MySQL依赖</p>
+<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token comment">&lt;!-- 连接MySQL数据库的依赖 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>mysql<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>mysql-connector-java<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>8.0.15<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>创建Demo01.java 在main方法中添加以下代码:</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//获取数据库连接</span>
+<span class="token class-name">Connection</span> conn <span class="token operator">=</span>
+        <span class="token class-name">DriverManager</span><span class="token punctuation">.</span><span class="token function">getConnection</span><span class="token punctuation">(</span>
+                <span class="token string">"jdbc:mysql://localhost:3306/newdb3?characterEncoding=utf8&amp;serverTimezone=Asia/Shanghai"</span><span class="token punctuation">,</span>
+                <span class="token string">"root"</span><span class="token punctuation">,</span><span class="token string">"root"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>conn<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//创建执行SQL语句对象</span>
+<span class="token class-name">Statement</span> s <span class="token operator">=</span> conn<span class="token punctuation">.</span><span class="token function">createStatement</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//执行SQL语句</span>
+<span class="token class-name">String</span> sql <span class="token operator">=</span> <span class="token string">"create table jdbct1(name varchar(20))"</span><span class="token punctuation">;</span>
+s<span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">(</span>sql<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// execute执行</span>
+<span class="token comment">//关闭资源</span>
+conn<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"执行完成!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+</li>
+</ul>
+<h3 id="Statement执行SQL语句的对象"><a href="#Statement执行SQL语句的对象" class="headerlink" title="Statement执行SQL语句的对象"></a>Statement执行SQL语句的对象</h3><ul>
+<li>execute(sql);   execute执行 ,  此方法可以执行任意SQL语句 但是建议执行DDL(数据库相关SQL和表相关的SQL)</li>
+<li>executeUpdate(sql);  执行增删改相关的SQL语句</li>
+<li>ResultSet rs = executeQuery(sql);</li>
+</ul>
+<h3 id="DBCP数据库连接池"><a href="#DBCP数据库连接池" class="headerlink" title="DBCP数据库连接池"></a>DBCP数据库连接池</h3><ul>
+<li>DataBaseConnectivityPool</li>
+<li>使用数据库连接池可以将数据库连接进行复用,大大降低了频繁开关连接的次数,从而提高了执行效率</li>
+<li>如果使用?<ul>
+<li>在pom.xml文件中添加dbcp依赖</li>
+</ul>
+</li>
+</ul>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">use newdb3;
+create table user(id int primary key auto_increment,username varchar(50),password varchar(50));
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
+<p>‘ or ‘1’=’1</p>
+<p>select id from user where username=’asdf’ and password=’’ or ‘1’=’1’</p>
+<h3 id="SQL注入"><a href="#SQL注入" class="headerlink" title="SQL注入"></a>SQL注入</h3><ul>
+<li><p>什么是SQL注入?</p>
+<p>往用户输入值的地方 输入进去了SQL语句, 导致原有SQL语句的逻辑发生改变,这种行为称为SQL注入</p>
+</li>
+<li><p>通过预编译的SQL执行对象PreparedStatement解决SQL注入问题</p>
+</li>
+<li><p>PreparedStatement如何解决的SQL注入问题?</p>
+<p>预编译的SQL执行对象,在创建执行对象的时候就使用了SQL语句,同时将SQL语句进行编译(可以理解为将SQL语句的逻辑部分锁死),用户输入的内容只能以值得形式添加到SQL语句中, 原有逻辑不会发生改变. </p>
+</li>
+<li><p>什么时候使用Statement和PreparedStatement?</p>
+<p>如果SQL语句中存在变量则使用PreparedStatement否则使用Statement.</p>
+</li>
+</ul>
+<h3 id="批量操作"><a href="#批量操作" class="headerlink" title="批量操作"></a>批量操作</h3><ul>
+<li>作用: 将多次数据传输 合并成一次,从而提高执行效率.</li>
+</ul>
+<h3 id="获取自增主键值"><a href="#获取自增主键值" class="headerlink" title="获取自增主键值"></a>获取自增主键值</h3><p>create table team(id int primary key auto_increment,name varchar(20))charset=utf8;</p>
+<p>create table player(id int primary key auto_increment,name varchar(20),team_id int)charset=utf8;</p>
+<h3 id="元数据"><a href="#元数据" class="headerlink" title="元数据"></a>元数据</h3><ul>
+<li>包括数据库相关的元数据和表相关的元数据</li>
+</ul>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">程序员17</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://example.com/2021/09/11/mysql-chu-ji/">http://example.com/2021/09/11/mysql-chu-ji/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">程序员17</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/mysql/">
+                                    <span class="chip bg-color">mysql</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2021/09/11/mysql-gao-ji/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="Mysql高级">
+                        
+                        <span class="card-title">Mysql高级</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-11
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            程序员17
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/mysql/">
+                        <span class="chip bg-color">mysql</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/09/11/wang-luo-bian-cheng/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="网络编程">
+                        
+                        <span class="card-title">网络编程</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-11
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            程序员17
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/java/">
+                        <span class="chip bg-color">java</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2021</span>
+            
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">程序员17</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">111.6k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1181062873@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1181062873" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1181062873" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

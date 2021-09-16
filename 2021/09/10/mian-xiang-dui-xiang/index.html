@@ -454,7 +454,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-09-11
+                    2021-09-14
                 </div>
                 
 
@@ -659,198 +659,130 @@
 <p>1)将所有派生类所共有的属性和行为，抽到超类中————抽共性 </p>
 <p>2)派生类的行为都一样，设计为普通方法  派生类的行为不一样，设计为抽象方法 </p>
 <p>3)将部分派生类所共有的属性和行为，抽到接口中  接口是对继承的单根性的扩展———–实现多继承</p>
-<h3 id="8、枚举"><a href="#8、枚举" class="headerlink" title="8、枚举"></a>8、枚举</h3><ul>
-<li>```<br>public abstract class Enum&lt;E extends Enum<E>&gt;<br>extends Object<br>implements Comparable<E>, Serializable<pre class="line-numbers language-none"><code class="language-none">
-  这是所有Java语言枚举类型的公共基类。有关枚举的更多信息，包括由编译器合成的隐式声明方法的描述，请参见The Java™ Language  Specification的第8.9 节 。
+<h3 id="8、枚举"><a href="#8、枚举" class="headerlink" title="8、枚举"></a>8、枚举</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token keyword">class</span> <span class="token class-name">Enum</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">E</span> <span class="token keyword">extends</span> <span class="token class-name">Enum</span><span class="token punctuation">&lt;</span><span class="token class-name">E</span><span class="token punctuation">></span><span class="token punctuation">></span></span>
+<span class="token keyword">extends</span> <span class="token class-name">Object</span>
+<span class="token keyword">implements</span> <span class="token class-name">Comparable</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">E</span><span class="token punctuation">></span></span><span class="token punctuation">,</span> <span class="token class-name">Serializable</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-  请注意，当使用枚举类型作为集合的类型或映射中的键的类型时，可以使用专门且高效的[set](..&#x2F;..&#x2F;java&#x2F;util&#x2F;EnumSet.html)和[map](..&#x2F;..&#x2F;java&#x2F;util&#x2F;EnumMap.html)实现。 
-
-  - 从以下版本开始： 
-
-    1.5 
-
-- - 另请参见： 
-
-    [&#96;Class.getEnumConstants()&#96;](..&#x2F;..&#x2F;java&#x2F;lang&#x2F;Class.html#getEnumConstants--)  ， [&#96;EnumSet&#96;](..&#x2F;..&#x2F;java&#x2F;util&#x2F;EnumSet.html) ， [&#96;EnumMap&#96;](..&#x2F;..&#x2F;java&#x2F;util&#x2F;EnumMap.html)  ， [Serialized Form](..&#x2F;..&#x2F;serialized-form.html#java.lang.Enum) 
-
-Java 中的每一个枚举都继承自 java.lang.Enum 类。当定义一个枚举类型时，每一个枚举类型成员都可以看作是 Enum 类的实例，这些枚举成员默认都被 final、public, static 修饰，当使用枚举类型成员时，直接使用枚举名称调用成员即可。
-
-所有枚举实例都可以调用 Enum 类的方法，常用方法如表 1 所示。
-
-| 方法名称    | 描述                             |
-| ----------- | -------------------------------- |
-| values()    | 以数组形式返回枚举类型的所有成员 |
-| valueOf()   | 将普通字符串转换为枚举实例       |
-| compareTo() | 比较两个枚举成员在定义时的顺序   |
-| ordinal()   | 获取枚举成员的索引位置           |
-
-
-
-&lt;u&gt;枚举是一个被命名的整型常数的集合，用于声明一组带标识符的常数。枚举在曰常生活中很常见，例如一个人的性别只能是“男”或者“女”，一周的星期只能是 7 天中的一个等。类似这种当一个变量有几种固定可能的取值时，就可以将它定义为枚举类型。&lt;&#x2F;u&gt;
-
-&lt;u&gt;在 JDK 1.5 之前没有枚举类型，那时候一般用接口常量来替代。而使用 Java 枚举类型 enum 可以更贴近地表示这种常量。&lt;&#x2F;u&gt;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-package enum1;</li>
+<p>所有Java语言枚举类型的公共基类。有关枚举的更多信息，包括由编译器合成的隐式声明方法的描述，请参见The Java™ Language  Specification的第8.9 节 。</p>
+<p>请注意，当使用枚举类型作为集合的类型或映射中的键的类型时，可以使用专门且高效的<a href="../../java/util/EnumSet.html">set</a>和<a href="../../java/util/EnumMap.html">map</a>实现。 </p>
+<ul>
+<li><p>从以下版本开始： </p>
+<p>1.5 </p>
+</li>
+<li><ul>
+<li><p>另请参见： </p>
+<p><a href="../../java/lang/Class.html#getEnumConstants--"><code>Class.getEnumConstants()</code></a>  ， <a href="../../java/util/EnumSet.html"><code>EnumSet</code></a> ， <a href="../../java/util/EnumMap.html"><code>EnumMap</code></a>  ， <a href="../../serialized-form.html#java.lang.Enum">Serialized Form</a> </p>
+</li>
 </ul>
-<p>public enum Sex<br>{<br>    male(“男”),female(“女”);<br>    private String sex;</p>
-<pre><code>Sex(String sex) &#123;
-    this.sex = sex;
-&#125;
-</code></pre>
-<p>}</p>
-<pre><code>
-[参考博客]https://blog.csdn.net/qq_35385687/article/details/90147104
-
-
-
-#### 内存管理
-
-1.内存管理:由JVM来管理  
-
-1)堆:  
-
-  1.1)存储new出来的对象(包括实例变量)    
-
-1.2)垃圾:没有任何引用所指向的对象        
-
-垃圾回收器(GC)不定时到内存中清扫垃圾，
-
- 回收过程是透明的(看不到的)，不一定一发现就立刻回收，
-
-通过调用System.gc()可以建议JVM尽快调度GC来回收垃圾    
-
-1.3)实例变量的生命周期:         
-
- 创建对象时存储在堆中，对象被回收时一并被回收    
-
-1.4)内存泄漏:不再使用的内存还没有被及时的回收，严重的泄漏会导致系统的崩溃                
-
- 建议:不再使用的对象应及时将引用设置为null  
-
-
-
-2)栈:    
-
-2.1)存储正在调用的方法中的局部变量(包括方法的参数)   
-
- 2.2)调用方法时，在栈中为该方法分配一块对应的栈帧，        
-
-栈帧中存储的是局部变量和方法的参数， 
-
-方法调用结束时，栈帧被自动清除，局部变量一并被清除    
-
-2.3)局部变量的生命周期:         
-
- 调用方法时存储在栈中，方法结束时与栈帧一并被清除  ‘
-
-3)方法区:   
-
- 3.1)存储.class字节码文件(包括静态变量、方法)   
-
- 3.2)方法只有一份，通过this来区分具体的调用对象
-
-**面向对象三大特征:**---------------你对面向对象的理解? 
-
-1.封装: 
-
- 1)类:封装的是对象的属性和行为  
-
-2)方法:封装的是特定的业务逻辑功能实现 
-
- 3)访问控制修饰符:封装的是具体的访问权限 
-
-2.继承: 
-
- 1)作用:代码复用  
-
-2)超类:所有派生类共有的属性和行为    
-
-接口:部分派生类共有的属性和行为    派
-
-生类/实现类:派生类特有的属性和行为  
-
-3)单一继承、多接口实现，传递性 
-
-3.多态:  
-
-1)行为多态:所有抽象方法都是多态的(通过重写来实现)    
-
-对象多态:所有对象都是多态的(通过向上造型为实现)  
-
-2)向上造型、强制类型转换、instanceof判断
-
- 
-
-### 总共给你们讲5个面试题应该如何说: 
-
-1)重写与重载的区别? 
-
- 1.1)重写(override):发生在父子类中，方法名相同，参数列表相同  
-
-1.2)重载(overload):发生在同一类中，方法名相同，参数列表不同 
-
-
-
-2)switch分支语句可以作用在哪些数据类型上?  
-
-2.1)byte,short,int,char,枚举,String(JDK1.7才开始支持)
-
-
-
- 3)简述java的8种基本数据类型?  ---共分四大类: 整型，浮点型，布尔型，字符型 
-
- 3.1)byte:整型(字节型)，1个字节  
-
-3.2)short:整型(短整型)，2个字节  
-
-3.3)int:整型，4个字节  
-
-3.4)long:整型(长整型)，8个字节  
-
-3.5)float:浮点型(单精度)，4个字节  
-
-3.6)double:浮点型(双精度)，8个字节 
-
- 3.7)boolean:布尔型，1个字节，存储true或false 
-
- 3.8)char:字符型，2个字节，存储单个字符 
-
-
-
-4)简述public、private、protected以及默认权限的访问范围?  ----都是访问控制修饰符，目的是为了保护数据的安全  
-
-4.1)public:公开的，任何类  
-
-4.2)private:私有的，本类  
-
-4.3)protected:受保护的，本类、派生类、同包类 
-
- 4.4)默认的:什么也不写，本类、同包类
-
-
-
- 5)简述抽象类与接口的区别? 
-
- 5.1)抽象类和接口都是数据类型，都属于引用数据类型，有很多相同点，      
-
-比如说都可以包含抽象方法，都不能被实例化，都需要被继承/实现才有意义  
-
-5.2)但是它们也有不同点:      
-
-1)抽象类中可以包含很多东西(常量、变量、普通方法、抽象方法、构造方法)        
-
-而接口中只能包含常量和抽象方法      
-
-2)一个类只能继承一个抽象类，但可以实现多个接口，用逗号分隔        
-
-继承抽象类的派生类，可以重写抽象方法也可以不重写，不重写将派生类也做成抽象类        
-
-接口的实现类必须重写所有抽象方法      
-
-3)抽象类中成员的默认访问权限就是默认的，即同包中访问        
-
-接口中成员的默认访问权限是public
-</code></pre>
+</li>
+</ul>
+<p>Java 中的每一个枚举都继承自 java.lang.Enum 类。当定义一个枚举类型时，每一个枚举类型成员都可以看作是 Enum 类的实例，这些枚举成员默认都被 final、public, static 修饰，当使用枚举类型成员时，直接使用枚举名称调用成员即可。</p>
+<p>所有枚举实例都可以调用 Enum 类的方法，常用方法如表 1 所示。</p>
+<table>
+<thead>
+<tr>
+<th>方法名称</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>values()</td>
+<td>以数组形式返回枚举类型的所有成员</td>
+</tr>
+<tr>
+<td>valueOf()</td>
+<td>将普通字符串转换为枚举实例</td>
+</tr>
+<tr>
+<td>compareTo()</td>
+<td>比较两个枚举成员在定义时的顺序</td>
+</tr>
+<tr>
+<td>ordinal()</td>
+<td>获取枚举成员的索引位置</td>
+</tr>
+</tbody></table>
+<p><u>枚举是一个被命名的整型常数的集合，用于声明一组带标识符的常数。枚举在曰常生活中很常见，例如一个人的性别只能是“男”或者“女”，一周的星期只能是 7 天中的一个等。类似这种当一个变量有几种固定可能的取值时，就可以将它定义为枚举类型。</u></p>
+<p><u>在 JDK 1.5 之前没有枚举类型，那时候一般用接口常量来替代。而使用 Java 枚举类型 enum 可以更贴近地表示这种常量。</u></p>
+<pre class="line-numbers language-none"><code class="language-none">package enum1;
+
+public enum Sex
+&#123;
+    male(&quot;男&quot;),female(&quot;女&quot;);
+    private String sex;
+
+    Sex(String sex) &#123;
+        this.sex &#x3D; sex;
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>[参考博客]<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_35385687/article/details/90147104">https://blog.csdn.net/qq_35385687/article/details/90147104</a></p>
+<h4 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h4><p>1.内存管理:由JVM来管理  </p>
+<p>1)堆:  </p>
+<p>  1.1)存储new出来的对象(包括实例变量)    </p>
+<p>1.2)垃圾:没有任何引用所指向的对象        </p>
+<p>垃圾回收器(GC)不定时到内存中清扫垃圾，</p>
+<p> 回收过程是透明的(看不到的)，不一定一发现就立刻回收，</p>
+<p>通过调用System.gc()可以建议JVM尽快调度GC来回收垃圾    </p>
+<p>1.3)实例变量的生命周期:         </p>
+<p> 创建对象时存储在堆中，对象被回收时一并被回收    </p>
+<p>1.4)内存泄漏:不再使用的内存还没有被及时的回收，严重的泄漏会导致系统的崩溃                </p>
+<p> 建议:不再使用的对象应及时将引用设置为null  </p>
+<p>2)栈:    </p>
+<p>2.1)存储正在调用的方法中的局部变量(包括方法的参数)   </p>
+<p> 2.2)调用方法时，在栈中为该方法分配一块对应的栈帧，        </p>
+<p>栈帧中存储的是局部变量和方法的参数， </p>
+<p>方法调用结束时，栈帧被自动清除，局部变量一并被清除    </p>
+<p>2.3)局部变量的生命周期:         </p>
+<p> 调用方法时存储在栈中，方法结束时与栈帧一并被清除  ‘</p>
+<p>3)方法区:   </p>
+<p> 3.1)存储.class字节码文件(包括静态变量、方法)   </p>
+<p> 3.2)方法只有一份，通过this来区分具体的调用对象</p>
+<p><strong>面向对象三大特征:</strong>—————你对面向对象的理解? </p>
+<p>1.封装: </p>
+<p> 1)类:封装的是对象的属性和行为  </p>
+<p>2)方法:封装的是特定的业务逻辑功能实现 </p>
+<p> 3)访问控制修饰符:封装的是具体的访问权限 </p>
+<p>2.继承: </p>
+<p> 1)作用:代码复用  </p>
+<p>2)超类:所有派生类共有的属性和行为    </p>
+<p>接口:部分派生类共有的属性和行为    派</p>
+<p>生类/实现类:派生类特有的属性和行为  </p>
+<p>3)单一继承、多接口实现，传递性 </p>
+<p>3.多态:  </p>
+<p>1)行为多态:所有抽象方法都是多态的(通过重写来实现)    </p>
+<p>对象多态:所有对象都是多态的(通过向上造型为实现)  </p>
+<p>2)向上造型、强制类型转换、instanceof判断</p>
+<h3 id="总共给你们讲5个面试题应该如何说"><a href="#总共给你们讲5个面试题应该如何说" class="headerlink" title="总共给你们讲5个面试题应该如何说:"></a>总共给你们讲5个面试题应该如何说:</h3><p>1)重写与重载的区别? </p>
+<p> 1.1)重写(override):发生在父子类中，方法名相同，参数列表相同  </p>
+<p>1.2)重载(overload):发生在同一类中，方法名相同，参数列表不同 </p>
+<p>2)switch分支语句可以作用在哪些数据类型上?  </p>
+<p>2.1)byte,short,int,char,枚举,String(JDK1.7才开始支持)</p>
+<p> 3)简述java的8种基本数据类型?  —共分四大类: 整型，浮点型，布尔型，字符型 </p>
+<p> 3.1)byte:整型(字节型)，1个字节  </p>
+<p>3.2)short:整型(短整型)，2个字节  </p>
+<p>3.3)int:整型，4个字节  </p>
+<p>3.4)long:整型(长整型)，8个字节  </p>
+<p>3.5)float:浮点型(单精度)，4个字节  </p>
+<p>3.6)double:浮点型(双精度)，8个字节 </p>
+<p> 3.7)boolean:布尔型，1个字节，存储true或false </p>
+<p> 3.8)char:字符型，2个字节，存储单个字符 </p>
+<p>4)简述public、private、protected以及默认权限的访问范围?  —-都是访问控制修饰符，目的是为了保护数据的安全  </p>
+<p>4.1)public:公开的，任何类  </p>
+<p>4.2)private:私有的，本类  </p>
+<p>4.3)protected:受保护的，本类、派生类、同包类 </p>
+<p> 4.4)默认的:什么也不写，本类、同包类</p>
+<p> 5)简述抽象类与接口的区别? </p>
+<p> 5.1)抽象类和接口都是数据类型，都属于引用数据类型，有很多相同点，      </p>
+<p>比如说都可以包含抽象方法，都不能被实例化，都需要被继承/实现才有意义  </p>
+<p>5.2)但是它们也有不同点:      </p>
+<p>1)抽象类中可以包含很多东西(常量、变量、普通方法、抽象方法、构造方法)        </p>
+<p>而接口中只能包含常量和抽象方法      </p>
+<p>2)一个类只能继承一个抽象类，但可以实现多个接口，用逗号分隔        </p>
+<p>继承抽象类的派生类，可以重写抽象方法也可以不重写，不重写将派生类也做成抽象类        </p>
+<p>接口的实现类必须重写所有抽象方法      </p>
+<p>3)抽象类中成员的默认访问权限就是默认的，即同包中访问        </p>
+<p>接口中成员的默认访问权限是public</p>
 
                 
             </div>
@@ -1373,7 +1305,7 @@ package enum1;</li>
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">100.2k</span>
+                        class="white-color">111.6k</span>
             
             
             
