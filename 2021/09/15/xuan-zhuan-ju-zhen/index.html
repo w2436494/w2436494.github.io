@@ -454,14 +454,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-09-15
+                    2021-09-22
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    83
+                    451
                 </div>
                 
 
@@ -486,7 +486,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>给定一个正方形矩阵，**只用有限几个变量(在原矩阵中)**，实现矩阵中每个位置的元素顺时针转动90度，比如如下的矩阵</p>
+                <h4 id="旋转矩阵"><a href="#旋转矩阵" class="headerlink" title="旋转矩阵"></a>旋转矩阵</h4><p>给定一个正方形矩阵，**只用有限几个变量(在原矩阵中)**，实现矩阵中每个位置的元素顺时针转动90度，比如如下的矩阵</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">a b c d
 e f g h
 i j k l
@@ -497,6 +497,88 @@ n j f b
 o k g c
 p l h d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+
+
+<p>思路：</p>
+<p><img src="/images/%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5/image-20210922230214249.png" alt="image-20210922230214249"></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">imitate</span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RotateEdge</span> <span class="token punctuation">&#123;</span>
+
+    <span class="token keyword">static</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> edge <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+            <span class="token punctuation">&#123;</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span class="token punctuation">&#123;</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span class="token punctuation">&#123;</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">11</span><span class="token punctuation">,</span><span class="token number">12</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span class="token punctuation">&#123;</span><span class="token number">13</span><span class="token punctuation">,</span><span class="token number">14</span><span class="token punctuation">,</span><span class="token number">15</span><span class="token punctuation">,</span><span class="token number">16</span><span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token function">printMatrix</span><span class="token punctuation">(</span>edge<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"================"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">rotate</span><span class="token punctuation">(</span>edge<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">printMatrix</span><span class="token punctuation">(</span>edge<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">printMatrix</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> edge<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> ints <span class="token operator">:</span> edge<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> anInt <span class="token operator">:</span> ints<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>anInt<span class="token operator">+</span><span class="token string">"     "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token comment">/*
+     时间复杂度
+     m*n
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">rotate</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> edge<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> b <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> c <span class="token operator">=</span> edge<span class="token punctuation">.</span>length<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> d <span class="token operator">=</span> edge<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>length<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// a b c d 画一个框，不断的把框让中间缩小</span>
+        <span class="token comment">// 一旦越界结束 矩阵旋转完毕</span>
+        <span class="token comment">// 因为是正方形 a和c越界 c和d一定越界</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>a <span class="token operator">&lt;</span> c<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token function">rotateEdge</span><span class="token punctuation">(</span>edge<span class="token punctuation">,</span>a<span class="token operator">++</span><span class="token punctuation">,</span>b<span class="token operator">++</span><span class="token punctuation">,</span>c<span class="token operator">--</span><span class="token punctuation">,</span>d<span class="token operator">--</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 每次循环旋转一圈</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">rotateEdge</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> edge<span class="token punctuation">,</span> <span class="token keyword">int</span> a<span class="token punctuation">,</span> <span class="token keyword">int</span> b<span class="token punctuation">,</span> <span class="token keyword">int</span> c<span class="token punctuation">,</span> <span class="token keyword">int</span> d<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">// 循环旋转每一圈的各组元素</span>
+        <span class="token comment">// 判断这一圈需要旋转的组数</span>
+        <span class="token keyword">int</span> times <span class="token operator">=</span> d<span class="token operator">-</span>b<span class="token punctuation">;</span>
+        <span class="token keyword">int</span> temp <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> times <span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token comment">// 弄清楚每组的坐标变换!!!</span>
+            temp <span class="token operator">=</span> edge<span class="token punctuation">[</span>a<span class="token punctuation">]</span><span class="token punctuation">[</span>b<span class="token operator">+</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 元素1</span>
+            edge<span class="token punctuation">[</span>a<span class="token punctuation">]</span><span class="token punctuation">[</span>b<span class="token operator">+</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> edge<span class="token punctuation">[</span>c<span class="token operator">-</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>b<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 元素4</span>
+            edge<span class="token punctuation">[</span>c<span class="token operator">-</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>b<span class="token punctuation">]</span> <span class="token operator">=</span> edge<span class="token punctuation">[</span>c<span class="token punctuation">]</span><span class="token punctuation">[</span>d<span class="token operator">-</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 元素3</span>
+            edge<span class="token punctuation">[</span>c<span class="token punctuation">]</span><span class="token punctuation">[</span>d<span class="token operator">-</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> edge<span class="token punctuation">[</span>a<span class="token operator">+</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>d<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 元素2</span>
+            edge<span class="token punctuation">[</span>a<span class="token operator">+</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>d<span class="token punctuation">]</span> <span class="token operator">=</span> temp<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+
+<p><img src="/images/%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5/image-20210922224533583.png" alt="image-20210922224533583"></p>
+<h4 id="绕圈打印矩形"><a href="#绕圈打印矩形" class="headerlink" title="绕圈打印矩形"></a>绕圈打印矩形</h4><p>如,给定的矩形不再是正方形</p>
+<pre class="line-numbers language-none"><code class="language-none">a b c d
+e f g h
+i j k l
+m n o p 
+q r s t
+要求打印结果为:
+a b c d h l p t s r q m i e 
+f g k o n j <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+
+<h4 id="蛇形打印矩形"><a href="#蛇形打印矩形" class="headerlink" title="蛇形打印矩形"></a>蛇形打印矩形</h4><p><img src="/images/%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5/image-20210922225648296.png" alt="image-20210922225648296"></p>
 
                 
             </div>
@@ -1019,7 +1101,7 @@ p l h d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></s
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">111.6k</span>
+                        class="white-color">112.2k</span>
             
             
             
