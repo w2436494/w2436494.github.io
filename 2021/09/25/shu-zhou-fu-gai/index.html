@@ -454,14 +454,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-09-25
+                    2021-10-25
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    437
+                    847
                 </div>
                 
 
@@ -490,8 +490,8 @@
 <p>主业务：题目的求解方法和题的内容有很大关系</p>
 <p>主技巧：平时刷题多刷主技巧的题。</p>
 <p><strong>描述：</strong> 给定一个有序数组arr,代表数轴上从左往右有n个点arr[0]、arr[1]…arr[n-1]。给定一个整数L，代表一个长度为L的绳子，求绳子最多能覆盖其中的几个点。</p>
-<p><img src="/images/%E6%95%B0%E8%BD%B4%E8%A6%86%E7%9B%96/image-20210925145219997.png" alt="image-20210925145219997"></p>
-<p>解法二：使用二分的思想，假设每个节点都是都是数组的末尾。从该节点往前绳子能落到哪儿。</p>
+<p><img src="/images/%E6%95%B0%E8%BD%B4%E8%A6%86%E7%9B%96/image-20210925233052447.png" alt="image-20210925233052447"></p>
+<h4 id="解法二："><a href="#解法二：" class="headerlink" title="解法二："></a>解法二：</h4><p>使用二分的思想，假设每个节点都是都是数组的末尾。从该节点往前绳子能落到哪儿。</p>
 <p><img src="/images/%E6%95%B0%E8%BD%B4%E8%A6%86%E7%9B%96/image-20210925175957428.png" alt="image-20210925175957428"></p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">greedy</span><span class="token punctuation">;</span>
 
@@ -509,7 +509,7 @@
         <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
             <span class="token keyword">int</span> start <span class="token operator">=</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">-</span> <span class="token class-name">L</span><span class="token punctuation">;</span> <span class="token comment">// 记录以arr[i]为结尾 L能覆盖的起始位置</span>
 
-            <span class="token comment">// 使用二分查找，查找start-arr[i]范围内，arr数组有几个节点</span>
+            <span class="token comment">// 使用二分查找，查找start~arr[i]范围内，arr数组有几个节点</span>
             <span class="token comment">// 查找数组中最近的大于等于start的元素下标</span>
             <span class="token keyword">int</span> index <span class="token operator">=</span> <span class="token function">binarySearch</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span>start<span class="token punctuation">)</span><span class="token punctuation">;</span>
            <span class="token comment">// System.out.println("i="+i+"index="+index);</span>
@@ -518,11 +518,12 @@
         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
 
+    <span class="token comment">// 此代码有一个bug  未修正</span>
     <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">binarySearch</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr<span class="token punctuation">,</span> <span class="token keyword">int</span> value<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
           <span class="token keyword">int</span> left <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
           <span class="token keyword">int</span> right <span class="token operator">=</span> arr<span class="token punctuation">.</span>length<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
           <span class="token keyword">int</span> mid <span class="token operator">=</span> <span class="token punctuation">(</span>left<span class="token operator">+</span>right<span class="token punctuation">)</span><span class="token operator">>></span><span class="token number">1</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> left<span class="token punctuation">;</span> left <span class="token operator">&lt;=</span> right<span class="token punctuation">;</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token punctuation">;</span>left <span class="token operator">&lt;=</span> right<span class="token punctuation">;</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
             <span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">[</span>mid<span class="token punctuation">]</span> <span class="token operator">==</span> value<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
                 <span class="token keyword">return</span> mid<span class="token punctuation">;</span>
             <span class="token punctuation">&#125;</span>
@@ -536,7 +537,73 @@
         <span class="token punctuation">&#125;</span>
         <span class="token keyword">return</span> left<span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="最优解"><a href="#最优解" class="headerlink" title="最优解"></a>最优解</h4><p><img src="/images/%E6%95%B0%E8%BD%B4%E8%A6%86%E7%9B%96/QQ%E5%9B%BE%E7%89%8720211025125544.jpg" alt="QQ图片20211025125544"></p>
+<p>数轴上有 N 个点，求一条长度为 K 的线段最多覆盖多少个点？</p>
+<p>数据范围：1&lt;=n&lt;=30000,1&lt;=K&lt;=1000</p>
+<h5 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a><strong>输入描述:</strong></h5><pre class="line-numbers language-none"><code class="language-none">第一行N和K，表示点数和线段长度
+第二行N个数，表示N个点的坐标<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
+<h5 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a><strong>输出描述:</strong></h5><pre class="line-numbers language-none"><code class="language-none">输出一个数，最多覆盖的点数<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>示例1</p>
+<h2 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h2><pre class="line-numbers language-none"><code class="language-none">5 3
+1 2 3 4 5 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">import java.util.Scanner;
+public class Main&#123;
+    public static void main(String[] args) &#123;
+        Scanner sc &#x3D; new Scanner(System.in);
+        int N &#x3D; sc.nextInt();
+        int K &#x3D; sc.nextInt();
+        &#x2F;&#x2F; int[] arr &#x3D; &#123;2,15,19&#125;;
+        int[] arr &#x3D; new int[N];
+        for(int i &#x3D; 0;i &lt; N;i++)&#123;
+            arr[i] &#x3D; sc.nextInt();
+        &#125;
+        int res &#x3D; maxPoint(arr,K);
+        
+        System.out.println(res);
+    &#125;
+
+   &#x2F;**
+     * 数轴覆盖最优解
+     * @param arr
+     * @param l
+     * @return
+     *&#x2F;
+    public static int maxPoint(int[] arr,int l)&#123;
+        int left &#x3D; 0;
+        int right &#x3D; 0;
+        int res &#x3D; 1;
+        &#x2F;&#x2F; right和left不回溯
+        while (left &lt; arr.length) &#123;
+            &#x2F;&#x2F; 不满足条件先行思想
+            &#x2F;&#x2F; 不能取等号arr[right] - arr[left] &lt;&#x3D; l。如果结果刚好为arr[right] - arr[left] &#x3D;&#x3D; l,则right还会+1,
+            &#x2F;&#x2F; 就会多计算出一个覆盖点结果错误
+            while (right &lt; arr.length &amp;&amp; arr[right] - arr[left] &lt; l)&#123;
+                right++;
+            &#125;
+            &#x2F;&#x2F; right-left
+            &#x2F;&#x2F; left+1
+            res &#x3D; Math.max(right-(left++),res);
+        &#125;
+&#x2F;&#x2F;            if (arr[right] - arr[left] &gt; l)&#123;
+&#x2F;&#x2F;                right --; &#x2F;&#x2F; right回溯了
+&#x2F;&#x2F;                res &#x3D; Math.max(right-left+1,res);
+&#x2F;&#x2F;                left++;
+&#x2F;&#x2F;            &#125;
+&#x2F;&#x2F;            right++;
+&#x2F;&#x2F;        &#125;
+&#x2F;&#x2F;        &#x2F;&#x2F; 排除2 15 19情况：
+&#x2F;&#x2F;        &#x2F;&#x2F; 比较right-left与res因为while退出一定是right&#x3D;&#x3D;arr.length
+&#x2F;&#x2F;        res &#x3D; Math.max(right-left,res);
+        return res;
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
                 
@@ -1060,7 +1127,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">116.2k</span>
+                        class="white-color">116.7k</span>
             
             
             
